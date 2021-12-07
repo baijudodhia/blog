@@ -47,11 +47,11 @@ plugins:
 jekyll-archives:
   enabled: 'all'
   layouts:
-    year: archive-year
-    month: archive-month
-    day: archive-day
-    category: archive-category
-    tag: archive-tag
+    year: archives/year
+    month: archives/month
+    day: archives/day
+    category: archives/category
+    tag: archives/tag
   permalinks:
     year: '/:year/'
     month: '/:year/:month/'
