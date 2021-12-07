@@ -1,27 +1,63 @@
 ---
 layout: default
 ---
-<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
-    <p class="post-meta">
-      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        {{ page.date | date: date_format }}
-      </time>
-      {%- if page.author -%}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
-      {%- endif -%}</p>
-  </header>
-
-  <div class="post-content e-content" itemprop="articleBody">
-    {{ content }}
-  </div>
-
-  {%- if site.disqus.shortname -%}
-    {%- include disqus_comments.html -%}
-  {%- endif -%}
-
-  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
-</article>
+<section class="w-100 m-0 p-0" style="background: linear-gradient(to right, #16222a, #3a6073);">
+    <div class="container py-3" id="blogpost">
+        <div class="row">
+            <div class="col-lg-12" style="margin: 12px 0px;">
+                <div class="card card-long w-100 h-100 border-0" style="background:white;color:black">
+                    <div class="card-body d-flex flex-column text-light">
+                        <div class="card-tags mb-1">
+                            {% for tag in page.tags %}
+                                <span class="badge badge-pill badge-dark">{{ tag }}</span>
+                            {% endfor %}
+                        </div>
+                        <div class="card-title h3 my-1">
+                            <b>{{ page.title | escape }}</b>
+                        </div>
+                        <div class="card-title h7 my-1 text-secondary">posted on&nbsp;
+                            <b>
+                                <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                                    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+                                    {{ page.date | date: date_format }}
+                                </time>
+                            </b>
+                        </div>
+                        <div class="card-title h7 mb-1 text-secondary">by&nbsp;<b>{{ page.author }}</b>
+                        </div>
+                        <div class="card-content p flex-grow-1 my-1">
+                            {{ content }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container d-flex flex-row justify-content-center w-100 px-1 pb-5 pt-2">
+        <div>
+            <a class="card-btn d-flex flex-row justify-content-center" href="{{ post.url | relative_url }}">
+                <div>
+                    <i aria-hidden="true" class="fa fa-arrow-left"></i>
+                </div>
+                <!-- <div class="pl-2 pr-1"><b>Prev</b></div> -->
+            </a>
+        </div>
+        <div>
+            <a class="card-btn d-flex flex-row justify-content-center mx-4" href="{{ post.url | relative_url }}">
+                <!-- <div class="px-1"><b>Random</b></div> -->
+                <div>
+                    <i aria-hidden="true" class="fa fa-random"></i>
+                </div>
+            </a>
+        </div>
+        <div>
+            <a class="card-btn d-flex flex-row justify-content-center" href="{{ post.url | relative_url }}">
+                <!-- <div class="pr-2 pl-1"><b>Next</b></div> -->
+                <div>
+                    <i aria-hidden="true" class="fa fa-arrow-right"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>

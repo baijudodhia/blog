@@ -1,94 +1,93 @@
 #landing {
-    margin-top: 48px;
-    margin-bottom: 32px;
+  margin-top: 48px;
+  margin-bottom: 32px;
+}
+
+.card {
+  cursor: pointer;
+  transition: 0.05s ease-in;
+  border-radius: 10px;
+  box-shadow: 0px 0px 16px -2px lightgray;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 10px -3px black;
+  transform: scale(1.005);
+}
+
+.card-long {
+  min-height: 220px;
+}
+
+.card-short {
+  min-height: 340px;
+}
+
+#landing .card-body {
+  padding: 18px;
+}
+
+#landing .card-title h2 {
+  text-shadow: 0px 0px 5px black;
+}
+
+#landing .card-btn {
+  margin-left: 4px;
+  margin-bottom: 4px;
+}
+
+a.card-btn {
+  border: 0px;
+  background: whitesmoke;
+  border-radius: 4px;
+  min-width: 80px;
+  min-height: 32px;
+  padding: 8px;
+  transition: 0.01s ease-in-out;
+  box-shadow: 0px 0px 16px -5px black;
+}
+#landing a.card-btn {
+  max-width: 100px;
+}
+#latest_landing a.card-btn,
+#trending_landing a.card-btn {
+  max-width: 80px;
+}
+
+.card-btn:focus {
+  outline: none;
+}
+
+.card-btn:active {
+  outline: none;
+  transform: scale(0.9);
+}
+
+#trending_heading:after,
+#latest_heading:after {
+  content: "";
+  width: 65px;
+  height: 5px;
+  border-radius: 10px;
+  background-color: rgb(50, 50, 255);
+  left: 0;
+  margin: 0px auto;
+  position: relative;
+  display: block;
+  top: 5px;
+}
+
+@media only screen and (max-width: 992px) {
+  #landing {
+    margin-top: 24px;
+    margin-bottom: 0px;
   }
-  
-  .card {
-    cursor: pointer;
-    transition: 0.05s ease-in;
-    border-radius: 10px;
-    box-shadow: 0px 0px 16px -2px lightgray;
-  }
-  
-  .card:hover {
-    box-shadow: 0px 0px 10px -3px black;
-    transform: scale(1.005);
-  }
-  
+
   .card-long {
-    min-height: 220px;
+    min-height: 175px;
   }
-  
+
   .card-short {
-    min-height: 340px;
+    min-height: 175px;
   }
-  
-  #landing .card-body {
-    padding: 18px;
-  }
-  
-  #landing .card-title h2 {
-    text-shadow: 0px 0px 5px black;
-  }
-  
-  #landing .card-btn {
-    margin-left: 4px;
-    margin-bottom: 4px;
-  }
-  
-  a.card-btn {
-    border: 0px;
-    background: whitesmoke;
-    border-radius: 4px;
-    min-width: 80px;
-    min-height: 32px;
-    padding: 8px;
-    transition: 0.01s ease-in-out;
-    box-shadow: 0px 0px 16px -5px black;
-  }
-  #landing a.card-btn {
-    max-width: 100px;
-  }
-  #latest_landing a.card-btn,
-  #trending_landing a.card-btn {
-    max-width: 80px;
-  }
-  
-  .card-btn:focus {
-    outline: none;
-  }
-  
-  .card-btn:active {
-    outline: none;
-    transform: scale(0.9);
-  }
-  
-  #trending_heading:after,
-  #latest_heading:after {
-    content: "";
-    width: 65px;
-    height: 5px;
-    border-radius: 10px;
-    background-color: rgb(50, 50, 255);
-    left: 0;
-    margin: 0px auto;
-    position: relative;
-    display: block;
-    top: 5px;
-  }
-  
-  @media only screen and (max-width: 992px) {
-    #landing {
-      margin-top: 24px;
-      margin-bottom: 0px;
-    }
-  
-    .card-long {
-      min-height: 175px;
-    }
-  
-    .card-short {
-      min-height: 175px;
-    }
-  }
-  
+}
