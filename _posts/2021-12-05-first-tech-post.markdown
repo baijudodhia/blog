@@ -3,7 +3,7 @@ layout: post
 title: "First Tech Post!"
 date: 2021-12-05 21:49:30 +0530
 category: tech
-tags: jekyll learning category tech
+tags: jekyll learning tech
 ---
 
 ## Welcome to first blog post.

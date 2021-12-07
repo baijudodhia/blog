@@ -3,7 +3,7 @@ layout: post
 title: "First FinTech Post!"
 date: 2021-12-05 21:49:30 +0530
 category: fintech
-tags: jekyll learning category fintech
+tags: jekyll learning fintech
 author: Baiju Dodhia
 ---
 
