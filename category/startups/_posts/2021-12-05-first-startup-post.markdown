@@ -2,6 +2,7 @@
 layout: post
 title: "First Startup Post!"
 date: 2021-12-05 21:49:30 +0530
+category: startups
 categories: jekyll learning category startups
 ---
 
