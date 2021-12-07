@@ -1,0 +1,46 @@
+.card {
+    color: black !important;
+    border-radius: 10px;
+    padding: 6px;
+    box-shadow: 0px 0px 16px -2px darkslategray;
+  }
+  .card-title,
+  .card-content {
+    color: black;
+  }
+  .card-btn {
+    border: 0px;
+    background: whitesmoke;
+    border-radius: 4px;
+    min-width: 80px;
+    min-height: 32px;
+    padding: 8px;
+    transition: 0.01s ease-in-out;
+    box-shadow: 0px 0px 16px -5px #16222a;
+  }
+  .card-btn:focus {
+    outline: none;
+  }
+  .card-btn:active {
+    outline: none;
+    transform: scale(0.9);
+  }
+  .paragraph-type-code {
+    background-color: lightgray;
+    border-radius: 3px;
+    padding: 12px;
+    font-family: monospace;
+    margin-left: -4px;
+    margin-right: -4px;
+  }
+  .paragraph-type-code-line {
+    display: block;
+  }
+  .paragraph-type-image > img {
+    max-width: 100%;
+    border-radius: 3px;
+    box-shadow: 0px 0px 16px -5px gray;
+    margin-top:8px;
+    margin-bottom:8px;
+  }
+  
