@@ -18,14 +18,19 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
+# Minima Theme Defaults
 title: Blog
-email: your-email@example.com
+# email: your-email@example.com (Not using email anywhere)
 description: >- # this means to ignore newlines until "baseurl:"
   Blogs related to tech & startups.
 baseurl: "/blog" # the subpath of your site, e.g. /blog
 url: "https://baijudodhia.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: baijudodhia
 github_username:  baijudodhia
+
+# Minia Custom Theme Defaults
+# Default Author name is present in Minia but is overridden here
+author: Baiju Dodhia
 
 # Build settings
 # Remove minima theme & using a custom regular gem based theme.
