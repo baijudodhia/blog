@@ -2,7 +2,8 @@
 layout: post
 title: "My First Post!"
 date: 2021-12-05 21:49:30 +0530
-categories: jekyll learning
+category: jekyll-learn
+tags: jekyll learning
 ---
 
 ## Welcome to first blog post.
