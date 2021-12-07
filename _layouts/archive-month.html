@@ -1,0 +1,37 @@
+---
+layout: default
+---
+<div class="container">
+    <h1>Archive of posts from {{ page.date | date: "%B %Y" }}</h1>
+    {% for post in page.posts %}
+        <div class="row">
+            <div class="col-lg-12" style="margin: 12px 0px">
+                <div class="card card-long w-100 h-100 border-0" style="background: linear-gradient(to right, #003973, #e5e5be)">
+                    <div class="card-body d-flex flex-column text-light">
+                        <div class="card-tags mb-1">
+                            <span class="badge badge-pill badge-dark">{{ post.category }}</span>
+                        </div>
+                        <div class="card-title h3 my-1">
+                            <b>{{ post.title }}</b>
+                        </div>
+                        <div class="card-content-preview p flex-grow-1 my-1">
+                            <span>
+                                {{ post.excerpt }}
+                            </span>
+                        </div>
+                        <div class="mt-1">
+                            <a class="card-btn d-flex flex-row justify-content-between" href="{{ post.url | relative_url }}">
+                                <div class="pr-2">
+                                    <b>{{ "Read" | escape }}</b>
+                                </div>
+                                <div>
+                                    <i aria-hidden="true" class="fa fa-arrow-right"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>

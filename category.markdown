@@ -4,5 +4,5 @@
 
 layout: category
 title: Category
-permalink: /category/
+permalink: /category
 ---
