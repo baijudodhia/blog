@@ -2,35 +2,9 @@
 layout: default
 ---
 
-<section class="w-100 m-0 p-0" style="background: linear-gradient(to right, #16222a, #3a6073);">
-    <div class="container d-flex flex-row justify-content-center w-100 px-1 pt-5 pt-2">
-        {%- if post.url != page.previous.url -%}
-        <div>
-            <a class="card-btn d-flex flex-row justify-content-center" href="{{ page.previous.url | relative_url }}">
-                <div>
-                    <i aria-hidden="true" class="fa fa-arrow-left"></i>
-                </div>
-            </a>
-        </div>
-        {%- endif -%}
-        <div>
-            <a class="card-btn d-flex flex-row justify-content-center mx-4" href="{{ post.url | relative_url }}">
-                <div>
-                    <i aria-hidden="true" class="fa fa-random"></i>
-                </div>
-            </a>
-        </div>
-        {%- if post.url != page.next.url -%}
-        <div>
-            <a class="card-btn d-flex flex-row justify-content-center" href="{{ page.next.url | relative_url }}">
-                <div>
-                    <i aria-hidden="true" class="fa fa-arrow-right"></i>
-                </div>
-            </a>
-        </div>
-        {%- endif -%}
-    </div>
-    <div class="container py-3" id="blogpost">
+<section class="w-100 m-0 px-0 py-2" style="background: linear-gradient(to right, #16222a, #3a6073);">
+    {%- include ui/next-prev-post.html -%}
+    <div class="container" id="blogpost">
         <div class="row">
             <div class="col-lg-12" style="margin: 12px 0px;">
                 <div class="card card-long w-100 h-100 border-0" style="background:white;color:black">
@@ -61,27 +35,7 @@ layout: default
             </div>
         </div>
     </div>
-    <div class="container d-flex flex-row justify-content-center w-100 px-1 pb-5 pt-2">
-        <div>
-            <a class="card-btn d-flex flex-row justify-content-center" href="{{ page.previous.url | relative_url }}">
-                <div>
-                    <i aria-hidden="true" class="fa fa-arrow-left"></i>
-                </div>
-            </a>
-        </div>
-        <div>
-            <a class="card-btn d-flex flex-row justify-content-center mx-4" href="{{ post.url | relative_url }}">
-                <div>
-                    <i aria-hidden="true" class="fa fa-random"></i>
-                </div>
-            </a>
-        </div>
-        <div>
-            <a class="card-btn d-flex flex-row justify-content-center" href="{{ page.next.url | relative_url }}">
-                <div>
-                    <i aria-hidden="true" class="fa fa-arrow-right"></i>
-                </div>
-            </a>
-        </div>
-    </div>
+    {%- include ui/next-prev-post.html -%}
 </section>
+
+{% include others/random.html %}
