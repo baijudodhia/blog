@@ -1,0 +1,16 @@
+.category-brief {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  row-gap: 2rem;
+  justify-content: center;
+  padding: 1rem;
+  align-items: center;
+  align-content: center;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 8px -3px #121212;
+}
+.category-brief-title {
+  font-size: 1.2rem;
+  color: #f5f5f5;
+}

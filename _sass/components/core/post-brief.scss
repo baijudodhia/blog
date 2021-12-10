@@ -1,0 +1,26 @@
+.post-brief {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  align-items: flex-start;
+  justify-content: center;
+  align-content: space-around;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 15px -10px #121212;
+}
+.post-brief-category {
+}
+.post-brief-content {
+  display: flex;
+  flex-direction: column;
+  column-gap: 0.5rem;
+  .post-brief-title {
+    font-size: 1.4rem;
+  }
+  .post-brief-excerpt {
+    font-size: 1rem;
+  }
+}
+.post-brief-link {
+}

@@ -1,0 +1,25 @@
+<div class="next-prev-post">
+    {%- if post.url != page.previous.url -%}
+        <div>
+            {% assign href = page.previous.url | relative_url %}
+            {% include components/base/anchor.html href=href showText=false showIcon=true icon='fa fa-arrow-left' %}
+        </div>
+    {%- else -%}
+        <div>
+            {% include components/base/button.html onclick='redirectToRandomBlog();' showText=false showIcon=true icon='fa fa-arrow-left' %}
+        </div>
+    {%- endif -%}
+    <div>
+        {% include components/base/button.html onclick='redirectToRandomBlog();' showText=false showIcon=true icon='fa fa-random' %}
+    </div>
+    {%- if post.url != page.next.url -%}
+        <div>
+            {% assign href = page.next.url | relative_url %}
+            {% include components/base/anchor.html href=href showText=false showIcon=true icon='fa fa-arrow-right' %}
+        </div>
+    {%- else -%}
+        <div>
+            {% include components/base/button.html onclick='redirectToRandomBlog();' showText=false showIcon=true icon='fa fa-arrow-right' %}
+        </div>
+    {%- endif -%}
+</div>

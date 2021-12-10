@@ -1,0 +1,12 @@
+.category {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  row-gap: 2rem;
+  column-gap: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}

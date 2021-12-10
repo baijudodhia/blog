@@ -1,0 +1,12 @@
+<a class="anchor" href={{include.href}}>
+    {% if include.showText %}
+        <div>
+            <b>{{ include.text }}</b>
+        </div>
+    {% endif %}
+    {% if include.showIcon %}
+        <div>
+            <i aria-hidden="true" class='{{include.icon}}'></i>
+        </div>
+    {% endif %}
+</a>

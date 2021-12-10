@@ -1,0 +1,18 @@
+<div class="post-brief" style="background: linear-gradient(to right, #003973, #e5e5be)">
+    <div class="post-brief-category">
+        {% assign category = include.post.category %}
+        {% include components/base/badge-category.html text=category %}
+    </div>
+    <div class="post-brief-content">
+        <div class="post-brief-title">
+            {{ include.post.title }}
+        </div>
+        <div class="post-brief-excerpt">
+            {{ include.post.content | strip_html | truncatewords: 25 }}
+        </div>
+    </div>
+    <div class="post-brief-link">
+        {% assign href = include.post.url | relative_url %}
+        {% include components/base/anchor.html href=href showText=true text='Read' showIcon=true icon='fa fa-arrow-right' %}
+    </div>
+</div>

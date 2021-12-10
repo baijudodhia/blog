@@ -1,2 +1,86 @@
+html {
+  --color_f5f5f5: #f5f5f5;
+  --color_121212: #121212;
+  --font-weight_400: 400;
+  --font-weight_bold: bold;
+}
+html[data-theme="light"] {
+  --color-light_0055ff-dark_009aff: #0055ff;
+  --color-light_f5f5f5-dark_121212: #f5f5f5;
+  --color-light_ffffff-dark_000000: #ffffff;
+  --color-light_f5f5f5-dark_121212-reverse: #121212;
+  --color-light_0055ff-dark_009aff-gradient: linear-gradient(
+    to bottom right,
+    #0072ff,
+    #00c6ff
+  );
+  --font-weight: bold;
+  --font-weight-hover: 500;
+}
+html[data-theme="dark"] {
+  --color-light_0055ff-dark_009aff: #009aff;
+  --color-light_f5f5f5-dark_121212: #121212;
+  --color-light_ffffff-dark_000000: #000000;
+  --color-light_f5f5f5-dark_121212-reverse: #f5f5f5;
+  --color-light_0055ff-dark_009aff-gradient: linear-gradient(
+    to bottom right,
+    #0072ff,
+    #00c6ff
+  );
+  --font-weight: 400;
+  --font-weight-hover: bold;
+}
+* {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  letter-spacing: 0;
+  word-spacing: 1px;
+  -webkit-tap-highlight-color: transparent;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: var(--color-light_f5f5f5-dark_121212) !important;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-light_0055ff-dark_009aff);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-light_0055ff-dark_009aff);
+}
+html,
+body {
+  margin: 0;
+  background-color: var(--color-light_f5f5f5-dark_121212) !important;
+  color: var(--color-light_f5f5f5-dark_121212-reverse) !important;
+  scroll-behavior: smooth !important;
+  font-weight: var(--font-weight) !important;
+}
+
 // Import partials.
-@import "custom/base", "custom/core", "custom/global", "custom/post";
+@import "components/base/anchor.scss";
+@import "components/base/badge-category.scss";
+@import "components/base/badge-tag.scss";
+@import "components/base/button.scss";
+@import "components/containers/body.scss";
+@import "components/containers/head.scss";
+@import "components/core/card.scss";
+@import "components/core/category-brief.scss";
+@import "components/core/next-prev-post.scss";
+@import "components/core/pagination.scss";
+@import "components/core/post-brief.scss";
+@import "components/core/tag-brief.scss";
+@import "components/navigation/footer.scss";
+@import "components/navigation/header.scss";
+@import "components/others/analytics.scss";
+@import "layouts/archives/category.scss";
+@import "layouts/archives/day.scss";
+@import "layouts/archives/month.scss";
+@import "layouts/archives/tag.scss";
+@import "layouts/archives/year.scss";
+@import "layouts/category.scss";
+@import "layouts/default.scss";
+@import "layouts/home.scss";
+@import "layouts/post.scss";
+@import "layouts/tag.scss";
