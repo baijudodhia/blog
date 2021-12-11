@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<div class="container category-archive">
+    <div class="category-archive-title">
+        {% assign words = page.title | split: '-' %}
+        {% capture titlecase %}
+            {% for word in words %}
+                {{ word | capitalize }}
+            {% endfor %}
+        {% endcapture %}
+        {{ titlecase }}
+    </div>
+    <div class="category-archive-post-brief-container">
+        {% for post in page.posts %}
+            {% include components/core/post-brief.html post=post%}
+        {% endfor %}
+    </div>
+</div>

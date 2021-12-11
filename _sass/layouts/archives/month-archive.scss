@@ -1,0 +1,29 @@
+.month-archive {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.month-archive-title {
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 5px;
+  text-decoration-color: red;
+}
+.month-archive-post-brief-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+.month-archive-post-brief-container > .post-brief {
+  align-self: stretch;
+}

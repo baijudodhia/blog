@@ -49,11 +49,11 @@ plugins:
 jekyll-archives:
   enabled: 'all'
   layouts:
-    year: archives/year
-    month: archives/month
-    day: archives/day
-    category: archives/category
-    tag: archives/tag
+    year: archives/year-archive
+    month: archives/month-archive
+    day: archives/day-archive
+    category: archives/category-archive
+    tag: archives/tag-archive
   permalinks:
     year: '/:year/'
     month: '/:year/:month/'

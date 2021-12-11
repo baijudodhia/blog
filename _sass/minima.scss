@@ -74,11 +74,11 @@ body {
 @import "components/navigation/footer.scss";
 @import "components/navigation/header.scss";
 @import "components/others/analytics.scss";
-@import "layouts/archives/category.scss";
-@import "layouts/archives/day.scss";
-@import "layouts/archives/month.scss";
-@import "layouts/archives/tag.scss";
-@import "layouts/archives/year.scss";
+@import "layouts/archives/category-archive.scss";
+@import "layouts/archives/day-archive.scss";
+@import "layouts/archives/month-archive.scss";
+@import "layouts/archives/tag-archive.scss";
+@import "layouts/archives/year-archive.scss";
 @import "layouts/category.scss";
 @import "layouts/default.scss";
 @import "layouts/home.scss";

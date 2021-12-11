@@ -9,18 +9,16 @@
   border-radius: 0.5rem;
   box-shadow: 0px 0px 15px -10px #121212;
 }
-.post-brief-category {
-}
 .post-brief-content {
   display: flex;
   flex-direction: column;
   column-gap: 0.5rem;
   .post-brief-title {
+    color:#121212;
     font-size: 1.4rem;
   }
   .post-brief-excerpt {
+    color:#121212;
     font-size: 1rem;
   }
-}
-.post-brief-link {
 }

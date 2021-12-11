@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+<div class="container year-archive">
+    <div class="year-archive-title">
+        Posts from {{ page.date | date: "%Y" }}
+    </div>
+    <div class="year-archive-post-brief-container">
+        {% for post in page.posts %}
+            {% include components/core/post-brief.html post=post%}
+        {% endfor %}
+    </div>
+</div>
