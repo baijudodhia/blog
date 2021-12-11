@@ -5,8 +5,8 @@ layout: default
 {%- if site.posts.size > 0 -%}
     <section class="home container">
         {%- for post in paginator.posts -%}
-            {% include components/core/post-brief.html post=post %}
+            {% include core/post-brief.html post=post %}
         {%- endfor -%}
-        {% include components/core/paginator.html %}
+        {% include core/paginator.html %}
     </section>
 {%- endif -%}

@@ -12,7 +12,7 @@ layout: default
                 {% endfor %}
             {% endcapture %}
             {% assign tag_link = '/tag/' | relative_url | append: tag[0] %}
-            {% include components/core/tag-brief.html tag_title=tag_title tag_link=tag_link %}
+            {% include core/tag-brief.html tag_title=tag_title tag_link=tag_link %}
         {% endfor %}
     </section>
 {% endif %}

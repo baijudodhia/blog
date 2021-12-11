@@ -3,7 +3,7 @@
         {{post.tag}}
         <div class="card-tags mb-1">
             {% assign category = post.category %}
-            {% include components/base/badge-tag.html text=category %}
+            {% include base/badge-tag.html text=category %}
         </div>
         <div class="card-title h3 my-1">
             <b>{{ post.title }}</b>
@@ -15,7 +15,7 @@
         </div>
         <div class="mt-1">
             {% assign href = post.url | relative_url %}
-            {% include components/base/anchor.html href=href showText=true text='Read' showIcon=true icon='fa fa-arrow-right' %}
+            {% include base/anchor.html href=href showText=true text='Read' showIcon=true icon='fa fa-arrow-right' %}
         </div>
     </div>
 </div>

@@ -3,7 +3,7 @@
         {% if paginator.previous_page %}
             <div class="paginator-prev">
                 {% assign href = paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' | remove: "index.html" %}
-                {% include components/base/anchor.html href=href showText=false showIcon=true icon='fa fa-chevron-left' %}
+                {% include base/anchor.html href=href showText=false showIcon=true icon='fa fa-chevron-left' %}
             </div>
         {% endif %}
         {% if paginator.page_trail %}
@@ -11,14 +11,14 @@
                 <div {% if page.url == trail.path %} class="paginator-middle selected" {% else %} class="paginator-middle" {% endif %}>
                     {% assign href = trail.path | prepend: site.baseurl | replace: '//', '/' | remove: "index.html" %}
                     {% assign num = trail.num %}
-                    {% include components/base/anchor.html href=href showText=true text=num showIcon=false %}
+                    {% include base/anchor.html href=href showText=true text=num showIcon=false %}
                 </div>
             {% endfor %}
         {% endif %}
         {% if paginator.next_page %}
             <div class="paginator-next">
                 {% assign href = paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' | remove: "index.html" %}
-                {% include components/base/anchor.html href=href showText=false showIcon=true icon='fa fa-chevron-right' %}
+                {% include base/anchor.html href=href showText=false showIcon=true icon='fa fa-chevron-right' %}
             </div>
         {% endif %}
     </div>

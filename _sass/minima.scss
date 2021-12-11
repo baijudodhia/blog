@@ -59,21 +59,21 @@ body {
 }
 
 // Import partials.
-@import "components/base/anchor.scss";
-@import "components/base/badge-category.scss";
-@import "components/base/badge-tag.scss";
-@import "components/base/button.scss";
-@import "components/containers/body.scss";
-@import "components/containers/head.scss";
-@import "components/core/card.scss";
-@import "components/core/category-brief.scss";
-@import "components/core/next-prev-post.scss";
-@import "components/core/pagination.scss";
-@import "components/core/post-brief.scss";
-@import "components/core/tag-brief.scss";
-@import "components/navigation/footer.scss";
-@import "components/navigation/header.scss";
-@import "components/others/analytics.scss";
+@import "includes/base/anchor.scss";
+@import "includes/base/badge-category.scss";
+@import "includes/base/badge-tag.scss";
+@import "includes/base/button.scss";
+@import "includes/containers/body.scss";
+@import "includes/containers/head.scss";
+@import "includes/core/card.scss";
+@import "includes/core/category-brief.scss";
+@import "includes/core/next-prev-post.scss";
+@import "includes/core/pagination.scss";
+@import "includes/core/post-brief.scss";
+@import "includes/core/tag-brief.scss";
+@import "includes/navigation/footer.scss";
+@import "includes/navigation/header.scss";
+@import "includes/others/analytics.scss";
 @import "layouts/archives/category-archive.scss";
 @import "layouts/archives/day-archive.scss";
 @import "layouts/archives/month-archive.scss";
