@@ -13,7 +13,7 @@ tags: technology android firebase machine-learning
 
 PhotoML is an Android App to demonstrate **on-device** FirebaseVision ML-Kit Tasks like _Label detection_, _Optical Character Recognition/Text Recognition_, _Face detection_ and _Barcode scanning_ on images selected from in-built gallery viewer without having to upload the image from device for every new image. The app supports both portrait and landscape layouts.
 
-![Wallpaper](https://source.unsplash.com/360x500/?code)
+![Wallpaper](https://source.unsplash.com/320x180/?code)
 
 ## Screenshots
 ![Label Portrait](https://github.com/baijudodhia/photoml/blob/master/screenrecords/PortraitLabel.gif)
