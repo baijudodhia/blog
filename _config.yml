@@ -22,7 +22,7 @@
 title: Blog
 # email: your-email@example.com (Not using email anywhere)
 description: >- # this means to ignore newlines until "baseurl:"
-  Blogs related to tech & startups.
+  Baiju Dodhia
 baseurl: "/blog" # the subpath of your site, e.g. /blog
 url: "https://baijudodhia.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: baijudodhia
