@@ -70,11 +70,16 @@
   flex-direction: row;
   column-gap: 1rem;
 }
+.header-nav-link {
+  width: 100%;
+}
 .header-nav-link-item {
+  width: 100% !important;
   color: var(--color-light_f5f5f5-dark_121212-reverse);
   text-decoration: none !important;
 }
 .header-nav-link-item.current {
+  width: 100% !important;
   color: var(--color-light_0055ff-dark_009aff);
 }
 .header-nav-link-item:hover {
