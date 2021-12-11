@@ -3,7 +3,7 @@ layout: default
 ---
 
 {%- if site.categories.size > 0 -%}
-    <section class="category container">
+    <section class="category">
         {% for category in site.categories %}
             {% assign words = category[0] | split: '-' %}
             {% capture category_title %}
@@ -16,3 +16,9 @@ layout: default
         {% endfor %}
     </section>
 {% endif %}
+<script>
+    let category_brief = document.getElementsByClassName("category-brief");
+    for (let i = 0; i < category_brief.length; i++) {
+        category_brief[i].style.background = getRandomColorDark();
+    }
+</script>

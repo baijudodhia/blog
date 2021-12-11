@@ -36,6 +36,7 @@ html[data-theme="dark"] {
   letter-spacing: 0;
   word-spacing: 1px;
   -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box !important;
 }
 ::-webkit-scrollbar {
   width: 10px;
@@ -44,10 +45,10 @@ html[data-theme="dark"] {
   background-color: var(--color-light_f5f5f5-dark_121212) !important;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: var(--color-light_0055ff-dark_009aff);
+  background-color: var(--color-light_f5f5f5-dark_121212-reverse);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--color-light_0055ff-dark_009aff);
+  background-color: var(--color-light_f5f5f5-dark_121212-reverse);
 }
 html,
 body {
@@ -57,8 +58,8 @@ body {
   scroll-behavior: smooth !important;
   font-weight: var(--font-weight) !important;
 }
-.container {
-  max-width: 720px;
+a {
+  text-decoration: none;
 }
 
 // Import partials.
@@ -77,11 +78,7 @@ body {
 @import "includes/navigation/footer.scss";
 @import "includes/navigation/header.scss";
 @import "includes/others/analytics.scss";
-@import "layouts/archives/category-archive.scss";
-@import "layouts/archives/day-archive.scss";
-@import "layouts/archives/month-archive.scss";
-@import "layouts/archives/tag-archive.scss";
-@import "layouts/archives/year-archive.scss";
+@import "layouts/archives/archive.scss";
 @import "layouts/category.scss";
 @import "layouts/default.scss";
 @import "layouts/home.scss";

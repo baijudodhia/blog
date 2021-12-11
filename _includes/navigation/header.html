@@ -1,50 +1,50 @@
-<div class="fixed-top w-100 m-0">
-  <nav class="navbar navbar-expand-md navbar-light bg-light">
-    <div class="container">
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSportedContent"
-        aria-controls="navbarSportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="d-flex flex-row mx-auto pl-1" style="padding-right: 3.6rem">
-        <div class="pr-2">
-          <img
-            src={{ "/assets/logo/logo.png" | relative_url }}
-            alt="The Tech Blog Logo"
-            width="24"
-            height="24"
-          />
+<div class="header">
+    <div class="header-container">
+        <div class="header-toggler">
+            <span class="header-toggler-bar"></span>
+            <span class="header-toggler-bar"></span>
+            <span class="header-toggler-bar"></span>
         </div>
-        <div class="my-auto">
-          <a href="{{ "/" | relative_url }}"
-            ><span style="color: black; font-size: 20px"
-              ><b>Blog</b></span
-            ></a
-          >
+        <div class="header-logo">
+            <img src={{ "/assets/logo/logo.png" | relative_url }} alt="The Tech Blog Logo" width="24" height="24"/>
+            <a href="{{ "/" | relative_url }}">
+                Blog
+            </a>
         </div>
-      </div>
-      <div class="collapse navbar-collapse" id="navbarSportedContent">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="{{ "/" | relative_url }}"
-              >Home <span class="sr-only">(current)</span></a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ "/category" | relative_url }}">Category</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ "/tag" | relative_url }}">Tag</a>
-          </li>
-        </ul>
-      </div>
+        <div class="header-nav">
+            {% assign current = page.url | downcase | split: '/' %}
+            <div class="header-nav-link">
+                <a href="{{ "/" | relative_url }}" class="header-nav-link-item {% if current[1] == 'index.html' %}current{% endif %}">Home</a>
+            </div>
+            <div class="header-nav-link">
+                <a href="{{ "/category" | relative_url }}" class="header-nav-link-item {% if current[1] == 'category' %}current{% endif %}">Category</a>
+            </div>
+            <div class="header-nav-link">
+                <a href="{{ "/tag" | relative_url }}" class="header-nav-link-item {% if current[1] == 'tag' %}current{% endif %}">Tag</a>
+            </div>
+        </div>
+        <div class="header-theme-changer">
+            <input id="header-theme-changer-btn" name="theme" onclick="changeTheme();" theme-value="light" type="submit" value="🌑"/>
+        </div>
     </div>
-  </nav>
 </div>
 <div class="spacing"></div>
+<script>
+    const hamburger = document.querySelector(".header-toggler");
+    const navMenu = document.querySelector(".header-nav");
+    const navLink = document.querySelectorAll(".header-nav-link-item");
+    
+    hamburger.addEventListener("click", mobileMenu);
+    navLink.forEach((n) => n.addEventListener("click", closeMenu));
+
+    function mobileMenu() {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    }
+
+    function closeMenu() {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+    }
+  </script>
+</div>

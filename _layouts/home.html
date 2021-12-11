@@ -3,10 +3,16 @@ layout: default
 ---
 
 {%- if site.posts.size > 0 -%}
-    <section class="home container">
+    <section class="home">
         {%- for post in paginator.posts -%}
             {% include core/post-brief.html post=post %}
         {%- endfor -%}
         {% include core/paginator.html %}
     </section>
 {%- endif -%}
+<script>
+    let post_brief = document.getElementsByClassName("post-brief");
+    for (let i = 0; i < post_brief.length; i++) {
+        post_brief[i].style.background = getRandomColorLight();
+    }
+</script>

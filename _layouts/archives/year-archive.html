@@ -2,13 +2,19 @@
 layout: default
 ---
 
-<div class="container year-archive">
-    <div class="year-archive-title">
+<div class="archive">
+    <div class="archive-title">
         Posts from {{ page.date | date: "%Y" }}
     </div>
-    <div class="year-archive-post-brief-container">
+    <div class="archive-post-brief-container">
         {% for post in page.posts %}
             {% include core/post-brief.html post=post%}
         {% endfor %}
     </div>
 </div>
+<script>
+    let post_archive = document.getElementsByClassName("post-brief");
+    for (let i = 0; i < post_archive.length; i++) {
+        post_archive[i].style.background = getRandomColorLight();
+    }
+</script>

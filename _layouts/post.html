@@ -2,38 +2,37 @@
 layout: default
 ---
 
-<section class="w-100 m-0 px-0 py-2" style="background: linear-gradient(to right, #16222a, #3a6073);">
+<div class="post">
     {%- include core/next-prev-post.html -%}
-    <div class="container" id="blogpost">
-        <div class="row">
-            <div class="col-lg-12" style="margin: 12px 0px;">
-                <div class="card card-long w-100 h-100 border-0" style="background:white;color:black">
-                    <div class="card-body d-flex flex-column text-light">
-                        <div class="card-tags mb-1">
-                            {% for tag in page.tags %}
-                                {% include base/badge-tag.html text=tag %}
-                            {% endfor %}
-                        </div>
-                        <div class="card-title h3 my-1">
-                            <b>{{ page.title | escape }}</b>
-                        </div>
-                        <div class="card-title h7 my-1 text-secondary">posted on&nbsp;
-                            <b>
-                                <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-                                    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-                                    {{ page.date | date: date_format }}
-                                </time>
-                            </b>
-                        </div>
-                        <div class="card-title h7 mb-1 text-secondary">by&nbsp;<b>{{ page.author }}</b>
-                        </div>
-                        <div class="card-content p flex-grow-1 my-1">
-                            {{ content }}
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="post-body">
+        <div class="post-tags">
+            {% for tag in page.tags %}
+                {% include base/badge-tag.html text=tag %}
+            {% endfor %}
+        </div>
+        <div class="post-title">
+            {{ page.title | escape }}
+        </div>
+        <div class="post-date">
+            posted on&nbsp;
+            <b>
+                <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                    {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+                    {{ page.date | date: date_format }}
+                </time>
+            </b>
+        </div>
+        <div class="post-author">by&nbsp;<b>{{ page.author }}</b>
+        </div>
+        <div class="post-content">
+            {{ content }}
         </div>
     </div>
     {%- include core/next-prev-post.html -%}
-</section>
+</div>
+<script>
+    document
+        .getElementsByClassName("post")[0]
+        .style
+        .background = getRandomColorGradientLightPredefined();
+</script>

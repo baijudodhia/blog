@@ -2,8 +2,8 @@
 layout: default
 ---
 
-<div class="container category-archive">
-    <div class="category-archive-title">
+<div class="archive">
+    <div class="archive-title">
         {% assign words = page.title | split: '-' %}
         {% capture titlecase %}
             {% for word in words %}
@@ -12,9 +12,15 @@ layout: default
         {% endcapture %}
         {{ titlecase }}
     </div>
-    <div class="category-archive-post-brief-container">
+    <div class="archive-post-brief-container">
         {% for post in page.posts %}
             {% include core/post-brief.html post=post%}
         {% endfor %}
     </div>
 </div>
+<script>
+    let post_archive = document.getElementsByClassName("post-brief");
+    for (let i = 0; i < post_archive.length; i++) {
+        post_archive[i].style.background = getRandomColorLight();
+    }
+</script>

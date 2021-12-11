@@ -3,7 +3,7 @@ layout: default
 ---
 
 {%- if site.tags.size > 0 -%}
-    <section class="tag container">
+    <section class="tag">
         {% for tag in site.tags %}
             {% assign words = tag[0] | split: '-' %}
             {% capture tag_title %}
@@ -16,3 +16,9 @@ layout: default
         {% endfor %}
     </section>
 {% endif %}
+<script>
+    let tag_brief = document.getElementsByClassName("tag-brief");
+    for (let i = 0; i < tag_brief.length; i++) {
+        tag_brief[i].style.background = getRandomColorDark();
+    }
+</script>

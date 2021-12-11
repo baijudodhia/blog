@@ -1,13 +1,14 @@
 .paginator {
   display: flex;
   flex-direction: row;
-  column-gap: 1rem;
   justify-content: center;
 }
 .paginator a {
   box-shadow: none;
+  color: var(--color-light_f5f5f5-dark_121212-reverse);
+  background-color: var(--color-light_f5f5f5-dark_121212);
 }
 .paginator-middle.selected > a {
-  color: #f5f5f5;
-  background-color: #121212;
+  color: var(--color-light_f5f5f5-dark_121212);
+  background-color: var(--color-light_f5f5f5-dark_121212-reverse);
 }
