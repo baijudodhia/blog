@@ -11,10 +11,11 @@ layout: default
             {% endfor %}
         </div>
         <div class="post-title">
+            Title:
             {{ page.title | escape }}
         </div>
         <div class="post-date">
-            posted on&nbsp;
+            Date:
             <b>
                 <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
                     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
@@ -22,8 +23,10 @@ layout: default
                 </time>
             </b>
         </div>
-        <div class="post-author">by&nbsp;<b>{{ page.author }}</b>
-        </div>
+        <!-- <div class="post-author">
+            by&nbsp;<b>{{ page.author }}</b>
+        </div> -->
+        <div class="post-divider"></div>
         <div class="post-content">
             {{ content }}
         </div>
@@ -31,8 +34,8 @@ layout: default
     {%- include core/next-prev-post.html -%}
 </div>
 <script>
-    document
-        .getElementsByClassName("post")[0]
-        .style
-        .background = getRandomColorGradientLightPredefined();
+    let x = document.getElementsByTagName("pre");
+    for (let i = 0; i < x.length; i++) {
+        console.log(x[i].innerText);
+    }
 </script>

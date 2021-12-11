@@ -13,7 +13,7 @@ tags: technology android firebase machine-learning
 
 PhotoML is an Android App to demonstrate **on-device** FirebaseVision ML-Kit Tasks like _Label detection_, _Optical Character Recognition/Text Recognition_, _Face detection_ and _Barcode scanning_ on images selected from in-built gallery viewer without having to upload the image from device for every new image. The app supports both portrait and landscape layouts.
 
-![Wallpaper](https://source.unsplash.com/320x180/?code)
+![Wallpaper](https://source.unsplash.com/1600x900/?code)
 
 ## Screenshots
 ![Label Portrait](https://github.com/baijudodhia/photoml/blob/master/screenrecords/PortraitLabel.gif)
@@ -49,15 +49,18 @@ Add the following code in the **AndroidManifest.xml** file to access Storage
 
 1. Add the following dependencies in the **build.gradle (Module:Project)** file
 - Firebase dependency
+
 ```java
 classpath 'com.google.gms:google-services:4.3.3'
 ```
-2. Add the following dependencies in the **build.gradle (Module:App)** file
+1. Add the following dependencies in the **build.gradle (Module:App)** file
 - Apply Firebase plugin
+
 ```java
 apply plugin: 'com.google.gms.google-services'
 ```
 - Android dependencies
+
 ```java
 //AndroidX dependencies
 implementation 'androidx.appcompat:appcompat:1.1.0'
@@ -70,6 +73,7 @@ androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 implementation "com.google.android.material:material:1.1.0"
 ```
 - 3rd Party dependencies
+
 ```java
 //RecyclerView Dependencies
 implementation 'androidx.appcompat:appcompat:1.0.0'
@@ -81,6 +85,7 @@ annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 implementation 'com.github.chrisbanes:PhotoView:2.3.0'
 ```
 - Firebase dependencies
+
 ```java
 //Firebase ML-Kit general dependency, also used for OCR and Barcode
 implementation 'com.google.firebase:firebase-ml-vision:24.0.3'
