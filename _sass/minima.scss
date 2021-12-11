@@ -39,16 +39,17 @@ html[data-theme="dark"] {
   box-sizing: border-box !important;
 }
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 10px !important;
 }
 ::-webkit-scrollbar-track {
-  background-color: var(--color-light_f5f5f5-dark_121212) !important;
+  background-color: transparent !important;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: var(--color-light_0055ff-dark_009aff);
+  background-color: lightgrey !important;
+  border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--color-light_0055ff-dark_009aff);
+  background-color: gray !important;
 }
 html,
 body {
