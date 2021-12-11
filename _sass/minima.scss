@@ -57,6 +57,9 @@ body {
   scroll-behavior: smooth !important;
   font-weight: var(--font-weight) !important;
 }
+.container {
+  max-width: 720px;
+}
 
 // Import partials.
 @import "includes/base/anchor.scss";
