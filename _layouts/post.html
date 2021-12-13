@@ -7,7 +7,7 @@ layout: default
     <div class="post-body">
         <div class="post-tags">
             {% for tag in page.tags %}
-                {% include base/badge-tag.html text=tag %}
+            {% include base/badge-tag.html text=tag %}
             {% endfor %}
         </div>
         <div class="post-title">
@@ -33,9 +33,3 @@ layout: default
     </div>
     {%- include core/next-prev-post.html -%}
 </div>
-<script>
-    let x = document.getElementsByTagName("pre");
-    for (let i = 0; i < x.length; i++) {
-        console.log(x[i].innerText);
-    }
-</script>
