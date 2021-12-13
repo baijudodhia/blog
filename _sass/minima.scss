@@ -54,6 +54,7 @@ html[data-theme="dark"] {
 html,
 body {
   margin: 0;
+  padding: 0px;
   background-color: var(--color-light_f5f5f5-dark_121212) !important;
   color: var(--color-light_f5f5f5-dark_121212-reverse) !important;
   scroll-behavior: smooth !important;
@@ -78,6 +79,7 @@ a {
 @import "includes/core/tag-brief.scss";
 @import "includes/navigation/footer.scss";
 @import "includes/navigation/header.scss";
+@import "includes/navigation/sidebar.scss";
 @import "includes/others/analytics.scss";
 @import "layouts/archives/archive.scss";
 @import "layouts/category.scss";

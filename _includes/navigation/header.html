@@ -1,50 +1,30 @@
-<div class="header">
-    <div class="header-container">
-        <div class="header-toggler">
-            <span class="header-toggler-bar"></span>
-            <span class="header-toggler-bar"></span>
-            <span class="header-toggler-bar"></span>
+<div class="header-container">
+  <div class="header">
+    <button onclick="opensidebar()" class="header-toggler">
+      <span class="header-toggler-bar"></span>
+      <span class="header-toggler-bar"></span>
+      <span class="header-toggler-bar"></span>
+    </button>
+    <div class="header-logo">
+        <img src={{ "/assets/logo/logo.png" | relative_url }} alt="The Tech Blog Logo" width="24" height="24"/>
+        <a href="{{ "/" | relative_url }}">
+            Blog
+        </a>
+    </div>
+    <div class="header-nav">
+        {% assign current = page.url | downcase | split: '/' %}
+        <div class="header-nav-link">
+            <a href="{{ "/" | relative_url }}" class="header-nav-link-item {% if current[1] == 'index.html' %}current{% endif %}">Home</a>
         </div>
-        <div class="header-logo">
-            <img src={{ "/assets/logo/logo.png" | relative_url }} alt="The Tech Blog Logo" width="24" height="24"/>
-            <a href="{{ "/" | relative_url }}">
-                Blog
-            </a>
+        <div class="header-nav-link">
+            <a href="{{ "/category" | relative_url }}" class="header-nav-link-item {% if current[1] == 'category' %}current{% endif %}">Category</a>
         </div>
-        <div class="header-nav">
-            {% assign current = page.url | downcase | split: '/' %}
-            <div class="header-nav-link">
-                <a href="{{ "/" | relative_url }}" class="header-nav-link-item {% if current[1] == 'index.html' %}current{% endif %}">Home</a>
-            </div>
-            <div class="header-nav-link">
-                <a href="{{ "/category" | relative_url }}" class="header-nav-link-item {% if current[1] == 'category' %}current{% endif %}">Category</a>
-            </div>
-            <div class="header-nav-link">
-                <a href="{{ "/tag" | relative_url }}" class="header-nav-link-item {% if current[1] == 'tag' %}current{% endif %}">Tag</a>
-            </div>
-        </div>
-        <div class="header-theme-changer">
-            <input id="header-theme-changer-btn" name="theme" onclick="changeTheme();" theme-value="light" type="submit" value="🌑"/>
+        <div class="header-nav-link">
+            <a href="{{ "/tag" | relative_url }}" class="header-nav-link-item {% if current[1] == 'tag' %}current{% endif %}">Tag</a>
         </div>
     </div>
-</div>
-<div class="spacing"></div>
-<script>
-    const hamburger = document.querySelector(".header-toggler");
-    const navMenu = document.querySelector(".header-nav");
-    const navLink = document.querySelectorAll(".header-nav-link-item");
-    
-    hamburger.addEventListener("click", mobileMenu);
-    navLink.forEach((n) => n.addEventListener("click", closeMenu));
-
-    function mobileMenu() {
-      hamburger.classList.toggle("active");
-      navMenu.classList.toggle("active");
-    }
-
-    function closeMenu() {
-      hamburger.classList.remove("active");
-      navMenu.classList.remove("active");
-    }
-  </script>
+    <div class="header-theme-changer">
+        <input id="header-theme-changer-btn" name="theme" onclick="changeTheme();" theme-value="light" type="submit" value="🌑"/>
+    </div>
+  </div>
 </div>

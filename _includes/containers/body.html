@@ -1,5 +1,17 @@
 <body onload="setDefaultTheme();">
-  {%- include navigation/header.html -%}
-  <div id="main">{{ content }}</div>
-  <!-- {%- include navigation/footer.html -%} -->
+    <div>
+        {%- include navigation/header.html -%}
+    </div>
+    <div id="content">
+        <div>
+            {%- include navigation/sidebar.html -%}
+        </div>
+        <div>
+            {{ content }}
+            {%- include navigation/footer.html -%}
+        </div>
+    </div>
 </body>
+<script>
+    horizontalSwipe();
+</script>
