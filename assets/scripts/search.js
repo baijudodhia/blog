@@ -1,5 +1,5 @@
 async function searchBlog(query) {
-  const xmlFetch = await fetch("http://127.0.0.1:4000/blog/sitemap.xml")
+  const xmlFetch = await fetch("https://baijudodhia.github.io/blog/sitemap.xml")
   const xmlText = await xmlFetch.text()
   const xml = await (new window.DOMParser()).parseFromString(xmlText, "text/xml")
   let arr = [];
