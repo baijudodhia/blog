@@ -1,4 +1,4 @@
-<button {% if include.id %} id={{include.id}} {% endif %} class="button {% if include.class %}{{include.class}}{% endif %}" onclick={{include.onclick}}>
+<button {% if include.id %} id={{include.id}} {% endif %} {% if include.title %} title={{include.title}} {% endif %} class="button {% if include.class %}{{include.class}}{% endif %}" onclick={{include.onclick}}>
     {% if include.showText %}
         <div>
             <b>{{ include.text }}</b>
