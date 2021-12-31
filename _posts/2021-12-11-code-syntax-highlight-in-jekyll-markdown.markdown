@@ -2,8 +2,8 @@
 layout: post
 title: "Jekyll Code Syntax Highlighting"
 date: 2021-12-11 23:19:44 +0530
-category: jekyll
-tags: jekyll code syntax highlight
+category: tech
+tags: jekyll syntax-highlight
 showExcerpt: false
 ---
 

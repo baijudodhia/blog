@@ -2,8 +2,8 @@
 layout: post
 title:  "PhotoML Android App"
 date:   2021-12-10 21:25:02 +0530
-category: technology
-tags: technology android firebase machine-learning
+category: tech
+tags: android firebase machine-learning
 ---
 <img src="https://github.com/baijudodhia/photoml/blob/master/app/src/main/assets/photomllogoedited.png" align="left" width="50" style="margin-right:10px;">   
 
