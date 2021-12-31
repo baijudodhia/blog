@@ -3,11 +3,13 @@
         {%- include navigation/header.html -%}
     </div>
     <div id="content">
-        <div>
+        <div id="body-sidebar">
             {%- include navigation/sidebar.html -%}
         </div>
-        <div>
-            {{ content }}
+        <div id="body-main">
+            <main>
+                {{ content }}
+            </main>
             {%- include navigation/footer.html -%}
         </div>
     </div>

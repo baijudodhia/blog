@@ -3,6 +3,13 @@ body {
   display: flex;
   flex-direction: column;
 }
+#body-main {
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 1.5rem;
+}
 #content {
   overflow-y: scroll;
 }
