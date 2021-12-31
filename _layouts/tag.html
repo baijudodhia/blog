@@ -12,7 +12,8 @@ layout: default
                 {% endfor %}
             {% endcapture %}
             {% assign tag_link = '/tag/' | relative_url | append: tag[0] %}
-            {% include core/tag-brief.html tag_title=tag_title tag_link=tag_link %}
+            {% assign tag_size = tag[1].size %}
+            {% include core/tag-brief.html tag_title=tag_title tag_link=tag_link tag_size=tag_size %}
         {% endfor %}
     </section>
 {% endif %}

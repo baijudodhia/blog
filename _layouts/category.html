@@ -12,7 +12,8 @@ layout: default
                 {% endfor %}
             {% endcapture %}
             {% assign category_link = '/category/' | relative_url | append: category[0] %}
-            {% include core/category-brief.html category_title=category_title category_link=category_link %}
+            {% assign category_size = category[1].size %}
+            {% include core/category-brief.html category_title=category_title category_link=category_link category_size=category_size %}
         {% endfor %}
     </section>
 {% endif %}
