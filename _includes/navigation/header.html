@@ -23,8 +23,15 @@
             <a href="{{ "/tag" | relative_url }}" class="header-nav-link-item {% if current[1] == 'tag' %}current{% endif %}">Tag</a>
         </div>
     </div>
-    <div class="header-theme-changer">
-        <input id="header-theme-changer-btn" name="theme" onclick="changeTheme();" theme-value="light" type="submit" value="🌑"/>
+    <div class="header-misc">
+        <div class="header-search-container">
+            <a class="header-search-btn" href="{{ '/search' | remove: ".html" | relative_url }}">
+                <i aria-hidden="true" class='fa fa-search'></i>
+            </a>
+        </div>
+        <div class="header-theme-changer">
+            <input id="header-theme-changer-btn" name="theme" onclick="changeTheme();" theme-value="light" type="submit" value="🌑"/>
+        </div>
     </div>
   </div>
 </div>
