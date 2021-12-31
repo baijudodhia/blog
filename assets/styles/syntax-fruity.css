@@ -247,6 +247,10 @@
   color: #0086f7 !important;
   font-weight: bold !important;
 }
+/* Custom added based on new finding */
+.highlight .sa {
+  color: #121212 !important;
+}
 /* Literal.String.Backtick */
 .highlight .sb {
   color: #0086d2 !important;

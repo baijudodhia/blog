@@ -10,10 +10,10 @@
 #search-form {
   align-self: center;
   color: var(--color-light_f5f5f5-dark_121212-reverse);
-  border: 2px solid var(--color-light_f5f5f5-dark_121212-reverse);
-  border-radius: 4px;
+  box-shadow: inset 0px 0px 5px -2px var(--color-light_ffffff-dark_000000-reverse);
+  border-radius: 100px;
   transition: 0.1s linear;
-  padding: 4px 8px;
+  padding: 8px 16px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -25,7 +25,7 @@
     color: var(--color-light_f5f5f5-dark_121212-reverse);
   }
   &:focus-within {
-    border: 2px solid var(--color-light_0055ff-dark_009aff);
+    box-shadow: inset 0px 0px 5px var(--color-light_0055ff-dark_009aff);
     #search-btn {
       color: var(--color-light_0055ff-dark_009aff);
     }
