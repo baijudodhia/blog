@@ -10,7 +10,7 @@ excerpt: Documentation for PhotoML Android App to demonstrate on-device Firebase
 
 ![Wallpaper](https://source.unsplash.com/1600x600/?code)
 
-<img src="http://localhost:4000/blog/assets/images/photoml-firebase-android-app/photomllogoedited.png" align="left" width="50" style="margin-right:10px;">
+<img src="https://baijudodhia.github.io/blog/assets/images/photoml-firebase-android-app/photomllogoedited.png" align="left" width="50" style="margin-right:10px;">
 
 PhotoML is an Android App to demonstrate **on-device** FirebaseVision ML-Kit Tasks like _Label detection_, _Optical Character Recognition/Text <mark>Recognition_</mark>, _Face detection_ and _Barcode scanning_ on images selected from in-built gallery viewer without having to upload the image from device for every new image. The app supports both portrait and landscape layouts.
 
@@ -19,18 +19,18 @@ PhotoML is an Android App to demonstrate **on-device** FirebaseVision ML-Kit Tas
 ### Portrait
 
 {:.image-carousel}
-![Label Portrait](http://localhost:4000/blog/assets/images/photoml-firebase-android-app/PortraitLabel.gif)
-![OCR Portrait](http://localhost:4000/blog/assets/images/photoml-firebase-android-app/PortraitOCR.gif)
-![Face Portrait](http://localhost:4000/blog/assets/images/photoml-firebase-android-app/PortraitFace.gif)
-![Barcode Portrait](http://localhost:4000/blog/assets/images/photoml-firebase-android-app/PortraitBarcode.gif)
+![Label Portrait](https://baijudodhia.github.io/blog/assets/images/photoml-firebase-android-app/PortraitLabel.gif)
+![OCR Portrait](https://baijudodhia.github.io/blog/assets/images/photoml-firebase-android-app/PortraitOCR.gif)
+![Face Portrait](https://baijudodhia.github.io/blog/assets/images/photoml-firebase-android-app/PortraitFace.gif)
+![Barcode Portrait](https://baijudodhia.github.io/blog/assets/images/photoml-firebase-android-app/PortraitBarcode.gif)
 
 ### Landscape
 
 {:.image-carousel}
-![Label Landscape](http://localhost:4000/blog/assets/images/photoml-firebase-android-app/LandLabel.gif)
-![OCR Landscape](http://localhost:4000/blog/assets/images/photoml-firebase-android-app/LandOCR.gif)
-![Face Landscape](http://localhost:4000/blog/assets/images/photoml-firebase-android-app/LandFace.gif)
-![Barcode Landscape](http://localhost:4000/blog/assets/images/photoml-firebase-android-app/LandBarcode.gif)
+![Label Landscape](https://baijudodhia.github.io/blog/assets/images/photoml-firebase-android-app/LandLabel.gif)
+![OCR Landscape](https://baijudodhia.github.io/blog/assets/images/photoml-firebase-android-app/LandOCR.gif)
+![Face Landscape](https://baijudodhia.github.io/blog/assets/images/photoml-firebase-android-app/LandFace.gif)
+![Barcode Landscape](https://baijudodhia.github.io/blog/assets/images/photoml-firebase-android-app/LandBarcode.gif)
 
 ## Debug APK
 
