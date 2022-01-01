@@ -10,11 +10,10 @@ layout: default
             {% endfor %}
         </div>
         <div class="post-title">
-            Title:
             {{ page.title | escape }}
         </div>
         <div class="post-date">
-            Date:
+            posted on
             <b>
                 <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
                     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
@@ -22,10 +21,10 @@ layout: default
                 </time>
             </b>
         </div>
-        <!-- <div class="post-author">
-            by&nbsp;<b>{{ page.author }}</b>
-        </div> -->
-        <div class="post-divider"></div>
+        <div class="post-author">
+            by <b>{{ page.author }}</b>
+        </div>
+        <!-- <div class="post-divider"></div> -->
         <div class="post-content">
             {{ content }}
         </div>

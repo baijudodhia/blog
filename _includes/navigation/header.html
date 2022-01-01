@@ -1,6 +1,6 @@
 <div class="header-container">
   <div class="header">
-    <button onclick="opensidebar()" class="header-toggler">
+    <button onclick="toggleSidebar()" class="header-toggler" aria-label="Menu">
       <span class="header-toggler-bar"></span>
       <span class="header-toggler-bar"></span>
       <span class="header-toggler-bar"></span>
@@ -25,13 +25,13 @@
     </div>
     <div class="header-misc">
         <div class="header-search-container">
-            <a class="header-search-btn" href="{{ '/search' | remove: ".html" | relative_url }}">
+            <a class="header-search-btn" href="{{ '/search' | remove: ".html" | relative_url }}" aria-label="Search" title="Search">
                 <i aria-hidden="true" class='fa fa-search'></i>
             </a>
         </div>
-        <div class="header-theme-changer">
+        <!-- <div class="header-theme-changer">
             <input id="header-theme-changer-btn" name="theme" onclick="changeTheme();" theme-value="light" type="submit" value="🌑"/>
-        </div>
+        </div> -->
     </div>
   </div>
 </div>

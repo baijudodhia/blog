@@ -3,25 +3,29 @@
         <div class="sidebar-nav">
             {% assign current = page.url | downcase | split: '/' %}
             <div class="sidebar-nav-link">
-                <a href="{{ "/" | relative_url }}" class="sidebar-nav-link-item {% if current[1] == 'index.html' %}current{% endif %}">Home</a>
+                <a href="{{ " /" | relative_url }}"
+                    class="sidebar-nav-link-item {% if current[1] == 'index.html' %}current{% endif %}">Home</a>
             </div>
             <div class="sidebar-nav-link">
-                <a href="{{ "/category" | relative_url }}" class="sidebar-nav-link-item {% if current[1] == 'category' %}current{% endif %}">Category</a>
+                <a href="{{ " /category" | relative_url }}"
+                    class="sidebar-nav-link-item {% if current[1] == 'category' %}current{% endif %}">Category</a>
             </div>
             <div class="sidebar-nav-link">
-                <a href="{{ "/tag" | relative_url }}" class="sidebar-nav-link-item {% if current[1] == 'tag' %}current{% endif %}">Tag</a>
+                <a href="{{ " /tag" | relative_url }}"
+                    class="sidebar-nav-link-item {% if current[1] == 'tag' %}current{% endif %}">Tag</a>
             </div>
         </div>
         <div class="sidebar-footer">
-            <a class="sidebar-footer-link" href="https://baijudodhia.github.io?utm_source=blog&utm_medium=sidebar" target="_blank">
+            <a class="sidebar-footer-link" rel="noopener" href="https://baijudodhia.github.io?utm_source=blog&utm_medium=sidebar"
+                target="_blank">
                 <i aria-hidden="true" class="fa fa-globe"></i>
                 <span>baijudodhia.github.io</span>
             </a>
-            <a class="sidebar-footer-link" href="https://www.github.com/baijudodhia/" target="_blank">
+            <a class="sidebar-footer-link" rel="noopener" href="https://www.github.com/baijudodhia/" target="_blank">
                 <i aria-hidden="true" class="fa fa-github"></i>
                 <span>baijudodhia</span>
             </a>
-            <a class="sidebar-footer-link" href="https://www.linkedin.com/in/baijudodhia/" target="_blank">
+            <a class="sidebar-footer-link" rel="noopener" href="https://www.linkedin.com/in/baijudodhia/" target="_blank">
                 <i aria-hidden="true" class="fa fa-linkedin"></i>
                 <span>baijudodhia</span>
             </a>

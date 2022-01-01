@@ -1,5 +1,8 @@
-<div class="tag-brief" style="background: linear-gradient(to right, #c04848, #480048);">
-    <img class="ratio--width-to-height" src="data:image/svg+xml;utf8,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'&gt;&lt;/svg&gt;">
-    {% assign text = include.tag_title | append:'(' | append: include.tag_size | append: ')' %}
-    {% include base/anchor.html href=include.tag_link showText=true text=text showIcon=false %}
-</div>
+<a href={{include.tag_link}} class="tag-brief" style="background: linear-gradient(to right, #c04848, #480048);">
+    <div class="tag-brief-title">
+        {{include.tag_title}}
+    </div>
+    <div class="tag-brief-size">
+        {{include.tag_size}}
+    </div>
+</a>
