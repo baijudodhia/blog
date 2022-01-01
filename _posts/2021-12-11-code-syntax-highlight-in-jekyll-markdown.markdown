@@ -2,9 +2,10 @@
 layout: post
 title: "Jekyll Code Syntax Highlighting"
 date: 2021-12-11 23:19:44 +0530
+author: Baiju Dodhia
 category: tech
 tags: jekyll syntax-highlight
-showExcerpt: false
+excerpt: Check various code syntax highlighting in jekyll for languages such as Ruby, CS, JavaScript. 
 ---
 
 Ruby:
