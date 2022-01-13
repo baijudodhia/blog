@@ -3,15 +3,15 @@
         <div class="sidebar-nav">
             {% assign current = page.url | downcase | split: '/' %}
             <div class="sidebar-nav-link">
-                <a href="{{ " /" | relative_url }}"
+                <a href="{{ "/" | relative_url }}"
                     class="sidebar-nav-link-item {% if current[1] == 'index.html' %}current{% endif %}">Home</a>
             </div>
             <div class="sidebar-nav-link">
-                <a href="{{ " /category" | relative_url }}"
+                <a href="{{ "/category" | relative_url }}"
                     class="sidebar-nav-link-item {% if current[1] == 'category' %}current{% endif %}">Category</a>
             </div>
             <div class="sidebar-nav-link">
-                <a href="{{ " /tag" | relative_url }}"
+                <a href="{{ "/tag" | relative_url }}"
                     class="sidebar-nav-link-item {% if current[1] == 'tag' %}current{% endif %}">Tag</a>
             </div>
         </div>
