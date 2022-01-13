@@ -4,10 +4,12 @@
   background-color: #eee !important;
   border-radius: 0.5rem;
   font-size: 14px !important;
+  tab-size: 4;
 }
 .highlight > pre {
   box-shadow: inset 0px 0px 5px #cdcdcd;
   width: 100%;
+  tab-size: 4;
 }
 .highlight .hll {
   /* background-color: #dcdcdc !important; */
