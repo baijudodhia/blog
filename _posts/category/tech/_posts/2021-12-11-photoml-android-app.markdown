@@ -12,7 +12,7 @@ excerpt: Documentation for PhotoML Android App to demonstrate on-device Firebase
 
 <img src="http://localhost:4000/blog/assets/images/photoml-firebase-android-app/photomllogoedited.png" align="left" width="50" style="margin-right:10px;">
 
-PhotoML is an Android App to demonstrate **on-device** FirebaseVision ML-Kit Tasks like _Label detection_, _Optical Character Recognition/Text <mark>Recognition_</mark>, _Face detection_ and _Barcode scanning_ on images selected from in-built gallery viewer without having to upload the image from device for every new image. The app supports both portrait and landscape layouts.
+PhotoML is an Android App to demonstrate **on-device** FirebaseVision ML-Kit Tasks like _Label detection_, _Optical Character Recognition/Text Recognition_, _Face detection_ and _Barcode scanning_ on images selected from in-built gallery viewer without having to upload the image from device for every new image. The app supports both portrait and landscape layouts.
 
 ## Screenshots
 
@@ -40,18 +40,18 @@ Download from [here](https://github.com/baijudodhia/photoml/blob/master/apk/phot
 
 Clone this repository and import into **Android Studio**
 
-```shell
+{% highlight shell linenos %}
 git clone https://github.com/baijudodhia/photoml.git
-```
+{% endhighlight %}
 
 ## Android Permissions
 
 The app requires Read-only Storage permissions
 Add the following code in the **AndroidManifest.xml** file to access Storage
 
-```java
+{% highlight java linenos %}
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-```
+{% endhighlight %}
 
 ## Firebase Setup
 
@@ -67,21 +67,21 @@ Add the following code in the **AndroidManifest.xml** file to access Storage
 
 - Firebase dependency
 
-```java
+{% highlight java linenos %}
 classpath 'com.google.gms:google-services:4.3.3'
-```
+{% endhighlight %}
 
 1. Add the following dependencies in the **build.gradle (Module:App)** file
 
 - Apply Firebase plugin
 
-```java
+{% highlight java linenos %}
 apply plugin: 'com.google.gms.google-services'
-```
+{% endhighlight %}
 
 - Android dependencies
 
-```java
+{% highlight java linenos %}
 //AndroidX dependencies
 implementation 'androidx.appcompat:appcompat:1.1.0'
 implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
@@ -91,11 +91,11 @@ androidTestImplementation 'androidx.test.ext:junit:1.1.1'
 androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 //Material Design Dependency
 implementation "com.google.android.material:material:1.1.0"
-```
+{% endhighlight %}
 
 - 3rd Party dependencies
 
-```java
+{% highlight java linenos %}
 //RecyclerView Dependencies
 implementation 'androidx.appcompat:appcompat:1.0.0'
 implementation 'androidx.recyclerview:recyclerview:1.1.0'
@@ -104,18 +104,18 @@ implementation 'com.github.bumptech.glide:glide:4.11.0'
 annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 //PhotoView Dependency for auto image zooming and double tap and pinch zoom replacing ImageView
 implementation 'com.github.chrisbanes:PhotoView:2.3.0'
-```
+{% endhighlight %}
 
 - Firebase dependencies
 
-```java
+{% highlight java linenos %}
 //Firebase ML-Kit general dependency, also used for OCR and Barcode
 implementation 'com.google.firebase:firebase-ml-vision:24.0.3'
 //Firebase ML-Kit recongnize and label images dependency works along with general dependency
 implementation 'com.google.firebase:firebase-ml-vision-image-label-model:20.0.1'
 //Firebase ML-Kit face detection dependency works along with general dependency
 implementation 'com.google.firebase:firebase-ml-vision-face-model:20.0.1'
-```
+{% endhighlight %}
 
 ## Project Assets
 
