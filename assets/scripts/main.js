@@ -1,8 +1,8 @@
 /* 
 
-1. goTop()
-2. horizontalSwipe()
-3. toggleSidebar()
+1. goTop();
+2. horizontalSwipe();
+3. toggleSidebar();
 4. searchBlog();
 5. redirectToRandomBlog();
 6. getRandomColorLight();
@@ -74,7 +74,7 @@ async function searchBlog(query) {
   let x = xml.documentElement.childNodes;
   for (i = 0; i < x.length; i++) {
     // Process only element nodes (type 1)
-    if (x[i].nodeType == 1) {
+    if (x[i].nodeType == 1 && x[i].getElementsByTagName("search")[0].firstChild.nodeValue === 'true') {
       const url = x[i].getElementsByTagName("loc")[0].firstChild.nodeValue;
       const title = x[i].getElementsByTagName("title")[0].firstChild.nodeValue;
       const tags = x[i].getElementsByTagName("tags")[0].firstChild.nodeValue;
@@ -100,7 +100,7 @@ async function searchBlog(query) {
 
 function redirectToRandomBlog() {
   var x = new XMLHttpRequest();
-  x.open("GET", "http://localhost:4000/blog/sitemap.xml", true);
+  x.open("GET", "https://baijudodhia.github.io/blog/sitemap.xml", true);
   x.onreadystatechange = function () {
     if (x.readyState == 4 && x.status == 200) {
       var doc = x.responseXML;
