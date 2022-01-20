@@ -99,6 +99,11 @@
             "articleBody": {{ page.content | strip_html | jsonify }},
             "datePublished": {{ page.date | jsonify }},
             "dateModified": {{ page.last_modified_at | default: page.date | jsonify }},
+            "image": [
+                "http://source.unsplash.com/100x100/?{{ page.tags | join: ', ' | split: '-' | join: ' ' | split: ' ' | join: '' }}",
+                "http://source.unsplash.com/400x300/?{{ page.tags | join: ', ' | split: '-' | join: ' ' | split: ' ' | join: '' }}",
+                "http://source.unsplash.com/1600x900/?{{ page.tags | join: ', ' | split: '-' | join: ' ' | split: ' ' | join: '' }}"
+            ],
             "author": {
                 "@type": "Person",
                 "name": {{ site.author | jsonify }},
