@@ -100,7 +100,7 @@ async function searchBlog(query) {
 
 function redirectToRandomBlog() {
   var x = new XMLHttpRequest();
-  x.open("GET", "https://baijudodhia.github.io/blog/sitemap.xml", true);
+  x.open("GET", "http://localhost:4000/blog/sitemap.xml", true);
   x.onreadystatechange = function () {
     if (x.readyState == 4 && x.status == 200) {
       var doc = x.responseXML;
@@ -109,7 +109,7 @@ function redirectToRandomBlog() {
       let arr = [];
       for (i = 0; i < x.length; i++) {
         // Process only element nodes (type 1)
-        if (x[i].nodeType == 1) {
+        if (x[i].nodeType == 1 && x[i].getElementsByTagName("search")[0].firstChild.nodeValue === 'true') {
           const url_string =
             x[i].getElementsByTagName("loc")[0].firstChild.nodeValue;
           arr.push(url_string);

@@ -3,10 +3,32 @@ layout: null
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <url>
+    <loc>{{ site.url }}/blog/</loc>
+    <priority>1.00</priority>
+    <search>false</search>
+  </url>
+  <url>
+    <loc>{{ site.url }}/blog/category</loc>
+    <priority>1.00</priority>
+    <search>false</search>
+  </url>
+  <url>
+    <loc>{{ site.url }}/blog/tag</loc>
+    <priority>1.00</priority>
+    <search>false</search>
+  </url>
+  <url>
+    <loc>{{ site.url }}/blog/search</loc>
+    <priority>1.00</priority>
+    <search>false</search>
+  </url>
   {% for post in site.posts %}
-    {% unless post.published == false %}    
+  {% unless post.published == false %}    
     <url>
       <loc>{{ site.url }}{{ post.url | remove: '.html' | relative_url }}</loc>
+      <priority>0.8</priority>
+      <search>true</search>
       <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
       <title>{{ post.title }}</title>
       <excerpt>{{ post.excerpt }}</excerpt>
