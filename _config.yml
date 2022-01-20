@@ -21,7 +21,8 @@
 # Minima Theme Defaults
 title: Blog - Baiju Dodhia
 # email: your-email@example.com (Not using email anywhere)
-description: >- # this means to ignore newlines until "baseurl:"
+keywords: "coding, technology, design techniques, digital marketing, entrepreneurship, startups, business, project management"
+description: "Blog posts about coding and technology, design techniques, digital marketing, entrepreneurship and startups, business and project management etc."
 
 baseurl: "/blog" # the subpath of your site, e.g. /blog
 url: "https://baijudodhia.github.io" # the base hostname & protocol for your site, e.g. http://example.com
@@ -31,9 +32,8 @@ github_username:  baijudodhia
 # Google Analytics Tracking Code
 ga_code: G-KNY1ESWNJG
 
-# Minia Custom Theme Defaults
-# Default Author name is present in Minia but is overridden here
-author: Baiju Dodhia
+# URL Links
+permalink: pretty
 
 # Build settings
 # Remove minima theme & using a custom regular gem based theme.
@@ -83,6 +83,17 @@ kramdown:
   syntax_highlighter_opts:
     block:
       line_numbers: true
+
+# SEO
+author:
+  name: Baiju Dodhia
+  url: https://baijudodhia.github.io/
+social:
+  name: Baiju Dodhia
+  links:
+    - https://baijudodhia.github.io/
+    - https://www.linkedin.com/in/baijudodhia
+    - https://github.com/baijudodhia
 
 # Exclude from processing.
 # The following items will not be processed, by default.

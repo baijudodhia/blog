@@ -1,12 +1,12 @@
 ---
 layout: default
 ---
-
 <div class="post">
     <div class="post-body">
         <div class="post-tags">
             {% for tag in page.tags %}
-            {% include base/badge-tag.html text=tag %}
+                {% assign tag_split = tag | split: '-' | join: ' ' %}
+                {% include base/badge-tag.html text=tag_split %}
             {% endfor %}
         </div>
         <div class="post-title">
