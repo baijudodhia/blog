@@ -3,7 +3,7 @@ layout: post
 title:  "Custom VSCode Snippets Guide"
 date:   2022-01-13 12:55:00 +0530
 author: Baiju Dodhia
-category: tech
+category: technology
 tags: vscode-snippets guides
 excerpt: A simple step by step guide to create a Custom VSCode Snippet.
 ---

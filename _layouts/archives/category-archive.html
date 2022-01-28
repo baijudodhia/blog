@@ -19,8 +19,11 @@ layout: default
     </div>
 </div>
 <script>
-    let post_archive = document.getElementsByClassName("post-brief");
-    for (let i = 0; i < post_archive.length; i++) {
-        post_archive[i].style.background = getRandomColorGradientPredefined();
+    let post_brief = document.getElementsByClassName("post-brief");
+    let startIndex = Math.floor(Math.random() * 100);
+    for (let i = 0; i < post_brief.length; i++) {
+        setTimeout(() => {
+            post_brief[i].style.backgroundColor = getRandomDarkColorPredefined(i + startIndex);
+        }, 100 * i);
     }
 </script>

@@ -12,7 +12,10 @@ layout: default
 {%- endif -%}
 <script>
     let post_brief = document.getElementsByClassName("post-brief");
+    let startIndex = Math.floor(Math.random() * 100);
     for (let i = 0; i < post_brief.length; i++) {
-        post_brief[i].style.backgroundImage = getRandomColorGradientPredefined();
+        setTimeout(() => {
+            post_brief[i].style.backgroundColor = getRandomDarkColorPredefined(i + startIndex);
+        }, 50 * i);
     }
 </script>

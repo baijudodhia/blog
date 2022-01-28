@@ -3,7 +3,7 @@ layout: post
 title: "PhotoML Android App"
 date: 2021-12-10 21:25:02 +0530
 author: Baiju Dodhia
-category: tech
+category: technology
 tags: android firebase machine-learning
 excerpt: Documentation for PhotoML Android App to demonstrate on-device FirebaseVision ML-Kit Tasks like Label detection, Optical Character Recognition/Text Recognition, Face detection and Barcode scanning.
 ---

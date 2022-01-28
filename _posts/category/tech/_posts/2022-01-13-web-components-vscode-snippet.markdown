@@ -3,7 +3,7 @@ layout: post
 title:  "Web Components VSCode Snippet"
 date:   2022-01-13 14:00:00 +0530
 author: Baiju Dodhia
-category: tech
+category: technology
 tags: vscode-snippets web-components
 excerpt: A sample VSCode Snippet for Web Component.
 ---
@@ -11,7 +11,7 @@ excerpt: A sample VSCode Snippet for Web Component.
 ![Wallpaper](https://source.unsplash.com/1600x600/?vscode)
 
 
-Guide to create a VSCode Snippet - [here](https://baijudodhia.github.io/blog/tech/2022/01/13/custom-vscode-snippets-guide.html)
+Guide to create a VSCode Snippet - [here](https://baijudodhia.github.io/blog/technology/2022/01/13/custom-vscode-snippets-guide/)
 
 
 A sample VSCode Snippet for Web Component.

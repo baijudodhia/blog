@@ -1,1 +1,8 @@
-<span class="badge-tag">{{include.text}}</span>
+{% if include.showAsLink %}
+    {% assign tag_link = site.baseurl | join: '/tag/' | join: include.text %}
+    {% assign tag_split = include.text | split: '-' | join: ' ' %}
+    <a class="badge-tag" href='{{site.baseurl}}/tag/{{include.text}}' title={{include.text}} rel="noopener">{{tag_split}}</a>
+{% else %}
+    {% assign tag_split = include.text | split: '-' | join: ' ' %}
+    <span class="badge-tag">{{tag_split}}</span>
+{% endif%}

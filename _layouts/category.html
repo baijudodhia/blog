@@ -19,7 +19,10 @@ layout: default
 {% endif %}
 <script>
     let category_brief = document.getElementsByClassName("category-brief");
+    let startIndex = Math.floor(Math.random() * 100);
     for (let i = 0; i < category_brief.length; i++) {
-        category_brief[i].style.background = getRandomColorDark();
+        setTimeout(() => {
+            category_brief[i].style.backgroundColor = getRandomDarkColorPredefined(i + startIndex);
+        }, 10 * i);
     }
 </script>

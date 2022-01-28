@@ -3,7 +3,7 @@ layout: post
 title:  "Welcome to Jekyll!"
 date:   2021-12-06 21:25:02 +0530
 author: Baiju Dodhia
-category: tech
+category: technology
 tags: jekyll
 excerpt: Welcome markdown jekyll file to get started.
 ---

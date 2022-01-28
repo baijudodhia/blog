@@ -19,7 +19,10 @@ layout: default
 {% endif %}
 <script>
     let tag_brief = document.getElementsByClassName("tag-brief");
+    let startIndex = Math.floor(Math.random() * 100);
     for (let i = 0; i < tag_brief.length; i++) {
-        tag_brief[i].style.background = getRandomColorDark();
+        setTimeout(() => {
+            tag_brief[i].style.background = getRandomColorDark(i + startIndex);
+        }, 5 * i)
     }
 </script>

@@ -8,12 +8,14 @@
 6. getRandomColorLight();
 7. getRandomColorDark();
 8. getRandomColorGradientLightPredefined();
-9. changeTheme();
-10. setDefaultTheme();
-11. setDarkTheme();
-12. setLightTheme();
+9. getRandomColorGradientLightPredefined();
+10. changeTheme();
+11. setDefaultTheme();
+12. setDarkTheme();
+13. setLightTheme();
 
 */
+
 function goTop() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
@@ -148,6 +150,26 @@ function getRandomColorGradientPredefined() {
     "linear-gradient(to right, #e65c00, #f9d423)",
   ];
   return String(gradients[Math.floor(Math.random() * gradients.length)]);
+}
+function getRandomDarkColorPredefined(i=-1) {
+  const darkColor = [
+    "darkblue",
+    "darkcyan",
+    "darkgoldenrod",
+    "darkgreen",
+    "darkmagenta",
+    "darkorange",
+    "darkred",
+    "darkslateblue",
+    "darkslategray"
+  ];
+  let color 
+  if(i == -1) {
+    color = String(darkColor[Math.floor(Math.random() * darkColor.length)]);
+  } else {
+    color = String(darkColor[i % darkColor.length])
+  }
+  return color;
 }
 
 function changeTheme() {
