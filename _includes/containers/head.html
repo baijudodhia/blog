@@ -2,42 +2,59 @@
     {% if page.url contains '404.html' %}
         {% assign is404Page = true %}
     {% endif %}
+
+    {% assign site_url = site.url | append: site.baseurl | append: '/' %}
+    {% assign page_url = site.url | append: site.baseurl | append: page.url | remove: "index.html" %}
+    {% if site_url == page_url %}
+        {% assign isHomePage = true %}
+    {% endif %}
     
-    {% if page.url contains '404.html' %}
-        {% assign is404Page = true %}
+    {% if page.tags and page.category %}
+        {% assign page_tags = page.tags | join: ', ' | split: '-' | join: ' ' %}
+        {% assign page_category = page.category %}
+        {% assign description =  "Blog post about " | append: page_category | append: ', ' | append: page_tags | append: ' etc.' %}
+        {% if page.excerpt %}
+            {% assign meta_description =  description | append: ' ' | append: page.excerpt %}
+        {% else %}
+            {% assign meta_description =  description %}
+        {% endif %}
+    {% else %}
+        {% assign meta_description = site.description %}
     {% endif %}
 
+    <title>{% if is404Page != true %}{% if page.content != "" %}{{ page.title }} | {% endif %}{% endif %}{{ site.title }}</title>
+    
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <meta name="author" content="Baiju Dodhia" />
     <meta name="color-scheme" content="light">
     <meta name="copyright" content="Baiju Dodhia" />
-    <meta name="description" content="{{ site.description }}{% if page.excerpt %} {{ page.excerpt }}{% endif %}" />
+    <meta name="description" content="{{meta_description}}" />
     <meta name="designer" content="Baiju Dodhia" />
     <meta name="geo.region" content="IN" />
-    <meta name="keywords" content="{{ site.keywords }}{% if page.tags %}, {{ page.tags | join: ', ' | split: '-' | join: ' ' }}{% endif %}" />
+    <meta name="keywords" content="{% if page.tags and page.category %}{{ page.category }}, {{ page.tags | join: ', ' | split: '-' | join: ' ' }}{% else %}{{ site.keywords }}{% endif %}" />
     <meta name="language" content="EN" />
     <meta name="owner" content="Baiju Dodhia" />
     <meta name="robots" content="INDEX, FOLLOW" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     {% if is404Page == true %}<meta name="robots" content="noindex, nofollow">{% endif %}
-    <title>{% if is404Page != true %}{% if page.content != "" %}{{ page.title }} | {% endif %}{% endif %}{{ site.title }}</title>
-
+    
     <!-- Open Graph -->
     <meta property="article:author" content="{{ site.author.name }}" />
     <meta property="article:published_time" content="{{ page.date }}" />
     <meta property="article:publisher" content="https://baijudodhia.github.io/" />
-    <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt }}{% else %}{{ site.description }}{% endif %}">
+    <meta property="og:description" content="{{meta_description}}">
     <meta property="og:locale" content="en_IN">
     <meta property="og:site_name" content="Blog - Baiju Dodhia">
     <meta property="og:title" content="{%if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:url" content="{{ site.url | append: site.baseurl | append: page.url | remove: "index.html" }}">
 
     <!-- Analytics -->
     <script src="{{ '/assets/scripts/analytics.js' | relative_url }}"></script>
 
+    {% if isHomePage == true %}
     <!-- Google SiteLink Search Schema -->
     <script type="application/ld+json">
         {
@@ -51,6 +68,7 @@
             }
         }
     </script>
+    {% endif %}
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -75,17 +93,18 @@
     <!-- Scripts -->
     <script src="{{ '/assets/scripts/main.js' | relative_url }}"></script>
 
-    {% if page.content != "" and is404Page != true %}
+    {% assign page_content = page.content | strip_html %}
+    {% if  page_content != "" and is404Page != true %}
     <!-- Post Schema -->
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "BlogPosting",
-            "url": "{{ site.url }}{{ page.url }}",
+            "url": "{{ site.url | append: site.baseurl | append: page.url }}",
             "name": {{ page.title | jsonify }},
             "headline": {{ page.title | jsonify }},
-            "keywords": {{ page.tags | join: ', ' | jsonify | split: '-' | join: ' ' }},
-            "description": {{ page.excerpt | strip_newlines | strip | jsonify }},
+            "keywords": "{{ page.category }}, {{ page.tags | join: ', ' | split: '-' | join: ' ' }}",
+            "description": {{ meta_description | jsonify }},
             "articleBody": {{ page.content | strip_html | jsonify }},
             "datePublished": {{ page.date | jsonify }},
             "dateModified": {{ page.last_modified_at | default: page.date | jsonify }},
