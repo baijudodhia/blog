@@ -1,5 +1,6 @@
 /* 
 
+0. Global Variables
 1. goTop();
 2. horizontalSwipe();
 3. toggleSidebar();
@@ -15,6 +16,8 @@
 13. setLightTheme();
 
 */
+
+baseUrl = 'https://baijudodhia.github.io/blog';
 
 function goTop() {
   document.body.scrollTop = 0;
@@ -68,7 +71,7 @@ function toggleSidebar() {
 
 async function searchBlog(query) {
   const xmlFetch = await fetch(
-    "https://baijudodhia.github.io/blog/sitemap.xml"
+    `${baseUrl}/search.xml`
   );
   const xmlText = await xmlFetch.text();
   const xml = await new window.DOMParser().parseFromString(xmlText, "text/xml");
@@ -76,12 +79,11 @@ async function searchBlog(query) {
   let x = xml.documentElement.childNodes;
   for (i = 0; i < x.length; i++) {
     // Process only element nodes (type 1)
-    if (x[i].nodeType == 1 && x[i].getElementsByTagName("search")[0].firstChild.nodeValue === 'true') {
+    if (x[i].nodeType == 1) {
       const url = x[i].getElementsByTagName("loc")[0].firstChild.nodeValue;
       const title = x[i].getElementsByTagName("title")[0].firstChild.nodeValue;
       const tags = x[i].getElementsByTagName("tags")[0].firstChild.nodeValue;
-      const category =
-        x[i].getElementsByTagName("category")[0].firstChild.nodeValue;
+      const category = x[i].getElementsByTagName("category")[0].firstChild.nodeValue;
       const regex = new RegExp(query, "g");
       const titleSearch = title.toLowerCase().search(query.toLowerCase());
       const tagsSearch = tags.toLowerCase().search(query.toLowerCase());
@@ -100,30 +102,25 @@ async function searchBlog(query) {
   return arr;
 }
 
-function redirectToRandomBlog() {
-  var x = new XMLHttpRequest();
-  x.open("GET", "https://baijudodhia.github.io/blog/sitemap.xml", true);
-  x.onreadystatechange = function () {
-    if (x.readyState == 4 && x.status == 200) {
-      var doc = x.responseXML;
-      txt = "";
-      x = doc.documentElement.childNodes;
-      let arr = [];
-      for (i = 0; i < x.length; i++) {
-        // Process only element nodes (type 1)
-        if (x[i].nodeType == 1 && x[i].getElementsByTagName("search")[0].firstChild.nodeValue === 'true') {
-          const url_string =
-            x[i].getElementsByTagName("loc")[0].firstChild.nodeValue;
-          arr.push(url_string);
-        }
-      }
-      const arrSize = arr.length;
-      const randInt = Math.floor(Math.random() * arrSize);
-      const randBlogUrl = arr[randInt];
-      window.location.replace(randBlogUrl);
+async function redirectToRandomBlog() {
+  const xmlFetch = await fetch(
+    `${baseUrl}/search.xml`
+  );
+  const xmlText = await xmlFetch.text();
+  const xml = await new window.DOMParser().parseFromString(xmlText, "text/xml");
+  let x = xml.documentElement.childNodes;
+  let arr = [];
+  for (i = 0; i < x.length; i++) {
+    // Process only element nodes (type 1)
+    if (x[i].nodeType == 1) {
+      const url = x[i].getElementsByTagName("loc")[0].firstChild.nodeValue;
+      arr.push(url);
     }
-  };
-  x.send(null);
+  }
+  const arrSize = arr.length;
+  const randInt = Math.floor(Math.random() * arrSize);
+  const randBlogUrl = arr[randInt];
+  window.location.replace(randBlogUrl);
 }
 
 function getRandomColorLight() {
@@ -151,7 +148,7 @@ function getRandomColorGradientPredefined() {
   ];
   return String(gradients[Math.floor(Math.random() * gradients.length)]);
 }
-function getRandomDarkColorPredefined(i=-1) {
+function getRandomDarkColorPredefined(i = -1) {
   const darkColor = [
     "darkblue",
     "darkcyan",
@@ -163,8 +160,8 @@ function getRandomDarkColorPredefined(i=-1) {
     "darkslateblue",
     "darkslategray"
   ];
-  let color 
-  if(i == -1) {
+  let color;
+  if (i == -1) {
     color = String(darkColor[Math.floor(Math.random() * darkColor.length)]);
   } else {
     color = String(darkColor[i % darkColor.length])
