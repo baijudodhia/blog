@@ -1,4 +1,11 @@
 <head>
+    {% if page.url contains '404.html' %}
+        {% assign is404Page = true %}
+    {% endif %}
+    
+    {% if page.url contains '404.html' %}
+        {% assign is404Page = true %}
+    {% endif %}
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -14,7 +21,8 @@
     <meta name="owner" content="Baiju Dodhia" />
     <meta name="robots" content="INDEX, FOLLOW" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>{% if page.content != "" %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    {% if is404Page == true %}<meta name="robots" content="noindex, nofollow">{% endif %}
+    <title>{% if is404Page != true %}{% if page.content != "" %}{{ page.title }} | {% endif %}{% endif %}{{ site.title }}</title>
 
     <!-- Open Graph -->
     <meta property="article:author" content="{{ site.author.name }}" />
@@ -27,18 +35,10 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="{{ site.url }}{{ page.url }}">
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga_code }}"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag("js", new Date());
-        gtag("config", "{{ site.ga_code }}");
-    </script>
+    <!-- Analytics -->
+    <script src="{{ '/assets/scripts/analytics.js' | relative_url }}"></script>
 
-    <!-- Google SiteLink Search-->
+    <!-- Google SiteLink Search Schema -->
     <script type="application/ld+json">
         {
             "@context": "http://schema.org",
@@ -52,22 +52,12 @@
         }
     </script>
 
-    <!-- Bing Webmaster Tools -->
-    <meta name="msvalidate.01" content="BEC77652B2417C03E19AED80E3EB97D8" />
-
-    <!-- Microsoft Clarity -->
-    <script type="text/javascript">
-        (function (c, l, a, r, i, t, y) {
-            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-        })(window, document, "clarity", "script", "a9r1s09a53");
-    </script>
-
-    <!-- Bootstrap CSS -->
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
     <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" rel="stylesheet" />
 
     <!-- Custom CSS -->
@@ -85,8 +75,8 @@
     <!-- Scripts -->
     <script src="{{ '/assets/scripts/main.js' | relative_url }}"></script>
 
-    {% if page.content != "" %}
-    <!-- Post Search SEO -->
+    {% if page.content != "" and is404Page != true %}
+    <!-- Post Schema -->
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
