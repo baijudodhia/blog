@@ -8,25 +8,27 @@ layout: default
             <i aria-hidden="true" class='fa fa-search'></i>
         </button>
     </form>
-    <ol id="search-results">
-        <template>
-            <li>
-                <a href="" target="_blank"></a>
-            </li>
-        </template>
-    </ol>
+    <div id="search-results-container">
+        <div id="search-results-title"></div>
+        <ol id="search-results">
+            <template>
+                <li>
+                    <a href="" target="_blank"></a>
+                </li>
+            </template>
+        </ol>
+    </div>
 </section>
 <script>
     const searchQuery = document.location.search;
     const urlParams = new URLSearchParams(searchQuery);
     const query = urlParams.get('q');
-    async function callSearchBlog() {
+    async function callSearchBlog(query) {
         results = await searchBlog(query);
         if (results.length > 0) {
+            const search_results_title = document.getElementById('search-results-title');
+            search_results_title.innerHTML = `<mark>&nbsp;${query}&nbsp;</mark> found in following posts...`;
             const search_results = document.getElementById('search-results');
-            var div = document.createElement("div");
-            div.innerHTML = `Results found for <mark>${query}</mark>`;
-            search_results.appendChild(div);
             var temp, item, a, i;
             temp = document.getElementsByTagName("template")[0];
             item = temp.content.querySelector("li");
@@ -38,18 +40,14 @@ layout: default
                 search_results.appendChild(li);
             }
         } else {
-            const search_results = document.getElementById('search-results');
-            var div = document.createElement("div");
-            div.innerHTML = `No results found for <i>${query}</i>.`;
-            search_results.appendChild(div);
+            const search_results_title = document.getElementById('search-results-title');
+            search_results_title.innerHTML = `No results found for <mark>&nbsp;${query}&nbsp;</mark>.`;
         }
     }
-    if (query !== null && query !== undefined && query !== '') {
-        callSearchBlog();
-    } else if (query === '') {
-        const search_results = document.getElementById('search-results');
-        var div = document.createElement("div");
-        div.innerHTML = `Please enter some keywords to search.`;
-        search_results.appendChild(div);
+    if (query === '' || !query.replace(/\s/g, '').length) {
+        const search_results_title = document.getElementById('search-results-title');
+        search_results_title.innerHTML = `&nbsp;Please enter some keywords to search.`;
+    } else if (query !== null && query !== undefined) {
+        callSearchBlog(query);
     }
 </script>

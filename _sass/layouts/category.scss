@@ -12,3 +12,41 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.category-search {
+  max-width: 700px;
+  padding: 28px 10px 16px;
+  margin: 0px auto;
+}
+#category-search-form {
+  color: var(--color-light_f5f5f5-dark_121212-reverse);
+  box-shadow: inset 0px 0px 5px -2px var(--color-light_ffffff-dark_000000-reverse);
+  border-radius: 100px;
+  transition: 0.1s linear;
+  padding: 8px 16px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+  flex-direction: row;
+  column-gap: 1rem;
+  &::placeholder {
+    color: var(--color-light_f5f5f5-dark_121212-reverse);
+  }
+  &:focus-within {
+    box-shadow: inset 0px 0px 5px var(--color-light_0055ff-dark_009aff);
+  }
+  #category-search-input {
+    color: var(--color-light_f5f5f5-dark_121212-reverse);
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 100%;
+    &:focus,
+    &:active {
+      border: none;
+      outline: none;
+    }
+  }
+}
