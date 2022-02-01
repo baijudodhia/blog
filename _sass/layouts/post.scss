@@ -20,7 +20,7 @@
   padding: 50px 0px 50px 0px;
   background: linear-gradient(to right, #16222a, #3a6073);
 }
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1000px) {
   .post-header {
     padding: 5vh 0px 5vh 0px;
   }
@@ -32,7 +32,7 @@
   flex-direction: column;
   font-weight: bold;
   justify-content: center;
-  max-width: 700px;
+  max-width: 1000px;
   padding: 0px 15px 0px 15px;
   row-gap: 1rem;
   width: 100%;
@@ -44,7 +44,7 @@
   flex-direction: column;
   font-weight: bold;
   justify-content: center;
-  max-width: 700px;
+  max-width: 1000px;
   padding: 0px 15px 15px 15px;
   row-gap: 0.25rem;
   width: 100%;
@@ -72,7 +72,7 @@
 }
 .post-divider {
   width: 100%;
-  max-width: 700px;
+  max-width: 1000px;
   height: 0.5px;
   padding: 0px 15px 0px 15px;
   border-top: 1.5px dashed #121212;
