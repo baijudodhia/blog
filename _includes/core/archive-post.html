@@ -1,0 +1,11 @@
+{% assign posts_count = page.posts | size %}
+{% if posts_count == 1 %}
+    {% assign className = 'archive-post-brief-container single' %}
+{% else %}
+    {% assign className = 'archive-post-brief-container' %}
+{% endif %}
+<div class="{{className}}">
+{% for post in page.posts %}
+    {% include core/post-brief.html post=post%}
+{% endfor %}
+</div>

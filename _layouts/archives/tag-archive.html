@@ -12,11 +12,7 @@ layout: default
         {% endcapture %}
         {{ titlecase }}
     </div>
-    <div class="archive-post-brief-container">
-        {% for post in page.posts %}
-            {% include core/post-brief.html post=post%}
-        {% endfor %}
-    </div>
+    {% include core/archive-post.html archive_posts=archive_posts %}
 </div>
 <script>
     let post_brief = document.getElementsByClassName("post-brief");

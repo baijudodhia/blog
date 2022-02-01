@@ -7,11 +7,7 @@ layout: default
         Posts from
         <b>{{ page.date | date: "%-d %b %Y" }}</b>
     </div>
-    <div class="archive-post-brief-container">
-        {% for post in page.posts %}
-            {% include core/post-brief.html post=post%}
-        {% endfor %}
-    </div>
+    {% include core/archive-post.html archive_posts=archive_posts %}
 </div>
 <script>
     let post_archive = document.getElementsByClassName("post-brief");

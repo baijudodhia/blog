@@ -1,31 +1,36 @@
 <div class="post-brief">
-    <div class="post-brief-category">
-        {% assign category = include.post.category %}
-        {% include base/badge-category.html text=category %}
-    </div>
-    <div class="post-brief-title">
-        {{ include.post.title }}
-    </div>
-    <div class="post-brief-metadata">
-        <div class="post-brief-date">
-            posted on
-            <b>
-                <time class="dt-published" datetime="{{ include.post.date | date_to_xmlschema }}" itemprop="datePublished">
-                    {%- assign date_format = site.minima.date_format | default: "%d %b '%y" -%}
-                    {{ include.post.date | date: date_format }}
-                </time>
-            </b>
-        </div>
-        <div class="post-brief-author">
-            by <b>{{ include.post.author }}</b>
+    <div class="post-brief-header">
+        <div class="post-brief-category">
+            {% assign category = include.post.category %}
+            {% include base/badge-category.html text=category %}
         </div>
     </div>
-    <div class="post-brief-excerpt">
-        {{ include.post.excerpt  }}
-        <!-- {{ include.post.excerpt | truncatewords: 15, '...' }} -->
+    <div class="post-brief-body">
+        <div class="post-brief-title">
+            {{ include.post.title }}
+        </div>
+        <div class="post-brief-metadata">
+            <div class="post-brief-date">
+                posted on
+                <b>
+                    <time class="dt-published" datetime="{{ include.post.date | date_to_xmlschema }}" itemprop="datePublished">
+                        {%- assign date_format = site.minima.date_format | default: "%d %b '%y" -%}
+                        {{ include.post.date | date: date_format }}
+                    </time>
+                </b>
+            </div>
+            <div class="post-brief-author">
+                by <b>{{ include.post.author }}</b>
+            </div>
+        </div>
+        <div class="post-brief-excerpt">
+            {{ include.post.excerpt }}
+        </div>
     </div>
-    <div class="post-brief-link">
-        {% assign href = include.post.url | relative_url %}
-        {% include base/anchor.html href=href showText=true text='Read' showIcon=true icon='fa fa-arrow-right' %}
+    <div class="post-brief-footer">
+        <div class="post-brief-link">
+            {% assign href = include.post.url | relative_url %}
+            {% include base/anchor.html href=href showText=true text='Read' showIcon=true icon='fa fa-arrow-right' %}
+        </div>
     </div>
 </div>

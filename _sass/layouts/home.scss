@@ -1,13 +1,15 @@
 .home {
-  display: flex;
-  flex-direction: column;
-  row-gap: 1.5rem;
   padding: 2rem 1.5rem;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
+  display: grid;
+  grid-template-areas: "card card";
+  grid-auto-columns: 1fr 1fr;
+  row-gap: 15px;
+  column-gap: 15px;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   .home {
     display: flex;
     flex-direction: column;
