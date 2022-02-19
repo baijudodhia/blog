@@ -45,11 +45,20 @@
     <meta property="article:published_time" content="{{ page.date }}" />
     <meta property="article:publisher" content="https://baijudodhia.github.io/" />
     <meta property="og:description" content="{{meta_description}}">
+    <meta property="og:image" content="{{ "/assets/social-media-preview/social-preview.png" | relative_url }}"/>
     <meta property="og:locale" content="en_IN">
-    <meta property="og:site_name" content="Blog - Baiju Dodhia">
+    <meta property="og:site_name" content="{%if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
     <meta property="og:title" content="{%if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
     <meta property="og:type" content="article">
     <meta property="og:url" content="{{ site.url | append: site.baseurl | append: page.url | remove: "index.html" }}">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:description" content="{{meta_description}}" />
+    <meta property="twitter:image" content="{{ "/assets/social-media-preview/social-preview.png" | relative_url }}"/>
+    <meta property="twitter:site" content="https://baijudodhia.github.io/blog/" />
+    <meta property="twitter:title" content="{%if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta property="twitter:url" content="https://baijudodhia.github.io/blog/" />
 
     <!-- Analytics -->
     <script src="{{ '/assets/scripts/analytics.js' | relative_url }}"></script>
@@ -83,12 +92,23 @@
     <link rel="stylesheet" href="{{ "/assets/styles/syntax-fruity.css" | relative_url }}">
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/favicon/apple-touch-icon.png" | relative_url }}">
-    <link rel="shortcut icon" type="image/png" sizes="16x16" href="{{ "/assets/favicon/android-chrome-192x192.png" | relative_url }}">
-    <link rel="shortcut icon" type="image/png" sizes="16x16" href="{{ "/assets/favicon/android-chrome-512x512.png" | relative_url }}">
-    <link rel="shortcut icon" type="image/png" sizes="16x16" href="{{ "/assets/favicon/favicon-16x16.png" | relative_url }}">
-    <link rel="shortcut icon" type="image/png" sizes="16x16" href="{{ "/assets/favicon/favicon.ico" | relative_url }}">
-    <link rel="shortcut icon" type="image/png" sizes="32x32" href="{{ "/assets/favicon/favicon-32x32.png" | relative_url }}">
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ "/assets/favicon/apple-icon-57x57.png" | relative_url }}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ "/assets/favicon/apple-icon-60x60.png" | relative_url }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ "/assets/favicon/apple-icon-72x72.png" | relative_url }}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ "/assets/favicon/apple-icon-76x76.png" | relative_url }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ "/assets/favicon/apple-icon-114x114.png" | relative_url }}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ "/assets/favicon/apple-icon-120x120.png" | relative_url }}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ "/assets/favicon/apple-icon-144x144.png" | relative_url }}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ "/assets/favicon/apple-icon-152x152.png" | relative_url }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/favicon/apple-icon-180x180.png" | relative_url }}">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{{ "/assets/favicon/android-icon-192x192.png" | relative_url }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/favicon/favicon-32x32.png" | relative_url }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ "/assets/favicon/favicon-96x96.png" | relative_url }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ "/assets/favicon/favicon-16x16.png" | relative_url }}">
+    <link rel="manifest" href="{{ "/assets/favicon/manifest.json" | relative_url }}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{{ "/assets/favicon/ms-icon-144x144.png" | relative_url }}">
+    <meta name="theme-color" content="#ffffff">
 
     <!-- Scripts -->
     <script src="{{ '/assets/scripts/main.js' | relative_url }}"></script>
