@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Web Components VSCode Snippet"
+title:  "VSCode Snippet - Web Components"
 date:   2022-01-13 14:00:00 +0530
 author: Baiju Dodhia
 category: technology
