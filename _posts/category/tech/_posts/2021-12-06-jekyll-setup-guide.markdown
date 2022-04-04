@@ -1,12 +1,13 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Jekyll Setup Guide"
 date:   2021-12-06 21:25:02 +0530
 author: Baiju Dodhia
 category: technology
-tags: jekyll
-excerpt: Welcome markdown jekyll file to get started.
+tags: jekyll guides
+excerpt: Guide to Setup & Getting Started with Jekyll.
 ---
+
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
 Jekyll requires blog post files to be named according to the following format:
