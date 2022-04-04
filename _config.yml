@@ -33,7 +33,7 @@ github_username:  baijudodhia
 ga_code: G-KNY1ESWNJG
 
 # URL Links
-permalink: pretty
+permalink: /:categories/:title/
 
 # Build settings
 # Remove minima theme & using a custom regular gem based theme.
