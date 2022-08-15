@@ -4,9 +4,11 @@ layout: default
 
 {%- if site.posts.size > 0 -%}
     <section class="home">
-        {%- for post in paginator.posts -%}
-            {% include core/post-brief.html post=post %}
-        {%- endfor -%}
+        <div class="home-posts">
+            {%- for post in paginator.posts -%}
+                {% include core/post-brief.html post=post %}
+            {%- endfor -%}
+        </div>
         {% include core/paginator.html %}
     </section>
 {%- endif -%}
