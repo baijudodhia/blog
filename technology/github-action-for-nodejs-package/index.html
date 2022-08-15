@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en"><head>
+    
+
+    
+    
+    
+    
+    
+
+    <title>Github Action for Node.js Package | Blog - Baiju Dodhia</title>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta name="author" content="Baiju Dodhia" />
+    <meta name="color-scheme" content="light">
+    <meta name="copyright" content="Baiju Dodhia" />
+    <meta name="description" content="Blog post about technology, github actions, github, npm, nodejs, node packages, guides etc. Github Action for configuring Node.js Packages with hosted on Github." />
+    <meta name="designer" content="Baiju Dodhia" />
+    <meta name="geo.region" content="IN" />
+    <meta name="keywords" content="technology, github actions, github, npm, nodejs, node packages, guides" />
+    <meta name="language" content="EN" />
+    <meta name="owner" content="Baiju Dodhia" />
+    <meta name="robots" content="INDEX, FOLLOW" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    
+    
+    <!-- Open Graph -->
+    <meta property="article:author" content="Baiju Dodhia" />
+    <meta property="article:published_time" content="2022-04-04 06:30:00 +0000" />
+    <meta property="article:publisher" content="https://baijudodhia.github.io/" />
+    <meta property="og:description" content="Blog post about technology, github actions, github, npm, nodejs, node packages, guides etc. Github Action for configuring Node.js Packages with hosted on Github.">
+    <meta property="og:image" content="https://baijudodhia.github.io/blog/assets/social-media-preview/social-preview.png"/>
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:site_name" content="Github Action for Node.js Package">
+    <meta property="og:title" content="Github Action for Node.js Package">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://baijudodhia.github.io/blog/technology/github-action-for-nodejs-package/">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:description" content="Blog post about technology, github actions, github, npm, nodejs, node packages, guides etc. Github Action for configuring Node.js Packages with hosted on Github." />
+    <meta property="twitter:image" content="https://baijudodhia.github.io/blog/assets/social-media-preview/social-preview.png"/>
+    <meta property="twitter:site" content="https://baijudodhia.github.io/blog/" />
+    <meta property="twitter:title" content="Github Action for Node.js Package">
+    <meta property="twitter:url" content="https://baijudodhia.github.io/blog/" />
+
+    <!-- Analytics -->
+    <script src="/blog/assets/scripts/analytics.js"></script>
+
+    
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/assets/main.css">
+    <link rel="stylesheet" href="/blog/assets/styles/syntax-fruity.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/blog/assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/blog/assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/blog/assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/blog/assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/blog/assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/blog/assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/blog/assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/blog/assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/blog/assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/blog/assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/blog/assets/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/blog/assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Scripts -->
+    <script src="/blog/assets/scripts/main.js"></script>
+
+    
+    
+    <!-- Post Schema -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "url": "https://baijudodhia.github.io/blog/technology/github-action-for-nodejs-package/",
+            "name": "Github Action for Node.js Package",
+            "headline": "Github Action for Node.js Package",
+            "keywords": "technology, github actions, github, npm, nodejs, node packages, guides",
+            "description": "Blog post about technology, github actions, github, npm, nodejs, node packages, guides etc. Github Action for configuring Node.js Packages with hosted on Github.",
+            "articleBody": "Steps to configure Repository as Node.js Package -\n\n\n  Create ‘.npmrc’ file and add the following content in it -\n\n\n    @your_github_username:registry=https://npm.pkg.github.com\n\n\n  In ‘package.json’ file add/modify according to the following code -\n\n\n1\n2\n3\n4\n5\n6\n7\n{\n\t\"name\": \"@your_github_username/package-name\",\n\t\"repository\": {\n\t\t\"type\": \"git\",\n\t\t\"url\": \"git+https://git@github.com/your_github_username/package_reponame.git\"\n\t},\n}\n\n\nSteps to configure Github Actions for the Repo -\n\n\n  Create a ‘.github’ folder at the root of the Github Repository.\n  Create a ‘workflows’ folder inside the ‘.github’ folder.\n  Create a ‘your_file_name.yml’ file inside the ‘workflows’ folder. The ‘your_file_name.yml’ file indicates to Github that this is a file for Github Action.\n\n\nThe following code can be added in the ‘your_file_name.yml’ for configuring the Repository as a Github Package.\n\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n32\n33\n34\n35\nname: publish Node.js Package\n\non:\n  push:\n    branches:\n      - build\n\njobs:\n  build:\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n      - uses: actions/setup-node@v1\n        with:\n          node-version: 12\n      - run: npm install\n      - run: npm test\n\n  publish-gpr:\n    needs: build\n    runs-on: ubuntu-latest\n    steps:\n      - uses: actions/checkout@v2\n      - uses: actions/setup-node@v1\n        with:\n          node-version: 12\n          registry-url: https://npm.pkg.github.com/\n          scope: '@your_github_username'\n      - run: npm install\n      - run: git config --global user.email \"$GITHUB_ACTOR@users.noreply.github.com\" &amp;&amp; git config --global user.name \"$GITHUB_ACTOR\"\n      - run: npm version --minor\n      - run: git push --tags &amp;&amp; git push\n      - run: npm publish\n        env:\n          NODE_AUTH_TOKEN: $\\{\\{secrets.GITHUB_TOKEN\\}\\}\n\n\nThe above action creates a build when we push code to the ‘build’ branch of the repository.\nAfter the build is created and the ‘build’ action is successful, the publish-gpr action is starts executing and publishes the package to Github Packages.\n\nChanges required:\n\n  Under ‘publish-gpr’ action -&gt; scope needs to be changed.\n  Under ‘publish-gpr’ action -&gt; NODE_AUTH_TOKEN secrets variable ‘GITHUB_TOKEN’ needs to be changed according to the defined secret variable. (You need to generate a Token and Save in the Secrets on Repo). The backslash is used as escape charater for the blog post, remove that and only keep curly braces.\n\n\nNote: The Node.js Package is registered on https://npm.pkg.github.com/ and not on https://registry.npmjs.org/\n\nAfter the package is published, it can be downloaded using\n\nnpm install @your_username/package-name\n",
+            "datePublished": "2022-04-04 06:30:00 +0000",
+            "dateModified": "2022-04-04 06:30:00 +0000",
+            "image": [
+                "http://source.unsplash.com/100x100/?githubactions,github,npm,nodejs,nodepackages,guides",
+                "http://source.unsplash.com/400x300/?githubactions,github,npm,nodejs,nodepackages,guides",
+                "http://source.unsplash.com/1600x900/?githubactions,github,npm,nodejs,nodepackages,guides"
+            ],
+            "author": {
+                "@type": "Person",
+                "name": {"name":"Baiju Dodhia","url":"https://baijudodhia.github.io/"},
+                "url": "https://baijudodhia.github.io/"
+            },
+            "publisher": {
+                "@type": "Professional",
+                "name": {"name":"Baiju Dodhia","url":"https://baijudodhia.github.io/"},
+                "url": "https://baijudodhia.github.io/"
+            },
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://baijudodhia.github.io/technology/github-action-for-nodejs-package/"
+            }
+        }
+    </script>
+    
+</head><body>
+    <div id="body-header"><div class="header-container">
+  <div class="header">
+    <button onclick="toggleSidebar()" class="header-toggler" aria-label="Menu">
+      <span class="header-toggler-bar"></span>
+      <span class="header-toggler-bar"></span>
+      <span class="header-toggler-bar"></span>
+    </button>
+    <div class="header-logo">
+        <img src=/blog/assets/logo/logo.png alt="The Tech Blog Logo" width="24" height="24"/>
+        <a href="/blog/">
+            Blog
+        </a>
+    </div>
+    <div class="header-nav">
+        
+        <div class="header-nav-link">
+            <a href="/blog/" class="header-nav-link-item ">Home</a>
+        </div>
+        <div class="header-nav-link">
+            <a href="/blog/category" class="header-nav-link-item ">Category</a>
+        </div>
+        <div class="header-nav-link">
+            <a href="/blog/tag" class="header-nav-link-item ">Tag</a>
+        </div>
+    </div>
+    <div class="header-misc">
+        <div class="header-search-container">
+            <a class="header-search-btn" href="/blog/search" aria-label="Search" title="Search">
+                <i aria-hidden="true" class='fa fa-search'></i>
+            </a>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+    <div id="content">
+        <div id="body-sidebar"><div id="sidebar-container">
+    <div id="sidebar">
+        <div class="sidebar-nav">
+            
+            <div class="sidebar-nav-link">
+                <a href="/blog/"
+                    class="sidebar-nav-link-item ">Home</a>
+            </div>
+            <div class="sidebar-nav-link">
+                <a href="/blog/category"
+                    class="sidebar-nav-link-item ">Category</a>
+            </div>
+            <div class="sidebar-nav-link">
+                <a href="/blog/tag"
+                    class="sidebar-nav-link-item ">Tag</a>
+            </div>
+        </div>
+        <div class="sidebar-footer">
+            <a class="sidebar-footer-link" rel="noopener" href="https://baijudodhia.github.io?utm_source=blog&utm_medium=sidebar"
+                target="_blank">
+                <i aria-hidden="true" class="fa fa-globe"></i>
+                <span>baijudodhia.github.io</span>
+            </a>
+            <a class="sidebar-footer-link" rel="noopener" href="https://www.github.com/baijudodhia/" target="_blank">
+                <i aria-hidden="true" class="fa fa-github"></i>
+                <span>baijudodhia</span>
+            </a>
+            <a class="sidebar-footer-link" rel="noopener" href="https://www.linkedin.com/in/baijudodhia/" target="_blank">
+                <i aria-hidden="true" class="fa fa-linkedin"></i>
+                <span>baijudodhia</span>
+            </a>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener("click", (e) => {
+        if (document.getElementById("sidebar-container").contains(e.target)) {
+            document
+                .getElementById("sidebar-container")
+                .classList
+                .remove("show");
+            document
+                .querySelector(".header-toggler")
+                .classList
+                .remove("active");
+        }
+    });
+</script>
+</div>
+        <div id="body-main">
+            <main>
+                <div class="post">
+    <div class="post-header">
+        <div class="post-header-container">
+            <div class="post-title">
+                Github Action for Node.js Package
+            </div>
+            <div class="post-date">
+                posted on
+                <b>
+                    <time class="dt-published" datetime="2022-04-04T06:30:00+00:00" itemprop="datePublished">Apr 4, 2022
+                    </time>
+                </b>
+            </div>
+            <div class="post-author">
+                by <b>Baiju Dodhia</b>
+            </div>
+            <div></div>
+            <div class="post-tags">
+                
+                    
+    
+    
+    <a class="badge-tag" href='/blog/tag/github-actions' title=github-actions rel="noopener">github actions</a>
+
+
+                
+                    
+    
+    
+    <a class="badge-tag" href='/blog/tag/github' title=github rel="noopener">github</a>
+
+
+                
+                    
+    
+    
+    <a class="badge-tag" href='/blog/tag/npm' title=npm rel="noopener">npm</a>
+
+
+                
+                    
+    
+    
+    <a class="badge-tag" href='/blog/tag/nodejs' title=nodejs rel="noopener">nodejs</a>
+
+
+                
+                    
+    
+    
+    <a class="badge-tag" href='/blog/tag/node-packages' title=node-packages rel="noopener">node packages</a>
+
+
+                
+                    
+    
+    
+    <a class="badge-tag" href='/blog/tag/guides' title=guides rel="noopener">guides</a>
+
+
+                
+            </div>
+        </div>
+    </div>
+    <div class="post-body">
+        <div class="post-content">
+            <h3 id="steps-to-configure-repository-as-nodejs-package--">Steps to configure Repository as Node.js Package -</h3>
+
+<ol>
+  <li>Create ‘.npmrc’ file and add the following content in it -</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">    @your_github_username:registry<span class="o">=</span>https://npm.pkg.github.com</code></pre></figure>
+
+<ol>
+  <li>In ‘package.json’ file add/modify according to the following code -</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre><span class="p">{</span><span class="w">
+	</span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"@your_github_username/package-name"</span><span class="p">,</span><span class="w">
+	</span><span class="nl">"repository"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+		</span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"git"</span><span class="p">,</span><span class="w">
+		</span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"git+https://git@github.com/your_github_username/package_reponame.git"</span><span class="w">
+	</span><span class="p">},</span><span class="w">
+</span><span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<h3 id="steps-to-configure-github-actions-for-the-repo--">Steps to configure Github Actions for the Repo -</h3>
+
+<ol>
+  <li>Create a ‘.github’ folder at the root of the Github Repository.</li>
+  <li>Create a ‘workflows’ folder inside the ‘.github’ folder.</li>
+  <li>Create a ‘your_file_name.yml’ file inside the ‘workflows’ folder. The ‘your_file_name.yml’ file indicates to Github that this is a file for Github Action.</li>
+</ol>
+
+<p>The following code can be added in the ‘your_file_name.yml’ for configuring the Repository as a Github Package.</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+</pre></td><td class="code"><pre>name: publish Node.js Package
+
+on:
+  push:
+    branches:
+      - build
+
+<span class="nb">jobs</span>:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm <span class="nb">install</span>
+      - run: npm <span class="nb">test
+
+  </span>publish-gpr:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://npm.pkg.github.com/
+          scope: <span class="s1">'@your_github_username'</span>
+      - run: npm <span class="nb">install</span>
+      - run: git config <span class="nt">--global</span> user.email <span class="s2">"</span><span class="nv">$GITHUB_ACTOR</span><span class="s2">@users.noreply.github.com"</span> <span class="o">&amp;&amp;</span> git config <span class="nt">--global</span> user.name <span class="s2">"</span><span class="nv">$GITHUB_ACTOR</span><span class="s2">"</span>
+      - run: npm version <span class="nt">--minor</span>
+      - run: git push <span class="nt">--tags</span> <span class="o">&amp;&amp;</span> git push
+      - run: npm publish
+        <span class="nb">env</span>:
+          NODE_AUTH_TOKEN: <span class="nv">$\</span><span class="o">{</span><span class="se">\{</span>secrets.GITHUB_TOKEN<span class="se">\}\}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>The above action creates a build when we push code to the ‘build’ branch of the repository.
+After the build is created and the ‘build’ action is successful, the publish-gpr action is starts executing and publishes the package to Github Packages.</p>
+
+<p>Changes required:</p>
+<ol>
+  <li>Under ‘publish-gpr’ action -&gt; scope needs to be changed.</li>
+  <li>Under ‘publish-gpr’ action -&gt; NODE_AUTH_TOKEN secrets variable ‘GITHUB_TOKEN’ needs to be changed according to the defined secret variable. (You need to generate a Token and Save in the Secrets on Repo). The backslash is used as escape charater for the blog post, remove that and only keep curly braces.</li>
+</ol>
+
+<p>Note: The Node.js Package is registered on <a href="https://npm.pkg.github.com/">https://npm.pkg.github.com/</a> and not on <a href="https://registry.npmjs.org/">https://registry.npmjs.org/</a></p>
+
+<p>After the package is published, it can be downloaded using</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">npm <span class="nb">install</span> @your_username/package-name</code></pre></figure>
+
+        </div>
+    </div>
+    <div class="post-divider"></div><div class="next-prev-post"><div>
+            
+            <a class="anchor next-prev-post-btn" title="Previous Post" href=/blog/business/finance-terminology/ rel="noopener">
+    
+    
+        <div>
+            <i aria-hidden="true" class='fa fa-arrow-left'></i>
+        </div>
+    
+</a>
+        </div><div>
+        <button   title=Random Post  class="button next-prev-post-btn" onclick=redirectToRandomBlog();>
+    
+    
+        <div>
+            <i aria-hidden="true" class='fa fa-random'></i>
+        </div>
+    
+</button>
+    </div><div>
+            
+            <a class="anchor next-prev-post-btn" title="Next Post" href=/blog/business/startup-terminology/ rel="noopener">
+    
+    
+        <div>
+            <i aria-hidden="true" class='fa fa-arrow-right'></i>
+        </div>
+    
+</a>
+        </div></div></div>
+            </main><footer class="footer">
+    <div class="footer-links">
+        <a class="footer-link" rel="noopener" href="https://baijudodhia.github.io?utm_source=blog&utm_medium=footer" target="_blank">
+            <i aria-hidden="true" class="fa fa-globe"></i>
+            <span>baijudodhia.github.io</span>
+        </a>
+        <a class="footer-link" rel="noopener" href="https://www.github.com/baijudodhia/" target="_blank">
+            <i aria-hidden="true" class="fa fa-github"></i>
+            <span>baijudodhia</span>
+        </a>
+        <a class="footer-link" rel="noopener" href="https://www.linkedin.com/in/baijudodhia/" target="_blank">
+            <i aria-hidden="true" class="fa fa-linkedin"></i>
+            <span>baijudodhia</span>
+        </a>
+    </div>
+</footer></div>
+    </div>
+</body></html>

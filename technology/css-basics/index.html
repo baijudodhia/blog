@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en"><head>
+    
+
+    
+    
+    
+    
+    
+
+    <title>CSS Basics | Blog - Baiju Dodhia</title>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta name="author" content="Baiju Dodhia" />
+    <meta name="color-scheme" content="light">
+    <meta name="copyright" content="Baiju Dodhia" />
+    <meta name="description" content="Blog post about technology, css, web styling etc. Basic of CSS" />
+    <meta name="designer" content="Baiju Dodhia" />
+    <meta name="geo.region" content="IN" />
+    <meta name="keywords" content="technology, css, web styling" />
+    <meta name="language" content="EN" />
+    <meta name="owner" content="Baiju Dodhia" />
+    <meta name="robots" content="INDEX, FOLLOW" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    
+    
+    <!-- Open Graph -->
+    <meta property="article:author" content="Baiju Dodhia" />
+    <meta property="article:published_time" content="2022-07-06 06:30:00 +0000" />
+    <meta property="article:publisher" content="https://baijudodhia.github.io/" />
+    <meta property="og:description" content="Blog post about technology, css, web styling etc. Basic of CSS">
+    <meta property="og:image" content="https://baijudodhia.github.io/blog/assets/social-media-preview/social-preview.png"/>
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:site_name" content="CSS Basics">
+    <meta property="og:title" content="CSS Basics">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://baijudodhia.github.io/blog/technology/css-basics/">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:description" content="Blog post about technology, css, web styling etc. Basic of CSS" />
+    <meta property="twitter:image" content="https://baijudodhia.github.io/blog/assets/social-media-preview/social-preview.png"/>
+    <meta property="twitter:site" content="https://baijudodhia.github.io/blog/" />
+    <meta property="twitter:title" content="CSS Basics">
+    <meta property="twitter:url" content="https://baijudodhia.github.io/blog/" />
+
+    <!-- Analytics -->
+    <script src="/blog/assets/scripts/analytics.js"></script>
+
+    
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/assets/main.css">
+    <link rel="stylesheet" href="/blog/assets/styles/syntax-fruity.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/blog/assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/blog/assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/blog/assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/blog/assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/blog/assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/blog/assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/blog/assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/blog/assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/blog/assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/blog/assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/blog/assets/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/blog/assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Scripts -->
+    <script src="/blog/assets/scripts/main.js"></script>
+
+    
+    
+    <!-- Post Schema -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "url": "https://baijudodhia.github.io/blog/technology/css-basics/",
+            "name": "CSS Basics",
+            "headline": "CSS Basics",
+            "keywords": "technology, css, web styling",
+            "description": "Blog post about technology, css, web styling etc. Basic of CSS",
+            "articleBody": "Box Model\n\n\n\nSelectors\n\n\n  \n    \n      Selector\n      Description\n    \n  \n  \n    \n      _\n      all elements\n    \n    \n      div\n      all div tags\n    \n    \n      div,p\n      all divs and paragraphs\n    \n    \n      div p\n      paragraphs inside divs\n    \n    \n      div &gt; p\n      all p tags, one level deep in div\n    \n    \n      div + p\n      p tags immediately after div\n    \n    \n      div ~ p\n      p tags preceded by div\n    \n    \n      .classname\n      all elements with class\n    \n    \n      #idname\n      element with ID\n    \n    \n      div.classname\n      divs with certain classname\n    \n    \n      div#idname\n      div with certain ID\n    \n    \n      #idname _\n      all elements inside #idname\n    \n  \n\n\nAttribute Selectors\n\n\n  \n    \n      Selector\n      Description\n    \n  \n  \n    \n      a[target]\n      links with a target attribute\n    \n    \n      a[target=”_blank”]\n      links which open in new tab\n    \n    \n      [title~=”chair”]\n      title element containing a word\n    \n    \n      [class^=”chair”]\n      class starts with chair\n    \n    \n      [class | =”chair”]\n      class starts with the chair word\n    \n    \n      [class*=”chair”]\n      class contains chair\n    \n    \n      [class$=”chair”]\n      class ends with chair\n    \n    \n      input[type=”button”]\n      specified input type\n    \n  \n\n\nPseudo Selectors\n\n\n  \n    \n      Selector\n      Description\n    \n  \n  \n    \n      a:link\n      link in normal state\n    \n    \n      a:active\n      link in clicked state\n    \n    \n      a:hover\n      link with mouse over it\n    \n    \n      a:visited\n      visited link\n    \n    \n      p::after{content:”Hello World”;}\n      add content after p\n    \n    \n      p::before\n      add content before p\n    \n    \n      input:checked\n      checked inputs\n    \n    \n      input:disabled\n      disabled inputs\n    \n    \n      input:enabled\n      enabled inputs\n    \n    \n      input:focus\n      input has focus\n    \n    \n      input:in-range\n      value in range\n    \n    \n      input:out-of-range\n      input value out of range\n    \n    \n      input:valid\n      input with valid value\n    \n    \n      input:invalid\n      input with invalid value\n    \n    \n      input:optional\n      no required attribute\n    \n    \n      input:required\n      input with requred attribute\n    \n    \n      input:read-only\n      with readonly attribute\n    \n    \n      input:read-write\n      no readonly attrib.\n    \n    \n      div:empty\n      element with no children\n    \n    \n      p::first-letter\n      first letter in p\n    \n    \n      p::first-line\n      first line in p\n    \n    \n      p:first-of-type\n      first of some type\n    \n    \n      p:last-of-type\n      last of some type\n    \n    \n      p:lang(en)\n      p with en language attribute\n    \n    \n      :not(span)\n      element that’s not a span\n    \n    \n      p:first-child\n      first child of its parent\n    \n    \n      p:last-child\n      last child of its parent\n    \n    \n      p:nth-child(2)\n      second child of its parent\n    \n    \n      p:nth-child(3n+1)\n      nth-child (an + b) formula\n    \n    \n      p:nth-last-child(2)\n      second child from behind\n    \n    \n      p:nth-of-type(2)\n      second p of its parent\n    \n    \n      p:nth-last-of-type(2)\n      …from behind\n    \n    \n      p:only-of-type\n      unique of its parent\n    \n    \n      p:only-child\n      only child of its parent\n    \n    \n      :root\n      documents root element\n    \n    \n      ::selection\n      portion selected by user\n    \n    \n      :target\n      highlight active anchor\n    \n  \n\n\nVariables in CSS\n\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n:root {\n--primary: #1e90ff;\n--secondary: #ffffff;\n}\nh1 {\ncolor: var(--primary);\n}\nh2 {\ncolor: var(--secondary);\n}\n\n\nLayouts\n\n\n  Float\n  Flex\n  Grid\n\n\nSASS\n\n\n",
+            "datePublished": "2022-07-06 06:30:00 +0000",
+            "dateModified": "2022-07-06 06:30:00 +0000",
+            "image": [
+                "http://source.unsplash.com/100x100/?css,webstyling",
+                "http://source.unsplash.com/400x300/?css,webstyling",
+                "http://source.unsplash.com/1600x900/?css,webstyling"
+            ],
+            "author": {
+                "@type": "Person",
+                "name": {"name":"Baiju Dodhia","url":"https://baijudodhia.github.io/"},
+                "url": "https://baijudodhia.github.io/"
+            },
+            "publisher": {
+                "@type": "Professional",
+                "name": {"name":"Baiju Dodhia","url":"https://baijudodhia.github.io/"},
+                "url": "https://baijudodhia.github.io/"
+            },
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://baijudodhia.github.io/technology/css-basics/"
+            }
+        }
+    </script>
+    
+</head><body>
+    <div id="body-header"><div class="header-container">
+  <div class="header">
+    <button onclick="toggleSidebar()" class="header-toggler" aria-label="Menu">
+      <span class="header-toggler-bar"></span>
+      <span class="header-toggler-bar"></span>
+      <span class="header-toggler-bar"></span>
+    </button>
+    <div class="header-logo">
+        <img src=/blog/assets/logo/logo.png alt="The Tech Blog Logo" width="24" height="24"/>
+        <a href="/blog/">
+            Blog
+        </a>
+    </div>
+    <div class="header-nav">
+        
+        <div class="header-nav-link">
+            <a href="/blog/" class="header-nav-link-item ">Home</a>
+        </div>
+        <div class="header-nav-link">
+            <a href="/blog/category" class="header-nav-link-item ">Category</a>
+        </div>
+        <div class="header-nav-link">
+            <a href="/blog/tag" class="header-nav-link-item ">Tag</a>
+        </div>
+    </div>
+    <div class="header-misc">
+        <div class="header-search-container">
+            <a class="header-search-btn" href="/blog/search" aria-label="Search" title="Search">
+                <i aria-hidden="true" class='fa fa-search'></i>
+            </a>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+    <div id="content">
+        <div id="body-sidebar"><div id="sidebar-container">
+    <div id="sidebar">
+        <div class="sidebar-nav">
+            
+            <div class="sidebar-nav-link">
+                <a href="/blog/"
+                    class="sidebar-nav-link-item ">Home</a>
+            </div>
+            <div class="sidebar-nav-link">
+                <a href="/blog/category"
+                    class="sidebar-nav-link-item ">Category</a>
+            </div>
+            <div class="sidebar-nav-link">
+                <a href="/blog/tag"
+                    class="sidebar-nav-link-item ">Tag</a>
+            </div>
+        </div>
+        <div class="sidebar-footer">
+            <a class="sidebar-footer-link" rel="noopener" href="https://baijudodhia.github.io?utm_source=blog&utm_medium=sidebar"
+                target="_blank">
+                <i aria-hidden="true" class="fa fa-globe"></i>
+                <span>baijudodhia.github.io</span>
+            </a>
+            <a class="sidebar-footer-link" rel="noopener" href="https://www.github.com/baijudodhia/" target="_blank">
+                <i aria-hidden="true" class="fa fa-github"></i>
+                <span>baijudodhia</span>
+            </a>
+            <a class="sidebar-footer-link" rel="noopener" href="https://www.linkedin.com/in/baijudodhia/" target="_blank">
+                <i aria-hidden="true" class="fa fa-linkedin"></i>
+                <span>baijudodhia</span>
+            </a>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener("click", (e) => {
+        if (document.getElementById("sidebar-container").contains(e.target)) {
+            document
+                .getElementById("sidebar-container")
+                .classList
+                .remove("show");
+            document
+                .querySelector(".header-toggler")
+                .classList
+                .remove("active");
+        }
+    });
+</script>
+</div>
+        <div id="body-main">
+            <main>
+                <div class="post">
+    <div class="post-header">
+        <div class="post-header-container">
+            <div class="post-title">
+                CSS Basics
+            </div>
+            <div class="post-date">
+                posted on
+                <b>
+                    <time class="dt-published" datetime="2022-07-06T06:30:00+00:00" itemprop="datePublished">Jul 6, 2022
+                    </time>
+                </b>
+            </div>
+            <div class="post-author">
+                by <b>Baiju Dodhia</b>
+            </div>
+            <div></div>
+            <div class="post-tags">
+                
+                    
+    
+    
+    <a class="badge-tag" href='/blog/tag/css' title=css rel="noopener">css</a>
+
+
+                
+                    
+    
+    
+    <a class="badge-tag" href='/blog/tag/web-styling' title=web-styling rel="noopener">web styling</a>
+
+
+                
+            </div>
+        </div>
+    </div>
+    <div class="post-body">
+        <div class="post-content">
+            <h3 id="box-model">Box Model</h3>
+
+<p><img src="https://baijudodhia.github.io/blog/assets/images/css-basics/css-box-model.png" alt="CSS Box Model" /></p>
+
+<h3 id="selectors">Selectors</h3>
+
+<table class="custom-table">
+  <thead>
+    <tr>
+      <th style="text-align: center">Selector</th>
+      <th style="text-align: center">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">_</td>
+      <td style="text-align: center">all elements</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">div</td>
+      <td style="text-align: center">all div tags</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">div,p</td>
+      <td style="text-align: center">all divs and paragraphs</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">div p</td>
+      <td style="text-align: center">paragraphs inside divs</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">div &gt; p</td>
+      <td style="text-align: center">all p tags, one level deep in div</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">div + p</td>
+      <td style="text-align: center">p tags immediately after div</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">div ~ p</td>
+      <td style="text-align: center">p tags preceded by div</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">.classname</td>
+      <td style="text-align: center">all elements with class</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">#idname</td>
+      <td style="text-align: center">element with ID</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">div.classname</td>
+      <td style="text-align: center">divs with certain classname</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">div#idname</td>
+      <td style="text-align: center">div with certain ID</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">#idname _</td>
+      <td style="text-align: center">all elements inside #idname</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="attribute-selectors">Attribute Selectors</h3>
+
+<table class="custom-table">
+  <thead>
+    <tr>
+      <th style="text-align: center">Selector</th>
+      <th style="text-align: center">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">a[target]</td>
+      <td style="text-align: center">links with a target attribute</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">a[target=”_blank”]</td>
+      <td style="text-align: center">links which open in new tab</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">[title~=”chair”]</td>
+      <td style="text-align: center">title element containing a word</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">[class^=”chair”]</td>
+      <td style="text-align: center">class starts with chair</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">[class | =”chair”]</td>
+      <td style="text-align: center">class starts with the chair word</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">[class*=”chair”]</td>
+      <td style="text-align: center">class contains chair</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">[class$=”chair”]</td>
+      <td style="text-align: center">class ends with chair</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">input[type=”button”]</td>
+      <td style="text-align: center">specified input type</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="pseudo-selectors">Pseudo Selectors</h3>
+
+<table class="custom-table">
+  <thead>
+    <tr>
+      <th style="text-align: center">Selector</th>
+      <th style="text-align: center">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">a:link</td>
+      <td style="text-align: center">link in normal state</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">a:active</td>
+      <td style="text-align: center">link in clicked state</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">a:hover</td>
+      <td style="text-align: center">link with mouse over it</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">a:visited</td>
+      <td style="text-align: center">visited link</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">p::after{content:”Hello World”;}</td>
+      <td style="text-align: center">add content after p</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">p::before</td>
+      <td style="text-align: center">add content before p</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">input:checked</td>
+      <td style="text-align: center">checked inputs</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">input:disabled</td>
+      <td style="text-align: center">disabled inputs</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">input:enabled</td>
+      <td style="text-align: center">enabled inputs</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">input:focus</td>
+      <td style="text-align: center">input has focus</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">input:in-range</td>
+      <td style="text-align: center">value in range</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">input:out-of-range</td>
+      <td style="text-align: center">input value out of range</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">input:valid</td>
+      <td style="text-align: center">input with valid value</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">input:invalid</td>
+      <td style="text-align: center">input with invalid value</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">input:optional</td>
+      <td style="text-align: center">no required attribute</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">input:required</td>
+      <td style="text-align: center">input with requred attribute</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">input:read-only</td>
+      <td style="text-align: center">with readonly attribute</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">input:read-write</td>
+      <td style="text-align: center">no readonly attrib.</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">div:empty</td>
+      <td style="text-align: center">element with no children</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">p::first-letter</td>
+      <td style="text-align: center">first letter in p</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">p::first-line</td>
+      <td style="text-align: center">first line in p</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">p:first-of-type</td>
+      <td style="text-align: center">first of some type</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">p:last-of-type</td>
+      <td style="text-align: center">last of some type</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">p:lang(en)</td>
+      <td style="text-align: center">p with en language attribute</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">:not(span)</td>
+      <td style="text-align: center">element that’s not a span</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">p:first-child</td>
+      <td style="text-align: center">first child of its parent</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">p:last-child</td>
+      <td style="text-align: center">last child of its parent</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">p:nth-child(2)</td>
+      <td style="text-align: center">second child of its parent</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">p:nth-child(3n+1)</td>
+      <td style="text-align: center">nth-child (an + b) formula</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">p:nth-last-child(2)</td>
+      <td style="text-align: center">second child from behind</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">p:nth-of-type(2)</td>
+      <td style="text-align: center">second p of its parent</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">p:nth-last-of-type(2)</td>
+      <td style="text-align: center">…from behind</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">p:only-of-type</td>
+      <td style="text-align: center">unique of its parent</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">p:only-child</td>
+      <td style="text-align: center">only child of its parent</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">:root</td>
+      <td style="text-align: center">documents root element</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">::selection</td>
+      <td style="text-align: center">portion selected by user</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">:target</td>
+      <td style="text-align: center">highlight active anchor</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="variables-in-css">Variables in CSS</h3>
+
+<figure class="highlight"><pre><code class="language-css" data-lang="css"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="code"><pre><span class="nd">:root</span> <span class="p">{</span>
+<span class="py">--primary</span><span class="p">:</span> <span class="m">#1e90ff</span><span class="p">;</span>
+<span class="py">--secondary</span><span class="p">:</span> <span class="m">#ffffff</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">h1</span> <span class="p">{</span>
+<span class="nl">color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--primary</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nt">h2</span> <span class="p">{</span>
+<span class="nl">color</span><span class="p">:</span> <span class="n">var</span><span class="p">(</span><span class="n">--secondary</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<h3 id="layouts">Layouts</h3>
+
+<ul>
+  <li>Float</li>
+  <li>Flex</li>
+  <li>Grid</li>
+</ul>
+
+<h3 id="sass">SASS</h3>
+
+<p><img src="https://baijudodhia.github.io/blog/assets/images/css-basics/sass-cheatsheet.jpg" alt="CSS Box Model" /></p>
+
+        </div>
+    </div>
+    <div class="post-divider"></div><div class="next-prev-post"><div>
+            
+            <a class="anchor next-prev-post-btn" title="Previous Post" href=/blog/technology/javascript-basics/ rel="noopener">
+    
+    
+        <div>
+            <i aria-hidden="true" class='fa fa-arrow-left'></i>
+        </div>
+    
+</a>
+        </div><div>
+        <button   title=Random Post  class="button next-prev-post-btn" onclick=redirectToRandomBlog();>
+    
+    
+        <div>
+            <i aria-hidden="true" class='fa fa-random'></i>
+        </div>
+    
+</button>
+    </div><div>
+            
+            <a class="anchor next-prev-post-btn" title="Next Post" href=/blog/technology/reactjs-basics/ rel="noopener">
+    
+    
+        <div>
+            <i aria-hidden="true" class='fa fa-arrow-right'></i>
+        </div>
+    
+</a>
+        </div></div></div>
+            </main><footer class="footer">
+    <div class="footer-links">
+        <a class="footer-link" rel="noopener" href="https://baijudodhia.github.io?utm_source=blog&utm_medium=footer" target="_blank">
+            <i aria-hidden="true" class="fa fa-globe"></i>
+            <span>baijudodhia.github.io</span>
+        </a>
+        <a class="footer-link" rel="noopener" href="https://www.github.com/baijudodhia/" target="_blank">
+            <i aria-hidden="true" class="fa fa-github"></i>
+            <span>baijudodhia</span>
+        </a>
+        <a class="footer-link" rel="noopener" href="https://www.linkedin.com/in/baijudodhia/" target="_blank">
+            <i aria-hidden="true" class="fa fa-linkedin"></i>
+            <span>baijudodhia</span>
+        </a>
+    </div>
+</footer></div>
+    </div>
+</body></html>

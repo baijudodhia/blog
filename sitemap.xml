@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    <url>
+        <loc>https://baijudodhia.github.io</loc>
+        <priority>1.00</priority>
+        <lastmod>2022-01-31T10:57:28+00:00</lastmod>
+    </url>
+    <url>
+        <loc>https://baijudodhia.github.io/blog</loc>
+        <priority>1.00</priority>
+        <lastmod>2022-01-31T10:57:28+00:00</lastmod>
+    </url>
+    <url>
+        <loc>https://baijudodhia.github.io/blog/category</loc>
+        <priority>0.80</priority>
+        <lastmod>2022-01-31T10:57:28+00:00</lastmod>
+    </url>
+    <url>
+        <loc>https://baijudodhia.github.io/blog/tag</loc>
+        <priority>0.80</priority>
+        <lastmod>2022-01-31T10:57:28+00:00</lastmod>
+    </url>
+    <url>
+        <loc>https://baijudodhia.github.io/blog/search</loc>
+        <priority>0.80</priority>
+        <lastmod>2022-01-31T10:57:28+00:00</lastmod>
+    </url>
+    
+        
+            <url>
+                <loc>https://baijudodhia.github.io/blog/technology/remove-bloatware-from-android-using-adb/</loc>
+                <priority>0.64</priority>
+                <lastmod>2022-08-13T06:30:00+00:00</lastmod>
+            </url>
+        
+    
+        
+            <url>
+                <loc>https://baijudodhia.github.io/blog/technology/reactjs-basics/</loc>
+                <priority>0.64</priority>
+                <lastmod>2022-07-06T06:30:00+00:00</lastmod>
+            </url>
+        
+    
+        
+            <url>
+                <loc>https://baijudodhia.github.io/blog/technology/css-basics/</loc>
+                <priority>0.64</priority>
+                <lastmod>2022-07-06T06:30:00+00:00</lastmod>
+            </url>
+        
+    
+        
+            <url>
+                <loc>https://baijudodhia.github.io/blog/technology/javascript-basics/</loc>
+                <priority>0.64</priority>
+                <lastmod>2022-07-05T06:30:00+00:00</lastmod>
+            </url>
+        
+    
+        
+            <url>
+                <loc>https://baijudodhia.github.io/blog/business/startup-terminology/</loc>
+                <priority>0.64</priority>
+                <lastmod>2022-04-04T07:00:00+00:00</lastmod>
+            </url>
+        
+    
+        
+            <url>
+                <loc>https://baijudodhia.github.io/blog/technology/github-action-for-nodejs-package/</loc>
+                <priority>0.64</priority>
+                <lastmod>2022-04-04T06:30:00+00:00</lastmod>
+            </url>
+        
+    
+        
+            <url>
+                <loc>https://baijudodhia.github.io/blog/business/finance-terminology/</loc>
+                <priority>0.64</priority>
+                <lastmod>2022-04-04T06:00:00+00:00</lastmod>
+            </url>
+        
+    
+        
+            <url>
+                <loc>https://baijudodhia.github.io/blog/technology/vscode-snippet-webcomponents/</loc>
+                <priority>0.64</priority>
+                <lastmod>2022-01-13T08:30:00+00:00</lastmod>
+            </url>
+        
+    
+        
+            <url>
+                <loc>https://baijudodhia.github.io/blog/technology/vscode-snippets-guide/</loc>
+                <priority>0.64</priority>
+                <lastmod>2022-01-13T07:25:00+00:00</lastmod>
+            </url>
+        
+    
+        
+            <url>
+                <loc>https://baijudodhia.github.io/blog/technology/code-syntax-highlight-in-jekyll-markdown/</loc>
+                <priority>0.64</priority>
+                <lastmod>2021-12-11T17:49:44+00:00</lastmod>
+            </url>
+        
+    
+        
+            <url>
+                <loc>https://baijudodhia.github.io/blog/technology/photoml-android-app/</loc>
+                <priority>0.64</priority>
+                <lastmod>2021-12-10T15:55:02+00:00</lastmod>
+            </url>
+        
+    
+        
+            <url>
+                <loc>https://baijudodhia.github.io/blog/technology/jekyll-setup-guide/</loc>
+                <priority>0.64</priority>
+                <lastmod>2021-12-06T15:55:02+00:00</lastmod>
+            </url>
+        
+    
+</urlset>

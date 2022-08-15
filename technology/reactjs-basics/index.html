@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en"><head>
+    
+
+    
+    
+    
+    
+    
+
+    <title>ReactJS Basics | Blog - Baiju Dodhia</title>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta name="author" content="Baiju Dodhia" />
+    <meta name="color-scheme" content="light">
+    <meta name="copyright" content="Baiju Dodhia" />
+    <meta name="description" content="Blog post about technology, reactjs, jsx etc. Basic understanding of ReactJS" />
+    <meta name="designer" content="Baiju Dodhia" />
+    <meta name="geo.region" content="IN" />
+    <meta name="keywords" content="technology, reactjs, jsx" />
+    <meta name="language" content="EN" />
+    <meta name="owner" content="Baiju Dodhia" />
+    <meta name="robots" content="INDEX, FOLLOW" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    
+    
+    <!-- Open Graph -->
+    <meta property="article:author" content="Baiju Dodhia" />
+    <meta property="article:published_time" content="2022-07-06 06:30:00 +0000" />
+    <meta property="article:publisher" content="https://baijudodhia.github.io/" />
+    <meta property="og:description" content="Blog post about technology, reactjs, jsx etc. Basic understanding of ReactJS">
+    <meta property="og:image" content="https://baijudodhia.github.io/blog/assets/social-media-preview/social-preview.png"/>
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:site_name" content="ReactJS Basics">
+    <meta property="og:title" content="ReactJS Basics">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://baijudodhia.github.io/blog/technology/reactjs-basics/">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:description" content="Blog post about technology, reactjs, jsx etc. Basic understanding of ReactJS" />
+    <meta property="twitter:image" content="https://baijudodhia.github.io/blog/assets/social-media-preview/social-preview.png"/>
+    <meta property="twitter:site" content="https://baijudodhia.github.io/blog/" />
+    <meta property="twitter:title" content="ReactJS Basics">
+    <meta property="twitter:url" content="https://baijudodhia.github.io/blog/" />
+
+    <!-- Analytics -->
+    <script src="/blog/assets/scripts/analytics.js"></script>
+
+    
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/assets/main.css">
+    <link rel="stylesheet" href="/blog/assets/styles/syntax-fruity.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/blog/assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/blog/assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/blog/assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/blog/assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/blog/assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/blog/assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/blog/assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/blog/assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/blog/assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/blog/assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/blog/assets/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/blog/assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Scripts -->
+    <script src="/blog/assets/scripts/main.js"></script>
+
+    
+    
+    <!-- Post Schema -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "url": "https://baijudodhia.github.io/blog/technology/reactjs-basics/",
+            "name": "ReactJS Basics",
+            "headline": "ReactJS Basics",
+            "keywords": "technology, reactjs, jsx",
+            "description": "Blog post about technology, reactjs, jsx etc. Basic understanding of ReactJS",
+            "articleBody": "\n\n#1 - What Is React?\n\n  React is a library for building user interfaces.\n  React runs on the client as a SPA(Single Page App), but can be used to build full stack apps by communicating with a server/API (eg. MERN stack).\n  React is often referred to as a front-end “framework” because it is capable and directly comparable to a framework such as Angular or Vue.\n\n\n#2 - Why Would You Use React?\n\n  Structure the “view” layer of your application\n  Reusable components with their own state\n  JSX - Dynamic markup\n  Interactive Uls with Virtual DOM\n  Performance &amp; testing\n  Very popular in the industry.\n\n\n#3 - What should you know first?\n\n  You should have a good handle on JavaScript. I would not suggest jumping into React without learning JavaScript first\n  Data types, variables, functions, loops, etc\n  Promises &amp; asynchronous programming\n  Array methods like forEach(), filter(), map() etc.\n  Fetch API &amp; making HTTP requests\n\n\n#4 - UI Components\n\n  When using React, think of your UI as a bunch of separate components\n\n\n#5 – Components\n\n  Components are self-contained reusable building blocks of web application.\n  React components are basically just idempotent functions (same input produces same output).\n  They describe your UI at any point in time, just like a server-rendered app.\n\n\n#6 – Props\n\n  Passed down to component from parent component and represents data for the component and accessed via this.props (In Class Based)\n\n\n#7 – State\n\n  Represents internal state of the component\n  Accessed via this.state (In Class Based)\n  When a component’s state data changes, the rendered markup will be updated by re-invoking render() method\n\n\n#8 – JSX (JavascriptXML)\n\n  Arguably, one of the coolest things in React\n  XML-like syntax for generating component’s HTML\n  Easier to read and understand large DOM trees\n  Translates to plain JavaScript using react-tools\n\n\n#9 - Virtual DOM\n\n  The virtual DOM is used for efficient re-rendering of the DOM\n  React aims to re-render the virtual tree only when the state changes\n  Uses 2 virtual trees (new and previous) to find differences and batch update real DOM\n  Observes data changes (setState) and does dirty-checking to know when to re-render component\n  Whenever possible, does not update entire component in real DOM - only computes a patch operation that updates part of the DOM.\n\n\n#10 - Components: function vs. class\na. Function\n\n1\n2\n3\n4\n5\n6\n7\nexport const MyComponent = () =&gt; {\n\treturn (\n        &lt;div&gt;\n            &lt;h1&gt;My component&lt;/h1&gt;\n        &lt;/div&gt;\n    )\n}\n\n\nb. Class\n\n1\n2\n3\n4\n5\n6\n7\n8\n9\nexport default class MyComponent extends React.Component {\n\trender() {\n\t\treturn (\n\t\t\t&lt;div&gt;\n\t\t\t\t&lt;h1&gt;My component&lt;/h1&gt;\n\t\t\t&lt;/div&gt;\n        )\t\n    }\n}\n\n\n\n  Components render/return JSX (JavaScript Syntax Extension)\n  Components can also take in “props”:\n\n\n1\n&lt;MyComponent text=\"My Text\" /&gt;\n\n\n#11 - Working With State\n\n  Components can have “state” which is an object that determines how a component renders and behaves\n  “App” or “global” state refers to state that is available to the entire Ul, not just a single component.\n  Prior to React 16.8, we had to use class based components to use state. Now we can use functional components with hooks.\n\n\n#12 - React Hooks\n\n  React Hooks are functions that let us hook into the React state and  lifecycle features from function components .\n  Type of Hooks –\n    \n      useState: To manage states. Returns a stateful value and an updater function to update it.\n      useEffect: To manage side-effects like API calls, subscriptions, timers, mutations, and more.\n      useContext: To return the current value for a context.\n      useReducer: A useState alternative to help with complex state management.\n      useCallback: It returns a memorized version of a callback to help a child component not re-render unnecessarily.\n      useMemo: It returns a memoized value that helps in performance optimizations.\n      useRef: It returns a ref object with a ‘.current’ property. The ref object is mutable. It is mainly used to access a child component imperatively.\n      useLayoutEffect: It fires at the end of all DOM mutations. It’s best to use useEffect as much as possible over this one as the useLayoutEffect fires synchronously.\n      useDebugValue: Helps to display a label in React DevTools for custom hooks.\n    \n  \n  You can also create your own custom hooks.\n\n\n#13 - Lifecycle Method\n\n  First, let’s take a look at how it’s been done traditionally. As you probably know, each React component has a life cycle, which consists of three phases:\n    \n      Mounting, that is putting inserting elements into the DOM.\n        \n          Class based – componentDidMount()\n          Function based – useEffect with empty dependencies.\n        \n      \n      Updating, which involves methods for updating components in the DOM.\n        \n          Class based – componentDidUpdate()\n          Function based – useEffect with dependencies.\n        \n      \n      Unmounting, that is removing a component from the DOM.\n        \n          Class based – componentWillUnmount()\n          Function based – useEffect with empty dependencies and return statement.\n        \n      \n    \n  \n\n\n#14 – Data Flow in React\n\n  In a React application, data typically flows from a parent component to a child component, using props. For Eg.\n\n\n1\n&lt;MyComponent myProp={'somevalue'} /&gt;\n\n\n\n  If you pass a function to the child component, you can however change the state of the parent component from a child component:\n\n\n1\n2\nconst [count, setCount] = useState(0);\n&lt;MyComponent set_count={setCount} /&gt;\n\n\n\n  Inside the MyComponent we can now grab the setFunct prop and call it to update the funct state in the parent component, when something happens:\n\n\n1\n2\n3\n4\n5\nfunction Counter({ set_count }) {\n //...\n set_count(1);\n //...\n}\n\n\n\n  There are more advanced ways to manage data, which include the Context API and libraries like Redux, but those introduce more complexity but are useful as the application/project size increases.\n\n\n#15 - Handling user events in React\n\n  React provides an easy way to manage events fired from DOM events like clicks, form events and more.\n  Understanding about click events which are quite simple. You can use the ‘onClick’ attribute on any JSX element:\n\n\n1\n2\n3\n4\n5\n6\n7\n&lt;button\n    onClick={(event) =&gt; {\n    /* handle the event */\n    }}\n&gt;\n    Click here\n&lt;/button&gt;\n\n\n\n  When the element is clicked, the function passed to the onClick attribute is fired.\n  You can define this function outside of the JSX. When the click event is fired on the button, React calls the event handler function.\n\n\n1\n2\n3\n4\n5\n6\nconst handleClickEvent = (event) =&gt; {\n  /* handle the event */\n}\nfunction App() {\n  return &lt;button onClick={handleClickEvent}&gt;Click he\n}\n\n\n\n  React supports a vast amount of types of events, like onKeyUp, onFocus, onChange, onMouseDown, onSubmit and many more.\n\n\n#16 – Prominent Libraries used along with ReactJS.\n\n  react-router-dom → Used for routing.\n  styled-components → Used for writing CSS inside JS.\n  axios → Promise based HTTP client.\n  redux → Managing and centralizing application state\n  react-testing-library → Testing react components.\n  react-transition-group → Animation Library for React.\n\n",
+            "datePublished": "2022-07-06 06:30:00 +0000",
+            "dateModified": "2022-07-06 06:30:00 +0000",
+            "image": [
+                "http://source.unsplash.com/100x100/?reactjs,jsx",
+                "http://source.unsplash.com/400x300/?reactjs,jsx",
+                "http://source.unsplash.com/1600x900/?reactjs,jsx"
+            ],
+            "author": {
+                "@type": "Person",
+                "name": {"name":"Baiju Dodhia","url":"https://baijudodhia.github.io/"},
+                "url": "https://baijudodhia.github.io/"
+            },
+            "publisher": {
+                "@type": "Professional",
+                "name": {"name":"Baiju Dodhia","url":"https://baijudodhia.github.io/"},
+                "url": "https://baijudodhia.github.io/"
+            },
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://baijudodhia.github.io/technology/reactjs-basics/"
+            }
+        }
+    </script>
+    
+</head><body>
+    <div id="body-header"><div class="header-container">
+  <div class="header">
+    <button onclick="toggleSidebar()" class="header-toggler" aria-label="Menu">
+      <span class="header-toggler-bar"></span>
+      <span class="header-toggler-bar"></span>
+      <span class="header-toggler-bar"></span>
+    </button>
+    <div class="header-logo">
+        <img src=/blog/assets/logo/logo.png alt="The Tech Blog Logo" width="24" height="24"/>
+        <a href="/blog/">
+            Blog
+        </a>
+    </div>
+    <div class="header-nav">
+        
+        <div class="header-nav-link">
+            <a href="/blog/" class="header-nav-link-item ">Home</a>
+        </div>
+        <div class="header-nav-link">
+            <a href="/blog/category" class="header-nav-link-item ">Category</a>
+        </div>
+        <div class="header-nav-link">
+            <a href="/blog/tag" class="header-nav-link-item ">Tag</a>
+        </div>
+    </div>
+    <div class="header-misc">
+        <div class="header-search-container">
+            <a class="header-search-btn" href="/blog/search" aria-label="Search" title="Search">
+                <i aria-hidden="true" class='fa fa-search'></i>
+            </a>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+    <div id="content">
+        <div id="body-sidebar"><div id="sidebar-container">
+    <div id="sidebar">
+        <div class="sidebar-nav">
+            
+            <div class="sidebar-nav-link">
+                <a href="/blog/"
+                    class="sidebar-nav-link-item ">Home</a>
+            </div>
+            <div class="sidebar-nav-link">
+                <a href="/blog/category"
+                    class="sidebar-nav-link-item ">Category</a>
+            </div>
+            <div class="sidebar-nav-link">
+                <a href="/blog/tag"
+                    class="sidebar-nav-link-item ">Tag</a>
+            </div>
+        </div>
+        <div class="sidebar-footer">
+            <a class="sidebar-footer-link" rel="noopener" href="https://baijudodhia.github.io?utm_source=blog&utm_medium=sidebar"
+                target="_blank">
+                <i aria-hidden="true" class="fa fa-globe"></i>
+                <span>baijudodhia.github.io</span>
+            </a>
+            <a class="sidebar-footer-link" rel="noopener" href="https://www.github.com/baijudodhia/" target="_blank">
+                <i aria-hidden="true" class="fa fa-github"></i>
+                <span>baijudodhia</span>
+            </a>
+            <a class="sidebar-footer-link" rel="noopener" href="https://www.linkedin.com/in/baijudodhia/" target="_blank">
+                <i aria-hidden="true" class="fa fa-linkedin"></i>
+                <span>baijudodhia</span>
+            </a>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener("click", (e) => {
+        if (document.getElementById("sidebar-container").contains(e.target)) {
+            document
+                .getElementById("sidebar-container")
+                .classList
+                .remove("show");
+            document
+                .querySelector(".header-toggler")
+                .classList
+                .remove("active");
+        }
+    });
+</script>
+</div>
+        <div id="body-main">
+            <main>
+                <div class="post">
+    <div class="post-header">
+        <div class="post-header-container">
+            <div class="post-title">
+                ReactJS Basics
+            </div>
+            <div class="post-date">
+                posted on
+                <b>
+                    <time class="dt-published" datetime="2022-07-06T06:30:00+00:00" itemprop="datePublished">Jul 6, 2022
+                    </time>
+                </b>
+            </div>
+            <div class="post-author">
+                by <b>Baiju Dodhia</b>
+            </div>
+            <div></div>
+            <div class="post-tags">
+                
+                    
+    
+    
+    <a class="badge-tag" href='/blog/tag/reactjs' title=reactjs rel="noopener">reactjs</a>
+
+
+                
+                    
+    
+    
+    <a class="badge-tag" href='/blog/tag/jsx' title=jsx rel="noopener">jsx</a>
+
+
+                
+            </div>
+        </div>
+    </div>
+    <div class="post-body">
+        <div class="post-content">
+            <p><img src="https://source.unsplash.com/1600x600/?reactjs,code" alt="Wallpaper" /></p>
+
+<h3 id="1---what-is-react">#1 - What Is React?</h3>
+<ul>
+  <li>React is a library for building user interfaces.</li>
+  <li>React runs on the client as a SPA(Single Page App), but can be used to build full stack apps by communicating with a server/API (eg. MERN stack).</li>
+  <li>React is often referred to as a front-end “framework” because it is capable and directly comparable to a framework such as Angular or Vue.</li>
+</ul>
+
+<h3 id="2---why-would-you-use-react">#2 - Why Would You Use React?</h3>
+<ul>
+  <li>Structure the “view” layer of your application</li>
+  <li>Reusable components with their own state</li>
+  <li>JSX - Dynamic markup</li>
+  <li>Interactive Uls with Virtual DOM</li>
+  <li>Performance &amp; testing</li>
+  <li>Very popular in the industry.</li>
+</ul>
+
+<h3 id="3---what-should-you-know-first">#3 - What should you know first?</h3>
+<ul>
+  <li>You should have a good handle on JavaScript. I would not suggest jumping into React without learning JavaScript first</li>
+  <li>Data types, variables, functions, loops, etc</li>
+  <li>Promises &amp; asynchronous programming</li>
+  <li>Array methods like forEach(), filter(), map() etc.</li>
+  <li>Fetch API &amp; making HTTP requests</li>
+</ul>
+
+<h3 id="4---ui-components">#4 - UI Components</h3>
+<ul>
+  <li>When using React, think of your UI as a bunch of separate components</li>
+</ul>
+
+<h3 id="5--components">#5 – Components</h3>
+<ul>
+  <li>Components are self-contained reusable building blocks of web application.</li>
+  <li>React components are basically just idempotent functions (same input produces same output).</li>
+  <li>They describe your UI at any point in time, just like a server-rendered app.</li>
+</ul>
+
+<h3 id="6--props">#6 – Props</h3>
+<ul>
+  <li>Passed down to component from parent component and represents data for the component and accessed via this.props (In Class Based)</li>
+</ul>
+
+<h3 id="7--state">#7 – State</h3>
+<ul>
+  <li>Represents internal state of the component</li>
+  <li>Accessed via this.state (In Class Based)</li>
+  <li>When a component’s state data changes, the rendered markup will be updated by re-invoking render() method</li>
+</ul>
+
+<h3 id="8--jsx-javascriptxml">#8 – JSX (JavascriptXML)</h3>
+<ul>
+  <li>Arguably, one of the coolest things in React</li>
+  <li>XML-like syntax for generating component’s HTML</li>
+  <li>Easier to read and understand large DOM trees</li>
+  <li>Translates to plain JavaScript using react-tools</li>
+</ul>
+
+<h3 id="9---virtual-dom">#9 - Virtual DOM</h3>
+<ul>
+  <li>The virtual DOM is used for efficient re-rendering of the DOM</li>
+  <li>React aims to re-render the virtual tree only when the state changes</li>
+  <li>Uses 2 virtual trees (new and previous) to find differences and batch update real DOM</li>
+  <li>Observes data changes (setState) and does dirty-checking to know when to re-render component</li>
+  <li>Whenever possible, does not update entire component in real DOM - only computes a patch operation that updates part of the DOM.</li>
+</ul>
+
+<h3 id="10---components-function-vs-class">#10 - Components: function vs. class</h3>
+<p>a. Function</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre><span class="k">export</span> <span class="kd">const</span> <span class="nx">MyComponent</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="p">(</span>
+        <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">My</span> <span class="nx">component</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">)</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>b. Class</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="code"><pre><span class="k">export</span> <span class="k">default</span> <span class="kd">class</span> <span class="nx">MyComponent</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+	<span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="p">(</span>
+			<span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+				<span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">My</span> <span class="nx">component</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>			<span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>        <span class="p">)</span>	
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>Components render/return JSX (JavaScript Syntax Extension)</li>
+  <li>Components can also take in “props”:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="o">&lt;</span><span class="nx">MyComponent</span> <span class="nx">text</span><span class="o">=</span><span class="dl">"</span><span class="s2">My Text</span><span class="dl">"</span> <span class="o">/&gt;</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<h3 id="11---working-with-state">#11 - Working With State</h3>
+<ul>
+  <li>Components can have “state” which is an object that determines how a component renders and behaves</li>
+  <li>“App” or “global” state refers to state that is available to the entire Ul, not just a single component.</li>
+  <li>Prior to React 16.8, we had to use class based components to use state. Now we can use functional components with hooks.</li>
+</ul>
+
+<h3 id="12---react-hooks">#12 - React Hooks</h3>
+<ul>
+  <li>React Hooks are functions that let us hook into the React state and  lifecycle features from function components .</li>
+  <li>Type of Hooks –
+    <ul>
+      <li>useState: To manage states. Returns a stateful value and an updater function to update it.</li>
+      <li>useEffect: To manage side-effects like API calls, subscriptions, timers, mutations, and more.</li>
+      <li>useContext: To return the current value for a context.</li>
+      <li>useReducer: A useState alternative to help with complex state management.</li>
+      <li>useCallback: It returns a memorized version of a callback to help a child component not re-render unnecessarily.</li>
+      <li>useMemo: It returns a memoized value that helps in performance optimizations.</li>
+      <li>useRef: It returns a ref object with a ‘.current’ property. The ref object is mutable. It is mainly used to access a child component imperatively.</li>
+      <li>useLayoutEffect: It fires at the end of all DOM mutations. It’s best to use useEffect as much as possible over this one as the useLayoutEffect fires synchronously.</li>
+      <li>useDebugValue: Helps to display a label in React DevTools for custom hooks.</li>
+    </ul>
+  </li>
+  <li>You can also create your own custom hooks.</li>
+</ul>
+
+<h3 id="13---lifecycle-method">#13 - Lifecycle Method</h3>
+<ul>
+  <li>First, let’s take a look at how it’s been done traditionally. As you probably know, each React component has a life cycle, which consists of three phases:
+    <ul>
+      <li>Mounting, that is putting inserting elements into the DOM.
+        <ul>
+          <li>Class based – componentDidMount()</li>
+          <li>Function based – useEffect with empty dependencies.</li>
+        </ul>
+      </li>
+      <li>Updating, which involves methods for updating components in the DOM.
+        <ul>
+          <li>Class based – componentDidUpdate()</li>
+          <li>Function based – useEffect with dependencies.</li>
+        </ul>
+      </li>
+      <li>Unmounting, that is removing a component from the DOM.
+        <ul>
+          <li>Class based – componentWillUnmount()</li>
+          <li>Function based – useEffect with empty dependencies and return statement.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="14--data-flow-in-react">#14 – Data Flow in React</h3>
+<ul>
+  <li>In a React application, data typically flows from a parent component to a child component, using props. For Eg.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+</pre></td><td class="code"><pre><span class="o">&lt;</span><span class="nx">MyComponent</span> <span class="nx">myProp</span><span class="o">=</span><span class="p">{</span><span class="dl">'</span><span class="s1">somevalue</span><span class="dl">'</span><span class="p">}</span> <span class="sr">/&gt;</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>If you pass a function to the child component, you can however change the state of the parent component from a child component:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="kd">const</span> <span class="p">[</span><span class="nx">count</span><span class="p">,</span> <span class="nx">setCount</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="o">&lt;</span><span class="nx">MyComponent</span> <span class="nx">set_count</span><span class="o">=</span><span class="p">{</span><span class="nx">setCount</span><span class="p">}</span> <span class="sr">/&gt;</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>Inside the MyComponent we can now grab the setFunct prop and call it to update the funct state in the parent component, when something happens:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">Counter</span><span class="p">({</span> <span class="nx">set_count</span> <span class="p">})</span> <span class="p">{</span>
+ <span class="c1">//...</span>
+ <span class="nx">set_count</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+ <span class="c1">//...</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>There are more advanced ways to manage data, which include the Context API and libraries like Redux, but those introduce more complexity but are useful as the application/project size increases.</li>
+</ul>
+
+<h3 id="15---handling-user-events-in-react">#15 - Handling user events in React</h3>
+<ul>
+  <li>React provides an easy way to manage events fired from DOM events like clicks, form events and more.</li>
+  <li>Understanding about click events which are quite simple. You can use the ‘onClick’ attribute on any JSX element:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="code"><pre><span class="o">&lt;</span><span class="nx">button</span>
+    <span class="nx">onClick</span><span class="o">=</span><span class="p">{(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="cm">/* handle the event */</span>
+    <span class="p">}}</span>
+<span class="o">&gt;</span>
+    <span class="nx">Click</span> <span class="nx">here</span>
+<span class="o">&lt;</span><span class="sr">/button&gt;</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>When the element is clicked, the function passed to the onClick attribute is fired.</li>
+  <li>You can define this function outside of the JSX. When the click event is fired on the button, React calls the event handler function.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="kd">const</span> <span class="nx">handleClickEvent</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="cm">/* handle the event */</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">handleClickEvent</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Click</span> <span class="nx">he</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>React supports a vast amount of types of events, like onKeyUp, onFocus, onChange, onMouseDown, onSubmit and many more.</li>
+</ul>
+
+<h3 id="16--prominent-libraries-used-along-with-reactjs">#16 – Prominent Libraries used along with ReactJS.</h3>
+<ul>
+  <li>react-router-dom → Used for routing.</li>
+  <li>styled-components → Used for writing CSS inside JS.</li>
+  <li>axios → Promise based HTTP client.</li>
+  <li>redux → Managing and centralizing application state</li>
+  <li>react-testing-library → Testing react components.</li>
+  <li>react-transition-group → Animation Library for React.</li>
+</ul>
+
+        </div>
+    </div>
+    <div class="post-divider"></div><div class="next-prev-post"><div>
+            
+            <a class="anchor next-prev-post-btn" title="Previous Post" href=/blog/technology/css-basics/ rel="noopener">
+    
+    
+        <div>
+            <i aria-hidden="true" class='fa fa-arrow-left'></i>
+        </div>
+    
+</a>
+        </div><div>
+        <button   title=Random Post  class="button next-prev-post-btn" onclick=redirectToRandomBlog();>
+    
+    
+        <div>
+            <i aria-hidden="true" class='fa fa-random'></i>
+        </div>
+    
+</button>
+    </div><div>
+            
+            <a class="anchor next-prev-post-btn" title="Next Post" href=/blog/technology/remove-bloatware-from-android-using-adb/ rel="noopener">
+    
+    
+        <div>
+            <i aria-hidden="true" class='fa fa-arrow-right'></i>
+        </div>
+    
+</a>
+        </div></div></div>
+            </main><footer class="footer">
+    <div class="footer-links">
+        <a class="footer-link" rel="noopener" href="https://baijudodhia.github.io?utm_source=blog&utm_medium=footer" target="_blank">
+            <i aria-hidden="true" class="fa fa-globe"></i>
+            <span>baijudodhia.github.io</span>
+        </a>
+        <a class="footer-link" rel="noopener" href="https://www.github.com/baijudodhia/" target="_blank">
+            <i aria-hidden="true" class="fa fa-github"></i>
+            <span>baijudodhia</span>
+        </a>
+        <a class="footer-link" rel="noopener" href="https://www.linkedin.com/in/baijudodhia/" target="_blank">
+            <i aria-hidden="true" class="fa fa-linkedin"></i>
+            <span>baijudodhia</span>
+        </a>
+    </div>
+</footer></div>
+    </div>
+</body></html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en"><head>
+    
+
+    
+    
+    
+    
+    
+
+    <title>Remove Bloatware from Android usign ADB | Blog - Baiju Dodhia</title>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta name="author" content="Baiju Dodhia" />
+    <meta name="color-scheme" content="light">
+    <meta name="copyright" content="Baiju Dodhia" />
+    <meta name="description" content="Blog post about technology, android, adb, bloatware etc. A guide to removing bloatware from android devices with android debug bridge (adb) command-line tool and no-root required." />
+    <meta name="designer" content="Baiju Dodhia" />
+    <meta name="geo.region" content="IN" />
+    <meta name="keywords" content="technology, android, adb, bloatware" />
+    <meta name="language" content="EN" />
+    <meta name="owner" content="Baiju Dodhia" />
+    <meta name="robots" content="INDEX, FOLLOW" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    
+    
+    <!-- Open Graph -->
+    <meta property="article:author" content="Baiju Dodhia" />
+    <meta property="article:published_time" content="2022-08-13 06:30:00 +0000" />
+    <meta property="article:publisher" content="https://baijudodhia.github.io/" />
+    <meta property="og:description" content="Blog post about technology, android, adb, bloatware etc. A guide to removing bloatware from android devices with android debug bridge (adb) command-line tool and no-root required.">
+    <meta property="og:image" content="https://baijudodhia.github.io/blog/assets/social-media-preview/social-preview.png"/>
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:site_name" content="Remove Bloatware from Android usign ADB">
+    <meta property="og:title" content="Remove Bloatware from Android usign ADB">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://baijudodhia.github.io/blog/technology/remove-bloatware-from-android-using-adb/">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:description" content="Blog post about technology, android, adb, bloatware etc. A guide to removing bloatware from android devices with android debug bridge (adb) command-line tool and no-root required." />
+    <meta property="twitter:image" content="https://baijudodhia.github.io/blog/assets/social-media-preview/social-preview.png"/>
+    <meta property="twitter:site" content="https://baijudodhia.github.io/blog/" />
+    <meta property="twitter:title" content="Remove Bloatware from Android usign ADB">
+    <meta property="twitter:url" content="https://baijudodhia.github.io/blog/" />
+
+    <!-- Analytics -->
+    <script src="/blog/assets/scripts/analytics.js"></script>
+
+    
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/assets/main.css">
+    <link rel="stylesheet" href="/blog/assets/styles/syntax-fruity.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/blog/assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/blog/assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/blog/assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/blog/assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/blog/assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/blog/assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/blog/assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/blog/assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/blog/assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/blog/assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/blog/assets/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/blog/assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Scripts -->
+    <script src="/blog/assets/scripts/main.js"></script>
+
+    
+    
+    <!-- Post Schema -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "url": "https://baijudodhia.github.io/blog/technology/remove-bloatware-from-android-using-adb/",
+            "name": "Remove Bloatware from Android usign ADB",
+            "headline": "Remove Bloatware from Android usign ADB",
+            "keywords": "technology, android, adb, bloatware",
+            "description": "Blog post about technology, android, adb, bloatware etc. A guide to removing bloatware from android devices with android debug bridge (adb) command-line tool and no-root required.",
+            "articleBody": "\n\nRequirements\n\n\n  Android Platform Tools for Windows.\n  Developer Options and USB Debugging Enabled in Android Smartphone.\n\n\nSteps\n\n\n  Connect Android Smartphone to Windows PC/Laptop.\n  Open Command Line/Powershell and change directory to Android Platform Tools folder.\n\n\nCommands\n\n1\n2\n3\n4\n5\n6\n7\n8\nadb start-server # Start the server\nadb devices # Check for connected devices\nadb shell # Enter Shell\npm list packages # List installed packages on connected device\npm list users # List profile currently on connected device [Primary User=0, Work Profile User=11]\npm uninstall --user 0 com.package.name # Uninstall package for User 0\npm disable-user --user 0 com.package.name # Disable package for User 0\npm enable com.package.name # Enable disabled package\n\n\nReferences\n\n\n  Android SDK Platform Tools\n  ADB Shell Commands\n  Reinstall an accidently uninstalled package\n  Bloatware list for MIUI\n  ADB Commands Cheatsheet\n\n",
+            "datePublished": "2022-08-13 06:30:00 +0000",
+            "dateModified": "2022-08-13 06:30:00 +0000",
+            "image": [
+                "http://source.unsplash.com/100x100/?android,adb,bloatware",
+                "http://source.unsplash.com/400x300/?android,adb,bloatware",
+                "http://source.unsplash.com/1600x900/?android,adb,bloatware"
+            ],
+            "author": {
+                "@type": "Person",
+                "name": {"name":"Baiju Dodhia","url":"https://baijudodhia.github.io/"},
+                "url": "https://baijudodhia.github.io/"
+            },
+            "publisher": {
+                "@type": "Professional",
+                "name": {"name":"Baiju Dodhia","url":"https://baijudodhia.github.io/"},
+                "url": "https://baijudodhia.github.io/"
+            },
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://baijudodhia.github.io/technology/remove-bloatware-from-android-using-adb/"
+            }
+        }
+    </script>
+    
+</head><body>
+    <div id="body-header"><div class="header-container">
+  <div class="header">
+    <button onclick="toggleSidebar()" class="header-toggler" aria-label="Menu">
+      <span class="header-toggler-bar"></span>
+      <span class="header-toggler-bar"></span>
+      <span class="header-toggler-bar"></span>
+    </button>
+    <div class="header-logo">
+        <img src=/blog/assets/logo/logo.png alt="The Tech Blog Logo" width="24" height="24"/>
+        <a href="/blog/">
+            Blog
+        </a>
+    </div>
+    <div class="header-nav">
+        
+        <div class="header-nav-link">
+            <a href="/blog/" class="header-nav-link-item ">Home</a>
+        </div>
+        <div class="header-nav-link">
+            <a href="/blog/category" class="header-nav-link-item ">Category</a>
+        </div>
+        <div class="header-nav-link">
+            <a href="/blog/tag" class="header-nav-link-item ">Tag</a>
+        </div>
+    </div>
+    <div class="header-misc">
+        <div class="header-search-container">
+            <a class="header-search-btn" href="/blog/search" aria-label="Search" title="Search">
+                <i aria-hidden="true" class='fa fa-search'></i>
+            </a>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+    <div id="content">
+        <div id="body-sidebar"><div id="sidebar-container">
+    <div id="sidebar">
+        <div class="sidebar-nav">
+            
+            <div class="sidebar-nav-link">
+                <a href="/blog/"
+                    class="sidebar-nav-link-item ">Home</a>
+            </div>
+            <div class="sidebar-nav-link">
+                <a href="/blog/category"
+                    class="sidebar-nav-link-item ">Category</a>
+            </div>
+            <div class="sidebar-nav-link">
+                <a href="/blog/tag"
+                    class="sidebar-nav-link-item ">Tag</a>
+            </div>
+        </div>
+        <div class="sidebar-footer">
+            <a class="sidebar-footer-link" rel="noopener" href="https://baijudodhia.github.io?utm_source=blog&utm_medium=sidebar"
+                target="_blank">
+                <i aria-hidden="true" class="fa fa-globe"></i>
+                <span>baijudodhia.github.io</span>
+            </a>
+            <a class="sidebar-footer-link" rel="noopener" href="https://www.github.com/baijudodhia/" target="_blank">
+                <i aria-hidden="true" class="fa fa-github"></i>
+                <span>baijudodhia</span>
+            </a>
+            <a class="sidebar-footer-link" rel="noopener" href="https://www.linkedin.com/in/baijudodhia/" target="_blank">
+                <i aria-hidden="true" class="fa fa-linkedin"></i>
+                <span>baijudodhia</span>
+            </a>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener("click", (e) => {
+        if (document.getElementById("sidebar-container").contains(e.target)) {
+            document
+                .getElementById("sidebar-container")
+                .classList
+                .remove("show");
+            document
+                .querySelector(".header-toggler")
+                .classList
+                .remove("active");
+        }
+    });
+</script>
+</div>
+        <div id="body-main">
+            <main>
+                <div class="post">
+    <div class="post-header">
+        <div class="post-header-container">
+            <div class="post-title">
+                Remove Bloatware from Android usign ADB
+            </div>
+            <div class="post-date">
+                posted on
+                <b>
+                    <time class="dt-published" datetime="2022-08-13T06:30:00+00:00" itemprop="datePublished">Aug 13, 2022
+                    </time>
+                </b>
+            </div>
+            <div class="post-author">
+                by <b>Baiju Dodhia</b>
+            </div>
+            <div></div>
+            <div class="post-tags">
+                
+                    
+    
+    
+    <a class="badge-tag" href='/blog/tag/android' title=android rel="noopener">android</a>
+
+
+                
+                    
+    
+    
+    <a class="badge-tag" href='/blog/tag/adb' title=adb rel="noopener">adb</a>
+
+
+                
+                    
+    
+    
+    <a class="badge-tag" href='/blog/tag/bloatware' title=bloatware rel="noopener">bloatware</a>
+
+
+                
+            </div>
+        </div>
+    </div>
+    <div class="post-body">
+        <div class="post-content">
+            <p><img src="https://source.unsplash.com/1600x600/?apps,bloatware" alt="Wallpaper" /></p>
+
+<h2 id="requirements">Requirements</h2>
+
+<ol>
+  <li>Android Platform Tools for Windows.</li>
+  <li>Developer Options and USB Debugging Enabled in Android Smartphone.</li>
+</ol>
+
+<h2 id="steps">Steps</h2>
+
+<ol>
+  <li>Connect Android Smartphone to Windows PC/Laptop.</li>
+  <li>Open Command Line/Powershell and change directory to Android Platform Tools folder.</li>
+</ol>
+
+<h2 id="commands">Commands</h2>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre>adb start-server <span class="c"># Start the server</span>
+adb devices <span class="c"># Check for connected devices</span>
+adb shell <span class="c"># Enter Shell</span>
+pm list packages <span class="c"># List installed packages on connected device</span>
+pm list <span class="nb">users</span> <span class="c"># List profile currently on connected device [Primary User=0, Work Profile User=11]</span>
+pm uninstall <span class="nt">--user</span> 0 com.package.name <span class="c"># Uninstall package for User 0</span>
+pm disable-user <span class="nt">--user</span> 0 com.package.name <span class="c"># Disable package for User 0</span>
+pm <span class="nb">enable </span>com.package.name <span class="c"># Enable disabled package</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<h2 id="references">References</h2>
+
+<ol>
+  <li><a href="https://technastic.com/android-sdk-platform-tools-download/">Android SDK Platform Tools</a></li>
+  <li><a href="https://adbshell.com/">ADB Shell Commands</a></li>
+  <li><a href="https://android.stackexchange.com/questions/215313/how-to-reinstall-an-accidentally-uninstalled-app-through-adb/236011#236011">Reinstall an accidently uninstalled package</a></li>
+  <li><a href="https://devcondition.com/article/removing-unneeded-miui-applications/">Bloatware list for MIUI</a></li>
+  <li><a href="https://technastic.com/adb-commands-list-adb-cheat-sheet/">ADB Commands Cheatsheet</a></li>
+</ol>
+
+        </div>
+    </div>
+    <div class="post-divider"></div><div class="next-prev-post"><div>
+            
+            <a class="anchor next-prev-post-btn" title="Previous Post" href=/blog/technology/reactjs-basics/ rel="noopener">
+    
+    
+        <div>
+            <i aria-hidden="true" class='fa fa-arrow-left'></i>
+        </div>
+    
+</a>
+        </div><div>
+        <button   title=Random Post  class="button next-prev-post-btn" onclick=redirectToRandomBlog();>
+    
+    
+        <div>
+            <i aria-hidden="true" class='fa fa-random'></i>
+        </div>
+    
+</button>
+    </div><div>
+            <button   title=Next Post  class="button next-prev-post-btn" onclick=redirectToRandomBlog();>
+    
+    
+        <div>
+            <i aria-hidden="true" class='fa fa-arrow-right'></i>
+        </div>
+    
+</button>
+        </div></div></div>
+            </main><footer class="footer">
+    <div class="footer-links">
+        <a class="footer-link" rel="noopener" href="https://baijudodhia.github.io?utm_source=blog&utm_medium=footer" target="_blank">
+            <i aria-hidden="true" class="fa fa-globe"></i>
+            <span>baijudodhia.github.io</span>
+        </a>
+        <a class="footer-link" rel="noopener" href="https://www.github.com/baijudodhia/" target="_blank">
+            <i aria-hidden="true" class="fa fa-github"></i>
+            <span>baijudodhia</span>
+        </a>
+        <a class="footer-link" rel="noopener" href="https://www.linkedin.com/in/baijudodhia/" target="_blank">
+            <i aria-hidden="true" class="fa fa-linkedin"></i>
+            <span>baijudodhia</span>
+        </a>
+    </div>
+</footer></div>
+    </div>
+</body></html>

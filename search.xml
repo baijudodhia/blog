@@ -1,0 +1,2275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    
+            
+            <url>
+                <loc>https://baijudodhia.github.io/blog/technology/remove-bloatware-from-android-using-adb/</loc>
+                <lastmod>2022-08-13T06:30:00+00:00</lastmod>
+                <title>Remove Bloatware from Android usign ADB</title>
+                <excerpt>A guide to removing bloatware from android devices with android debug bridge (adb) command-line tool and no-root required.</excerpt>
+                <tags>android , adb , bloatware</tags>
+                <category>technology</category>
+                <content>Requirements
+
+
+  Android Platform Tools for Windows.
+  Developer Options and USB Debugging Enabled in Android Smartphone.
+
+
+Steps
+
+
+  Connect Android Smartphone to Windows PC/Laptop.
+  Open Command Line/Powershell and change directory to Android Platform Tools folder.
+
+
+Commands
+
+1
+2
+3
+4
+5
+6
+7
+8
+adb start-server # Start the server
+adb devices # Check for connected devices
+adb shell # Enter Shell
+pm list packages # List installed packages on connected device
+pm list users # List profile currently on connected device [Primary User=0, Work Profile User=11]
+pm uninstall --user 0 com.package.name # Uninstall package for User 0
+pm disable-user --user 0 com.package.name # Disable package for User 0
+pm enable com.package.name # Enable disabled package
+
+
+References
+
+
+  Android SDK Platform Tools
+  ADB Shell Commands
+  Reinstall an accidently uninstalled package
+  Bloatware list for MIUI
+  ADB Commands Cheatsheet</content>
+            </url>
+        
+    
+            
+            <url>
+                <loc>https://baijudodhia.github.io/blog/technology/reactjs-basics/</loc>
+                <lastmod>2022-07-06T06:30:00+00:00</lastmod>
+                <title>ReactJS Basics</title>
+                <excerpt>Basic understanding of ReactJS</excerpt>
+                <tags>reactjs , jsx</tags>
+                <category>technology</category>
+                <content>#1 - What Is React?
+
+  React is a library for building user interfaces.
+  React runs on the client as a SPA(Single Page App), but can be used to build full stack apps by communicating with a server/API (eg. MERN stack).
+  React is often referred to as a front-end “framework” because it is capable and directly comparable to a framework such as Angular or Vue.
+
+
+#2 - Why Would You Use React?
+
+  Structure the “view” layer of your application
+  Reusable components with their own state
+  JSX - Dynamic markup
+  Interactive Uls with Virtual DOM
+  Performance &amp; testing
+  Very popular in the industry.
+
+
+#3 - What should you know first?
+
+  You should have a good handle on JavaScript. I would not suggest jumping into React without learning JavaScript first
+  Data types, variables, functions, loops, etc
+  Promises &amp; asynchronous programming
+  Array methods like forEach(), filter(), map() etc.
+  Fetch API &amp; making HTTP requests
+
+
+#4 - UI Components
+
+  When using React, think of your UI as a bunch of separate components
+
+
+#5 – Components
+
+  Components are self-contained reusable building blocks of web application.
+  React components are basically just idempotent functions (same input produces same output).
+  They describe your UI at any point in time, just like a server-rendered app.
+
+
+#6 – Props
+
+  Passed down to component from parent component and represents data for the component and accessed via this.props (In Class Based)
+
+
+#7 – State
+
+  Represents internal state of the component
+  Accessed via this.state (In Class Based)
+  When a component’s state data changes, the rendered markup will be updated by re-invoking render() method
+
+
+#8 – JSX (JavascriptXML)
+
+  Arguably, one of the coolest things in React
+  XML-like syntax for generating component’s HTML
+  Easier to read and understand large DOM trees
+  Translates to plain JavaScript using react-tools
+
+
+#9 - Virtual DOM
+
+  The virtual DOM is used for efficient re-rendering of the DOM
+  React aims to re-render the virtual tree only when the state changes
+  Uses 2 virtual trees (new and previous) to find differences and batch update real DOM
+  Observes data changes (setState) and does dirty-checking to know when to re-render component
+  Whenever possible, does not update entire component in real DOM - only computes a patch operation that updates part of the DOM.
+
+
+#10 - Components: function vs. class
+a. Function
+
+1
+2
+3
+4
+5
+6
+7
+export const MyComponent = () =&gt; {
+	return (
+        &lt;div&gt;
+            &lt;h1&gt;My component&lt;/h1&gt;
+        &lt;/div&gt;
+    )
+}
+
+
+b. Class
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+export default class MyComponent extends React.Component {
+	render() {
+		return (
+			&lt;div&gt;
+				&lt;h1&gt;My component&lt;/h1&gt;
+			&lt;/div&gt;
+        )	
+    }
+}
+
+
+
+  Components render/return JSX (JavaScript Syntax Extension)
+  Components can also take in “props”:
+
+
+1
+&lt;MyComponent text="My Text" /&gt;
+
+
+#11 - Working With State
+
+  Components can have “state” which is an object that determines how a component renders and behaves
+  “App” or “global” state refers to state that is available to the entire Ul, not just a single component.
+  Prior to React 16.8, we had to use class based components to use state. Now we can use functional components with hooks.
+
+
+#12 - React Hooks
+
+  React Hooks are functions that let us hook into the React state and  lifecycle features from function components .
+  Type of Hooks –
+    
+      useState: To manage states. Returns a stateful value and an updater function to update it.
+      useEffect: To manage side-effects like API calls, subscriptions, timers, mutations, and more.
+      useContext: To return the current value for a context.
+      useReducer: A useState alternative to help with complex state management.
+      useCallback: It returns a memorized version of a callback to help a child component not re-render unnecessarily.
+      useMemo: It returns a memoized value that helps in performance optimizations.
+      useRef: It returns a ref object with a ‘.current’ property. The ref object is mutable. It is mainly used to access a child component imperatively.
+      useLayoutEffect: It fires at the end of all DOM mutations. It’s best to use useEffect as much as possible over this one as the useLayoutEffect fires synchronously.
+      useDebugValue: Helps to display a label in React DevTools for custom hooks.
+    
+  
+  You can also create your own custom hooks.
+
+
+#13 - Lifecycle Method
+
+  First, let’s take a look at how it’s been done traditionally. As you probably know, each React component has a life cycle, which consists of three phases:
+    
+      Mounting, that is putting inserting elements into the DOM.
+        
+          Class based – componentDidMount()
+          Function based – useEffect with empty dependencies.
+        
+      
+      Updating, which involves methods for updating components in the DOM.
+        
+          Class based – componentDidUpdate()
+          Function based – useEffect with dependencies.
+        
+      
+      Unmounting, that is removing a component from the DOM.
+        
+          Class based – componentWillUnmount()
+          Function based – useEffect with empty dependencies and return statement.
+        
+      
+    
+  
+
+
+#14 – Data Flow in React
+
+  In a React application, data typically flows from a parent component to a child component, using props. For Eg.
+
+
+1
+&lt;MyComponent myProp={'somevalue'} /&gt;
+
+
+
+  If you pass a function to the child component, you can however change the state of the parent component from a child component:
+
+
+1
+2
+const [count, setCount] = useState(0);
+&lt;MyComponent set_count={setCount} /&gt;
+
+
+
+  Inside the MyComponent we can now grab the setFunct prop and call it to update the funct state in the parent component, when something happens:
+
+
+1
+2
+3
+4
+5
+function Counter({ set_count }) {
+ //...
+ set_count(1);
+ //...
+}
+
+
+
+  There are more advanced ways to manage data, which include the Context API and libraries like Redux, but those introduce more complexity but are useful as the application/project size increases.
+
+
+#15 - Handling user events in React
+
+  React provides an easy way to manage events fired from DOM events like clicks, form events and more.
+  Understanding about click events which are quite simple. You can use the ‘onClick’ attribute on any JSX element:
+
+
+1
+2
+3
+4
+5
+6
+7
+&lt;button
+    onClick={(event) =&gt; {
+    /* handle the event */
+    }}
+&gt;
+    Click here
+&lt;/button&gt;
+
+
+
+  When the element is clicked, the function passed to the onClick attribute is fired.
+  You can define this function outside of the JSX. When the click event is fired on the button, React calls the event handler function.
+
+
+1
+2
+3
+4
+5
+6
+const handleClickEvent = (event) =&gt; {
+  /* handle the event */
+}
+function App() {
+  return &lt;button onClick={handleClickEvent}&gt;Click he
+}
+
+
+
+  React supports a vast amount of types of events, like onKeyUp, onFocus, onChange, onMouseDown, onSubmit and many more.
+
+
+#16 – Prominent Libraries used along with ReactJS.
+
+  react-router-dom → Used for routing.
+  styled-components → Used for writing CSS inside JS.
+  axios → Promise based HTTP client.
+  redux → Managing and centralizing application state
+  react-testing-library → Testing react components.
+  react-transition-group → Animation Library for React.</content>
+            </url>
+        
+    
+            
+            <url>
+                <loc>https://baijudodhia.github.io/blog/technology/css-basics/</loc>
+                <lastmod>2022-07-06T06:30:00+00:00</lastmod>
+                <title>CSS Basics</title>
+                <excerpt>Basic of CSS</excerpt>
+                <tags>css , web-styling</tags>
+                <category>technology</category>
+                <content>Box Model
+
+
+
+Selectors
+
+
+  
+    
+      Selector
+      Description
+    
+  
+  
+    
+      _
+      all elements
+    
+    
+      div
+      all div tags
+    
+    
+      div,p
+      all divs and paragraphs
+    
+    
+      div p
+      paragraphs inside divs
+    
+    
+      div &gt; p
+      all p tags, one level deep in div
+    
+    
+      div + p
+      p tags immediately after div
+    
+    
+      div ~ p
+      p tags preceded by div
+    
+    
+      .classname
+      all elements with class
+    
+    
+      #idname
+      element with ID
+    
+    
+      div.classname
+      divs with certain classname
+    
+    
+      div#idname
+      div with certain ID
+    
+    
+      #idname _
+      all elements inside #idname
+    
+  
+
+
+Attribute Selectors
+
+
+  
+    
+      Selector
+      Description
+    
+  
+  
+    
+      a[target]
+      links with a target attribute
+    
+    
+      a[target=”_blank”]
+      links which open in new tab
+    
+    
+      [title~=”chair”]
+      title element containing a word
+    
+    
+      [class^=”chair”]
+      class starts with chair
+    
+    
+      [class | =”chair”]
+      class starts with the chair word
+    
+    
+      [class*=”chair”]
+      class contains chair
+    
+    
+      [class$=”chair”]
+      class ends with chair
+    
+    
+      input[type=”button”]
+      specified input type
+    
+  
+
+
+Pseudo Selectors
+
+
+  
+    
+      Selector
+      Description
+    
+  
+  
+    
+      a:link
+      link in normal state
+    
+    
+      a:active
+      link in clicked state
+    
+    
+      a:hover
+      link with mouse over it
+    
+    
+      a:visited
+      visited link
+    
+    
+      p::after{content:”Hello World”;}
+      add content after p
+    
+    
+      p::before
+      add content before p
+    
+    
+      input:checked
+      checked inputs
+    
+    
+      input:disabled
+      disabled inputs
+    
+    
+      input:enabled
+      enabled inputs
+    
+    
+      input:focus
+      input has focus
+    
+    
+      input:in-range
+      value in range
+    
+    
+      input:out-of-range
+      input value out of range
+    
+    
+      input:valid
+      input with valid value
+    
+    
+      input:invalid
+      input with invalid value
+    
+    
+      input:optional
+      no required attribute
+    
+    
+      input:required
+      input with requred attribute
+    
+    
+      input:read-only
+      with readonly attribute
+    
+    
+      input:read-write
+      no readonly attrib.
+    
+    
+      div:empty
+      element with no children
+    
+    
+      p::first-letter
+      first letter in p
+    
+    
+      p::first-line
+      first line in p
+    
+    
+      p:first-of-type
+      first of some type
+    
+    
+      p:last-of-type
+      last of some type
+    
+    
+      p:lang(en)
+      p with en language attribute
+    
+    
+      :not(span)
+      element that’s not a span
+    
+    
+      p:first-child
+      first child of its parent
+    
+    
+      p:last-child
+      last child of its parent
+    
+    
+      p:nth-child(2)
+      second child of its parent
+    
+    
+      p:nth-child(3n+1)
+      nth-child (an + b) formula
+    
+    
+      p:nth-last-child(2)
+      second child from behind
+    
+    
+      p:nth-of-type(2)
+      second p of its parent
+    
+    
+      p:nth-last-of-type(2)
+      …from behind
+    
+    
+      p:only-of-type
+      unique of its parent
+    
+    
+      p:only-child
+      only child of its parent
+    
+    
+      :root
+      documents root element
+    
+    
+      ::selection
+      portion selected by user
+    
+    
+      :target
+      highlight active anchor
+    
+  
+
+
+Variables in CSS
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+:root {
+--primary: #1e90ff;
+--secondary: #ffffff;
+}
+h1 {
+color: var(--primary);
+}
+h2 {
+color: var(--secondary);
+}
+
+
+Layouts
+
+
+  Float
+  Flex
+  Grid
+
+
+SASS</content>
+            </url>
+        
+    
+            
+            <url>
+                <loc>https://baijudodhia.github.io/blog/technology/javascript-basics/</loc>
+                <lastmod>2022-07-05T06:30:00+00:00</lastmod>
+                <title>Javascript Basics</title>
+                <excerpt>Basic concepts in Javascript.</excerpt>
+                <tags>javascript , js-basics , js-functions , js-closure , -js-settimeout</tags>
+                <category>technology</category>
+                <content>#1 - Execution Context
+
+  Everything in JS happens inside the execution context. Imagine a sealed-off container inside which JS runs. It is an abstract concept that hold info about the env. within the current code is being executed.
+  In the container the first component is memory component and the 2nd one is code component
+  Memory component has all the variables and functions in key value pairs. It is also called Variable environment. Code component is the place where code is executed one line at a time. It is also called the Thread of Execution. JS is a synchronous, single-threaded language
+    
+      Synchronous: One command at a time.
+      Single-threaded: In a specific synchronous order.
+    
+  
+
+
+#2: How JS is executed &amp; Call Stack ?
+
+
+  When a JS program is ran, a global execution context is created. The execution context is created in two phases.
+    
+      Memory creation phase - JS will allocate memory to variables and functions.
+      Code execution phase - Let’s consider the below example and its code execution steps:
+    
+  
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+var n = 2;
+
+function square(num) {
+    var ans = num * num;
+    return ans;
+}
+var square2 = square(n);
+var square4 = square(4);
+
+
+
+  Javascript manages code execution context creation and deletion with the the help of Call Stack. Call Stack is a mechanism to keep track of its place in script that calls multiple function.
+  Call Stack maintains the order of execution of execution contexts. It is also known as Program Stack, Control Stack, Runtime stack, Machine Stack, Execution context stack.
+
+
+#3: Hoisting in JavaScript (Variables &amp; Functions)
+
+
+  Let’s observe the below code and it’s explaination:
+
+
+1
+2
+3
+4
+5
+6
+getName(); // Hello World console.log(x); // undefined
+var x = 7;
+
+function getName() {
+    console.log("Hello World");
+}
+
+
+
+  It should have been an outright error in many other languages, as it is not possible to even access something which is not even created (defined) yet but in JS we know that in memory creation phase it assigns undefined and puts the content of function to function’s memory. And in execution, it then executes whatever is asked. Here, as execution goes line by line and not after compiling, it could only print undefined and nothing else. This phenomenon, is not an error. However, if we remove var x = 7; then it gives error. Uncaught ReferenceError: x is not defined
+  Hoisting is a concept which enables us to extract values of variables and functions even before initialising/assigning value without getting error and this is happening due to the 1st phase (memory creation phase) of the Execution Context.
+  So in previous part, we learnt that execution context gets created in two phase, so even before code execution, memory is created so in case of variable, it will be initialized as undefined while in case of function the whole function code is placed in the memory.
+
+
+Example:
+
+1
+2
+3
+4
+5
+6
+getName(); // Hello World
+console.log(x); // Uncaught Reference: x is not defined.
+console.log(getName); // function getName(){ console.log("Hello World); }
+function getName() {
+  console.log("Hello World");
+}
+
+
+
+  Now let’s observe a different example and try to understand the output.
+
+
+1
+2
+3
+4
+5
+getName(); // Uncaught TypeError: getName is not a function console.log(getName);
+var getName = function() {
+    console.log("Hello World");
+}
+// The code won't execute as the first line itself throws an TypeError.
+
+
+#4: Functions and Variable Environments
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+var x = 1;
+a();
+b(); // we are calling the functions before defining them. This will work properly, as seen in Hoisting.
+console.log(x);
+
+function a() {
+    var x = 10; // local scope because of separate execution context console.log(x);
+}
+
+function b() {
+    var x = 100;
+    console.log(x);
+}
+
+
+Outputs:
+10
+100
+1
+
+#5: Shortest JS Program, window &amp; this keyword
+
+
+  The shortest JS program is empty file. Because even then, JS engine does a lot of things. As always, even in this case, it creates the GEC which has memory space and the execution context.
+  JS engine creates something known as ‘window’. It is an object, which is created in the global space. It contains lots of functions and variables. These functions and variables can be accessed from anywhere in the program. JS engine also creates a this keyword, which points to the window object at the global level. So, in summary, along with GEC, a global object (window) and a this variable are created.
+  In different engines, the name of global object changes. Window in browsers, but in nodeJS it is called something else.
+  At global level, this === window
+  If we create any variable in the global scope, then the variables get attached to the global object.
+
+
+1
+2
+3
+4
+var x = 10;
+console.log(x); // 10
+console.log(this.x); // 10
+console.log(window.x); // 10
+
+
+#6: undefined vs not defined in JS
+
+
+  In first phase (memory allocation) JS assigns each variable a placeholder called undefined.
+  undefined is when memory is allocated for the variable, but no value is assigned yet.
+  If an object/variable is not even declared/found in memory allocation phase, and tried to access it then it is Not defined
+  Not Defined !== Undefined
+  When variable is declared but not assigned value, its current value is undefined. But when the variable itself is not declared but called in code, then it is not defined.
+
+
+1
+2
+3
+console.log(x); // undefined var x = 25;
+console.log(x); // 25
+console.log(a); // Uncaught ReferenceError: a is not defined
+
+
+
+  JS is a loosely typed / weakly typed language. It doesn’t attach variables to any datatype. We can say var a = 5, and then change the value to boolean a = true or string a = ‘hello’ later on.
+  Never assign undefined to a variable manually. Let it happen on it’s own accord.
+
+
+#7: The Scope Chain, Scope &amp; Lexical Environment
+
+
+  Scope in Javascript is directly related to Lexical Environment.
+
+
+Let’s observe the below examples:
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+// CASE 1
+function a() {
+    console.log(b); // 10
+    // Instead of printing undefined it prints 10, So somehow this a function could access the variable b outside the function scope.
+}
+var b = 10;
+a();
+
+// CASE 2
+function a() {
+    c();
+
+    function c() {
+        console.log(b); // 10
+    }
+}
+var b = 10;
+a();
+
+// CASE 3
+function a() {
+    c();
+
+    function c() {
+        var b = 100;
+        console.log(b); // 100
+    }
+}
+var b = 10;
+a();
+
+// CASE 4
+function a() {
+    var b = 10;
+    c();
+
+    function c() {
+        console.log(b); // 10
+    }
+}
+a();
+console.log(b); // Error, Not Defined
+
+
+
+  Let’s try to understand the output in each of the cases above.
+    
+      In case 1: function a is able to access variable b from Global scope.
+      In case 2: 10 is printed. It means that within nested function too, the global scope variable can be accessed.
+      In case 3: 100 is printed meaning local variable of the same name took precedence over a global variable.
+      In case 4: A function can access a global variable, but the global execution context can’t access any local variable.
+    
+  
+  So, Lexical Environment = local memory + lexical env of its parent. Hence, Lexical Environement is the local memory along with the lexical environment of its parent
+  Lexical: In hierarchy, In order
+  Whenever an Execution Context is created, a Lexical environment(LE) is also created and is referenced in the local Execution Context(in memory space). The process of going one by one to parent and checking for values is called scope chain or Lexcial environment chain.
+
+
+1
+2
+3
+4
+5
+6
+function a() {
+    function c() {
+        // logic here
+    }
+    c(); // c is lexically inside a
+} // a is lexically inside global execution
+
+
+
+  Lexical or Static scope refers to the accessibility of variables, functions and object based on phylical location in source code.
+
+
+1
+2
+3
+4
+5
+6
+Global {
+    Outer {
+        Inner
+    }
+}
+// Inner is surrounded by lexical scope of Outer
+
+
+
+  TLDR; An inner function can access variables which are in outer functions even if inner function is nested deep. In any other case, a function can’t access variables not in its scope.
+
+
+#8: let &amp; const in JS, Temporal Dead Zone
+
+
+  let and const declarations are hoisted. But its different from var
+
+
+1
+2
+3
+4
+console.log(a); // ReferenceError: Cannot access 'a' before initialization console.log(b); // prints undefined as expected
+let a = 10;
+console.log(a); // 10 var b = 15;
+console.log(window.a); // undefined console.log(window.b); // 15
+
+
+
+  It looks like let isn’t hoisted, but it is, let’s understand
+  Both a and b are actually initialized as undefined in hoisting stage. But var b is inside the storage space of GLOBAL, and a is in a separate memory object called script, where it can be accessed only after assigning some value to it first ie. one can access ‘a’ only if it is assigned. Thus, it throws error.
+  Temporal Dead Zone : Time since when the let variable was hoisted until it is initialized some value.
+    
+      So any line till before “let a = 10” is the TDZ for a
+      Since a is not accessible on global, its not accessible in window/this also. window.b or this.b -&gt; 15; But window.a or this.a -&gt;undefined, just like window.x-&gt;undefined (x isn’t declared anywhere)
+    
+  
+  Reference Error are thrown when variables are in temporal dead zone.
+  Syntax Error doesn’t even let us run single line of code.
+
+
+1
+2
+let a = 10;
+let a = 100; //this code is rejected upfront as SyntaxError. (duplicate declaration)
+
+
+1
+2
+let a = 10;
+var a = 100; // this code also rejected upfront as SyntaxError. (can't use same name in same scope)
+
+
+
+  Let is a stricter version of var. Now, const is even more stricter than let.
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+let a;
+a = 10;
+console.log(a) // 10. Note declaration and assigning of a is in different lines.
+
+const b;
+b = 10;
+console.log(b); // SyntaxError: Missing initializer in const declaration. (This type of declaration won't work with const. const b = 10 only will work)
+
+const b = 100;
+b = 1000; //this gives us TypeError: Assignment to constant variable.
+
+
+
+  Types of Error: Syntax, Reference, and Type.
+    
+      Uncaught ReferenceError: x is not defined at …
+        
+          This Error signifies that x has never been in the scope of the program. This literally means that x was never defined/declared and is being tried to be accesed.
+        
+      
+      Uncaught ReferenceError: cannot access ‘a’ before initialization
+        
+          This Error signifies that ‘a’ cannot be accessed because it is declared as ‘let’ and since it is not assigned a value, it is its Temporal Dead Zone. Thus, this error occurs.
+        
+      
+      Uncaught SyntaxError: Identifier ‘a’ has already been declared
+        
+          This Error signifies that we are redeclaring a variable that is ‘let’ declared. No execution will take place.
+        
+      
+      Uncaught SyntaxError: Missing initializer in const declaration
+        
+          This Error signifies that we haven’t initialized or assigned value to a const declaration.
+        
+      
+      Uncaught TypeError: Assignment to constant variable
+        
+          This Error signifies that we are reassigning to a const variable.
+        
+      
+    
+  
+
+
+SOME GOOD PRACTICES:
+
+  Try using const wherever possible. If not, use let, Avoid var.
+  Declare and initialize all variables with let to the top to avoid errors to shrink temporal dead zone window to zero.
+
+
+#9: Functions in JS
+
+Q: What is Function statement?
+Below way of creating function are function statement.
+
+1
+2
+3
+4
+function a() {
+    console.log("Hello");
+}
+a(); // Hello
+
+
+Q: What is Function Expression?
+Assigning a function to a variable. Function acts like a value.
+
+1
+2
+3
+4
+var b = function() {
+    console.log("Hello");
+}
+b();
+
+
+Q: Difference between function statement and expression
+The major difference between these two lies in Hoisting.
+
+1
+2
+3
+4
+5
+6
+7
+8
+a(); // "Hello A"
+b(); // TypeError
+function a() {
+  console.log("Hello A");
+}
+var b = function () {
+  console.log("Hello B");
+};
+
+
+Why did this happen? During mem creation phase a is created in memory and function assigned to a. But b is created like a variable (b:undefined) and until code reaches the function() part, it is still undefined. So it cannot be called.
+
+Q: What is Function Declaration?
+Other name for function statement.
+
+Q: What is Anonymous Function?
+A function without a name.
+
+1
+2
+3
+function () {
+
+} // this is going to throw Syntax Error - Function Statement requires function name.
+
+
+They don’t have their own identity. So an anonymous function without code inside it results in an error.
+Anonymous functions are used when functions are used as values eg. the code sample for function expression above.
+
+#10: Closures in JS
+
+
+  Function bundled along with it’s lexical scope is closure.
+  JavaScript has a lexcial scope environment. If a function needs to access a variable, it first goes to its local memory. When it does not find it there, it goes to the memory of its lexical parent.
+  See Below code, Over here function y along with its lexical scope i.e. (function x) would be called a closure.
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+function x() {
+    var a = 7;
+
+    function y() {
+        console.log(a);
+    }
+    return y;
+}
+var z = x();
+console.log(z); // value of z is entire code of function y.
+
+
+
+  In above code, When y is returned, not only is the function returned but the entire closure (fun y + its lexical scope) is returned and put inside z. So when z is used somewhere else in program, it still remembers var a inside x()
+  Thus In simple words, we can say:
+    
+      A closure is a function that has access to its outer function scope even after the function has returned. Meaning, A closure can remember and access variables and arguments reference of its outer function even after the function has returned.
+    
+  
+  Advantages of Closure: Module Design, Pattern Currying, Memoize, Data hiding and encapsulation setTimeouts etc.
+  Disadvantages of Closure: Over consumption of memory , Memory Leak &amp; Freeze Browser
+
+
+#10 (A) setTimeout
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+function x() {
+    var i = 1;
+    setTimeout(function() {
+        console.log(i);
+    }, 3000);
+    console.log("Hello World");
+}
+x();
+// Output:
+// Hello World
+// 1 // after waiting 3 seconds
+
+
+
+  We expect JS to wait 3 sec, print 1 and then go down and print the string. But JS prints string immediately, waits 3 sec and then prints 1.
+  The function inside setTimeout forms a closure (remembers reference to i). So wherever function goes it carries this ref along with it.
+  setTimeout takes this callback function &amp; attaches timer of 3000ms and stores it. Goes to next line without waiting and prints string.
+  After 3000ms runs out, JS takes function, puts it into call stack and runs it. Q: Print 1 after 1 sec, 2 after 2 sec till 5
+  We assume this has a simple approach as below
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+function x() {
+    for (var i = 1; i &lt;= 5; i++) {
+        setTimeout(function() {
+            console.log(i);
+        }, i * 1000);
+    }
+    console.log("Hello World");
+}
+x();
+// Output:
+// Hello World
+// 6
+// 6
+// 6
+// 6
+// 6
+
+
+Reason?
+
+  This happens because of closures. When setTimeout stores the function somewhere and attaches timer to it, the function remembers its reference to i, not value of i. All 5 copies of function point to same reference of i. JS stores these 5 functions, prints string and then comes back to the functions. By then the timer has run fully. And due to looping, the i value became 6. And when the callback fun runs the variable i = 6. So same 6 is printed in each log.
+  To avoid this, we can use let instead of var as let has Block scope. For each iteration, the i is a new variable altogether(new copy of i). Everytime setTimeout is run, the inside function forms closure with new variable i
+  But what if you have to implement using var?
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+function x() {
+    for (var i = 1; i &lt;= 5; i++) {
+        function close(i) {
+            setTimeout(function() {
+                console.log(i);
+            }, i * 1000);
+            // put the setT function inside new function close()
+        }
+        close(i); // everytime you call close(i) it creates new copy of i. Only this time, it is with var itself!
+    }
+    console.log("Hello World");
+}
+x();
+
+
+#11 – Web APIs
+
+Stuff which is not a part of JS but provided by the Browsers.
+E.g. setTimeout(), DOM APIs, fetch(), localstorage, console, location and so many
+more.
+a.	setTimeout() : Timer function
+b.	DOM APIs : eg.Document.xxxx ; Used to access HTML DOM tree. (Document Object Manipulation)
+c.	fetch() : Used to make connection with external servers eg. Netflix servers etc.</content>
+            </url>
+        
+    
+            
+            <url>
+                <loc>https://baijudodhia.github.io/blog/business/startup-terminology/</loc>
+                <lastmod>2022-04-04T07:00:00+00:00</lastmod>
+                <title>Startup Terminology</title>
+                <excerpt>Terminology related to Startups with their meanings/description.</excerpt>
+                <tags>startups , terminology</tags>
+                <category>business</category>
+                <content>Angel Investment
+1
+An angel round is typically a small round designed to get a new company off the ground. Investors in an angel round include individual angel investors, angel investor groups, friends, and family.
+
+
+Convertible Note
+1
+A convertible note is an ‘in-between’ round funding to help companies hold over until they want to raise their next round of funding. When they raise the next round, this note ‘converts’ with a discount at the price of the new round. You will typically see convertible notes after a company raises, for example, a Series A round but does not yet want to raise a Series B round.
+
+
+Corporate Round
+1
+A corporate round occurs when a company, rather than a venture capital firm, makes an investment in another company. These are often, though not necessarily, done for the purpose of forming a strategic partnership.
+
+
+Debt Financing
+1
+In a debt round, an investor lends money to a company, and the company promises to repay the debt with added interest.
+
+
+Equity Crowdfunding
+1
+Equity crowdfunding platforms allow individual users to invest in companies in exchange for equity. Typically on these platforms the investors invest small amounts of money, though syndicates are formed to allow an individual to take a lead on evaluating an investment and pooling funding from a group of individual investors.
+
+
+Funding Rounds
+1
+A funding round is anytime money is raised from one or more investors for a business.
+
+
+Initial coin offering (ICO)
+1
+An initial coin offering (ICO) is a means of raising money via crowdfunding using cryptocurrency as capital. A company raising money through an ICO holds a fundraising campaign, and during this campaign, backers will purchase a percentage of a new cryptocurrency (called a “token” or “coin”), often using another cryptocurrency like bitcoin to make the purchase, in the hopes that the new cryptocurrency grows in value.
+
+
+Market
+1
+A market domain is as a segment of a broader industry with a strategic focus or target of meeting a particular business or customer need in the marketplace.
+
+
+Non-Equity Assistance
+1
+A non-equity assistance round occurs when a company or investor provides office space or mentorship and does not get equity in return.
+
+
+Pre-seed Funding
+1
+A Pre-Seed round is a pre-institutional seed round that either has no institutional investors or is a very low amount, often below $150k.
+
+
+Private Equity
+1
+Private equity is an alternative investment class and consists of capital that is not listed on a public exchange. Private equity is composed of funds and investors that directly invest in private companies, or that engage in buyouts of public companies, resulting in the delisting of public equity.
+
+
+Post IPO Debt
+1
+A post-IPO debt round takes place when firms loan a company money after the company has already gone public. Similar to debt financing, a company will promise to repay the principal as well as added interest on the debt.
+
+
+Post IPO Equity
+1
+A post-IPO equity round takes place when firms invest in a company after the company has already gone public.
+
+
+Post IPO Secondary
+1
+A post-IPO secondary round takes place when an investor purchases shares of stock in a company from other, existing shareholders rather than from the company directly, and it occurs after the company has already gone public.
+
+
+Product Crowdfunding
+1
+In a product crowdfunding round, a company will provide its product, which is often still in development, in exchange for capital. This kind of round is also typically completed on a funding platform.
+
+
+Round (or Series) A and B
+1
+Series A and Series B rounds are funding rounds for earlier stage companies and range on average between $1M–$30M.
+
+
+Round (or Series) C to H
+1
+Series C to H rounds and onwards are for later stage and more established companies. These rounds are usually $10M+ and are often much larger.
+
+
+Seed Funding
+1
+Seed rounds are among the first rounds of funding a company will receive, generally while the company is young and working to gain traction. Round sizes range between $10k–$2M, though larger seed rounds have become more common in recent years. A seed round typically comes after an angel round (if applicable) and before a company’s Series A round.
+
+
+Startup Grant
+1
+Startup grants consist of a sum of money that groups offer to small companies and nonprofits to help them with their work. A Grant is when a company, investor, or government agency provides capital to a company without taking an equity stake in the company. Grants aren’t like loans. Organizations don’t have to put up collateral or pay late fees or interest. In fact, organizations don’t have to pay back grants at all. Essentially, the money is free.
+
+
+Total Funding
+1
+The total funding is the sum of all the funds received by the startup from the start of it's inception till date including all types of funding.
+
+
+Undisclosed Funding
+1
+It the funding amount which is not disclosed in any public domain and is only known to the fund raiser and the fund provider.
+
+
+Venture Funding
+1
+Venture funding refers to an investment that comes from a venture capital firm and describes Series A, Series B, and later rounds. This funding type is used for any funding round that is clearly a venture round but where the series has not been specified.</content>
+            </url>
+        
+    
+            
+            <url>
+                <loc>https://baijudodhia.github.io/blog/technology/github-action-for-nodejs-package/</loc>
+                <lastmod>2022-04-04T06:30:00+00:00</lastmod>
+                <title>Github Action for Node.js Package</title>
+                <excerpt>Github Action for configuring Node.js Packages with hosted on Github.</excerpt>
+                <tags>github-actions , github , npm , nodejs , node-packages , guides</tags>
+                <category>technology</category>
+                <content>Steps to configure Repository as Node.js Package -
+
+
+  Create ‘.npmrc’ file and add the following content in it -
+
+
+    @your_github_username:registry=https://npm.pkg.github.com
+
+
+  In ‘package.json’ file add/modify according to the following code -
+
+
+1
+2
+3
+4
+5
+6
+7
+{
+	"name": "@your_github_username/package-name",
+	"repository": {
+		"type": "git",
+		"url": "git+https://git@github.com/your_github_username/package_reponame.git"
+	},
+}
+
+
+Steps to configure Github Actions for the Repo -
+
+
+  Create a ‘.github’ folder at the root of the Github Repository.
+  Create a ‘workflows’ folder inside the ‘.github’ folder.
+  Create a ‘your_file_name.yml’ file inside the ‘workflows’ folder. The ‘your_file_name.yml’ file indicates to Github that this is a file for Github Action.
+
+
+The following code can be added in the ‘your_file_name.yml’ for configuring the Repository as a Github Package.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+name: publish Node.js Package
+
+on:
+  push:
+    branches:
+      - build
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm install
+      - run: npm test
+
+  publish-gpr:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://npm.pkg.github.com/
+          scope: '@your_github_username'
+      - run: npm install
+      - run: git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com" &amp;&amp; git config --global user.name "$GITHUB_ACTOR"
+      - run: npm version --minor
+      - run: git push --tags &amp;&amp; git push
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: $\{\{secrets.GITHUB_TOKEN\}\}
+
+
+The above action creates a build when we push code to the ‘build’ branch of the repository.
+After the build is created and the ‘build’ action is successful, the publish-gpr action is starts executing and publishes the package to Github Packages.
+
+Changes required:
+
+  Under ‘publish-gpr’ action -&gt; scope needs to be changed.
+  Under ‘publish-gpr’ action -&gt; NODE_AUTH_TOKEN secrets variable ‘GITHUB_TOKEN’ needs to be changed according to the defined secret variable. (You need to generate a Token and Save in the Secrets on Repo). The backslash is used as escape charater for the blog post, remove that and only keep curly braces.
+
+
+Note: The Node.js Package is registered on https://npm.pkg.github.com/ and not on https://registry.npmjs.org/
+
+After the package is published, it can be downloaded using
+
+npm install @your_username/package-name</content>
+            </url>
+        
+    
+            
+            <url>
+                <loc>https://baijudodhia.github.io/blog/business/finance-terminology/</loc>
+                <lastmod>2022-04-04T06:00:00+00:00</lastmod>
+                <title>Finance Terminology</title>
+                <excerpt>Terminology related to Finance with their meanings/description.</excerpt>
+                <tags>finance , terminology , fintech</tags>
+                <category>business</category>
+                <content>Terminology related to Finance with their meanings/description.
+
+Bounced Cheque [Banking]
+1
+2
+3
+4
+A bounced check is slang for a check that cannot be processed because the account holder has nonsufficient funds (NSF) available for use.
+Banks return, or "bounce", these checks, also known as rubber checks, rather than honoring them, and banks charge the check writers NSF fees.
+When a check bounces, users are not honored by the depositor's bank, and may result in fees and banking restrictions. Additional penalties for bouncing checks may include negative credit score marks, refusal of merchants from accepting your checks, and potentially legally trouble.
+Banks often offer overdraft protection to prevent inadvertent check bouncing.
+
+
+Current Account &amp; Savings Account (CASA) [Banking]
+1
+2
+3
+A current account savings account (CASA) is aimed at combining the features of savings and checking accounts to entice customers to keep their money in the bank.
+It pays very low or no interest on the current account and an above-average return on the savings portion.
+CASA is most commonly used in West and Southeast Asia, though the CASA structure is available globally.
+
+
+CASA Ratio [Banking]
+1
+2
+CASA Ratio is the ratio of deposits in current account and savings account to the total deposits of the bank.
+A higher CASA ratio means that the bank has a higher share of deposits in current and savings accounts.
+
+
+Monthly Average Balance (MAB) [Banking]
+1
+2
+Monthly Average Balance (MAB), also known as the Minimum Average Balance is nothing but the minimum amount you are required to maintain in your Savings Account every month.
+The figure is calculated at the end of each month and failure to maintain this minimum average balance will result in penalties.
+
+
+Quarterly Average Balance (QAB) [Banking]
+1
+2
+3
+4
+QAB is the average of the all the closing day balance of a bank account in a given quarter.
+To calculate the QAB, add up all the closing day balance for the given quarter and divide it by the number of days in that quarter.
+Savings account holders are required to maintain a minimum QAB in their bank account and failing to do so would amount to a penalty charge.
+QAB requirements are different for different banks. It also depends on the account holder's location i.e. urban, semi-urban or rural and the category of the account.</content>
+            </url>
+        
+    
+            
+            <url>
+                <loc>https://baijudodhia.github.io/blog/technology/vscode-snippet-webcomponents/</loc>
+                <lastmod>2022-01-13T08:30:00+00:00</lastmod>
+                <title>VSCode Snippet - Web Components</title>
+                <excerpt>A sample VSCode Snippet for Web Component.</excerpt>
+                <tags>vscode-snippets , web-components</tags>
+                <category>technology</category>
+                <content>Guide to create a VSCode Snippet - here
+
+A sample VSCode Snippet for Web Component.
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+{
+  "Web Component Snippet": {
+    "scope": "javascript,typescript",
+    "prefix": "webcomponent",
+    "body": [
+      "class ${1:CustomWebComponent} extends HTMLElement {",
+      "\tconstructor() {",
+      "\t\tsuper();",
+      "\t\t// element created",
+      "\t}",
+      "",
+      "\tconnectedCallback() {",
+      "\t\t// browser calls this method when the element is added to the document",
+      "\t\t// (can be called many times if an element is repeatedly added/removed)",
+      "\t}",
+      "",
+      "\tdisconnectedCallback() {",
+      "\t\t// browser calls this method when the element is removed from the document",
+      "\t\t// (can be called many times if an element is repeatedly added/removed)",
+      "\t}",
+      "",
+      "\tstatic get observedAttributes() {",
+      "\t\treturn [",
+      "\t\t\t/* Attributes to observe. */",
+      "\t\t];",
+      "\t}",
+      "",
+      "\tattributeChangedCallback(name, oldValue, newValue) {",
+      "\t\t// called when one of attributes listed above is modified",
+      "\t}",
+      "",
+      "\tadoptedCallback() {",
+      "\t\t// called when the element is moved to a new document",
+      "\t\t// (happens in document.adoptNode, very rarely used)",
+      "\t}",
+      "",
+      "\t// there can be other element methods and properties",
+      "}",
+      "",
+      "customElements.define('${0}', ${1:WebComponent});"
+    ],
+    "description": "Generates a template code for Web Component along with registeration."
+  }
+}</content>
+            </url>
+        
+    
+            
+            <url>
+                <loc>https://baijudodhia.github.io/blog/technology/vscode-snippets-guide/</loc>
+                <lastmod>2022-01-13T07:25:00+00:00</lastmod>
+                <title>VSCode Snippets Guide</title>
+                <excerpt>A simple step by step guide to create a VSCode Snippet.</excerpt>
+                <tags>vscode-snippets , guides</tags>
+                <category>technology</category>
+                <content>A simple step by step guide to create a VSCode Snippet.
+
+Steps using VSCode
+
+
+  Open VSCode and navigate to File &gt; Preferences &gt; User Snippets.
+  Select “New Global Snippets file…” or “New Snippets file for ‘project-name’…” depending upon where to create the snippet.
+  Type the snippet file name.
+  A new file-name.code-snippets file will be generated in the AppData Code folder (If using Windows) or .vscode folder of the project depending upon the scope of snippet.
+
+
+Steps without using VSCode
+
+
+  Project specific snippet -
+    
+      Open the project folder and create a “.vscode” folder inside it at root level if not already present.
+      Open the “.vscode” folder and create a new file inside it for custom code snippets using “.code-snippets” extension. This will generate a code snippet which can be used within the same project.
+    
+  
+  Global snippet -
+    
+      To create a Global VSCode Snippet open the AppData folder (in Windows) by searching %APPDATA% in windows search.
+      Then navigate to AppData &gt; Roaming &gt; Code &gt; User &gt; snippets folder. In this folder create a new file inside it for global code snippets using “.code-snippets” extension. This will generate a code snippet which can be used by all the projects.
+    
+  
+
+
+Default File Content
+
+
+  For Global Snippet
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+{
+    // Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+    // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+    // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+    // used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+    // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+    // Placeholders with the same ids are connected.
+    // Example:
+    "Print to console": {
+    	"scope": "javascript,typescript",
+    	"prefix": "log",
+    	"body": [
+    		"console.log('$1');",
+    		"$2"
+    	],
+    	"description": "Log output to console"
+    }
+}
+
+
+
+  For Project Specific Snippet
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+{
+	// Place your 'project-name' workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	"Print to console": {
+		"scope": "javascript,typescript",
+		"prefix": "log",
+		"body": [
+			"console.log('$1');",
+			"$2"
+		],
+		"description": "Log output to console"
+	}
+}
+
+
+Now these files can be edited to generate custom code snippets.</content>
+            </url>
+        
+    
+            
+            <url>
+                <loc>https://baijudodhia.github.io/blog/technology/code-syntax-highlight-in-jekyll-markdown/</loc>
+                <lastmod>2021-12-11T17:49:44+00:00</lastmod>
+                <title>Jekyll Code Syntax Highlighting</title>
+                <excerpt>Check various code syntax highlighting in jekyll for languages such as Ruby, CS, JavaScript.</excerpt>
+                <tags>jekyll , syntax-highlight</tags>
+                <category>technology</category>
+                <content>Ruby:
+
+1
+2
+3
+4
+5
+def print_hi(name)
+    puts "Hi, #{name}"
+end
+print_hi('Tom')
+#=&gt; prints 'Hi, Tom' to STDOUT.
+
+
+CS
+
+1
+2
+3
+4
+public interface ITest : ITestKey
+{
+    Task&lt;string&gt; SayHello(string name);
+}
+
+
+Scala
+
+1
+2
+3
+def test(i: Int): Unit = {
+    println(i)
+}
+
+
+Javascript
+
+1
+2
+3
+function test(a: 1) {
+    console.log(a);
+}
+
+
+Python
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+'''
+scrape lyrics from vagalume.com.br
+(author: thiagomarzagao.com)
+'''
+
+import json
+import time
+import pickle
+import requests
+from bs4 import BeautifulSoup
+
+# get each genre's URL
+
+basepath = 'http://www.vagalume.com.br'
+r = requests.get(basepath + '/browse/style/')
+soup = BeautifulSoup(r.text)
+genres = [u'Rock']
+u'Ax\u00E9',
+u'Forr\u00F3',
+u'Pagode',
+u'Samba',
+u'Sertanejo',
+u'MPB',
+u'Rap']
+genre*urls = {}
+for genre in genres:
+genre_urls[genre] = soup.find('a', class* = 'eA', text = genre).get('href')
+
+# get each artist's URL, per genre
+
+artist*urls = {e: [] for e in genres}
+for genre in genres:
+r = requests.get(basepath + genre_urls[genre])
+soup = BeautifulSoup(r.text)
+counter = 0
+for artist in soup.find_all('a', class* = 'top'):
+counter += 1
+print 'artist {} \r'.format(counter)
+artist_urls[genre].append(basepath + artist.get('href'))
+time.sleep(2) # don't reduce the 2-second wait (here or below) or you get errors
+
+# get each lyrics, per genre
+
+api = 'http://api.vagalume.com.br/search.php?musid='
+genre_lyrics = {e: {} for e in genres}
+for genre in artist_urls:
+print len(artist_urls[genre])
+counter = 0
+artist1 = None
+for url in artist_urls[genre]:
+success = False
+while not success: # foor loop in case your connection flickers
+try:
+r = requests.get(url)
+success = True
+except:
+time.sleep(2)
+soup = BeautifulSoup(r.text)
+hrefs = soup.find_all('a')
+for href in hrefs:
+if href.has_attr('data-song'):
+song_id = href['data-song']
+print song_id
+time.sleep(2)
+success = False
+while not success:
+try:
+song_metadata = requests.get(api + song_id).json()
+success = True
+except:
+time.sleep(2)
+if 'mus' in song_metadata:
+if 'lang' in song_metadata['mus'][0]: # discard if no language info
+language = song_metadata['mus'][0]['lang']
+if language == 1: # discard if language != Portuguese
+if 'text' in song_metadata['mus'][0]: # discard if no lyrics
+artist2 = song_metadata['art']['name']
+if artist2 != artist1:
+if counter &gt; 0:
+print artist1.encode('utf-8') # change as needed
+genre_lyrics[genre][artist1] = artist_lyrics
+artist1 = artist2
+artist_lyrics = []
+lyrics = song_metadata['mus'][0]['text']
+artist_lyrics.append(lyrics)
+counter += 1
+print 'lyrics {} \r'.format(counter)
+
+    # serialize
+    with open(genre + '.json', mode = 'wb') as fbuffer:
+        json.dump(genre_lyrics[genre], fbuffer)
+
+
+Check out the Jekyll docs for more info on how to get the most out of Jekyll. File all bugs/feature requests at Jekyll’s GitHub repo. If you have questions, you can ask them on Jekyll Talk.</content>
+            </url>
+        
+    
+            
+            <url>
+                <loc>https://baijudodhia.github.io/blog/technology/photoml-android-app/</loc>
+                <lastmod>2021-12-10T15:55:02+00:00</lastmod>
+                <title>PhotoML Android App</title>
+                <excerpt>Documentation for PhotoML Android App to demonstrate on-device FirebaseVision ML-Kit Tasks like Label detection, Optical Character Recognition/Text Recognition, Face detection and Barcode scanning.</excerpt>
+                <tags>android , firebase , machine-learning</tags>
+                <category>technology</category>
+                <content>PhotoML is an Android App to demonstrate on-device FirebaseVision ML-Kit Tasks like Label detection, Optical Character Recognition/Text Recognition, Face detection and Barcode scanning on images selected from in-built gallery viewer without having to upload the image from device for every new image. The app supports both portrait and landscape layouts.
+
+Screenshots
+
+Portrait
+
+
+
+
+
+
+Landscape
+
+
+
+
+
+
+Debug APK
+
+Download from here.
+
+Installation
+
+Clone this repository and import into Android Studio
+
+1
+git clone https://github.com/baijudodhia/photoml.git
+
+
+Android Permissions
+
+The app requires Read-only Storage permissions
+Add the following code in the AndroidManifest.xml file to access Storage
+
+1
+&lt;uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /&gt;
+
+
+Firebase Setup
+
+
+  Go to Firebase Console
+  Sign in with your google account.
+  Add new project &gt; Enter project name &gt; Skip analytics &gt; Create project.
+  Add Android App &gt; Enter details &gt; Register App.
+  Download google-services.json file and follow the setup to place file in your project to get started.
+
+
+Dependencies
+
+
+  Add the following dependencies in the build.gradle (Module:Project) file
+
+
+
+  Firebase dependency
+
+
+1
+classpath 'com.google.gms:google-services:4.3.3'
+
+
+
+  Add the following dependencies in the build.gradle (Module:App) file
+
+
+
+  Apply Firebase plugin
+
+
+1
+apply plugin: 'com.google.gms.google-services'
+
+
+
+  Android dependencies
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+//AndroidX dependencies
+implementation 'androidx.appcompat:appcompat:1.1.0'
+implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+testImplementation 'junit:junit:4.12'
+androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+//Material Design Dependency
+implementation "com.google.android.material:material:1.1.0"
+
+
+
+  3rd Party dependencies
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+//RecyclerView Dependencies
+implementation 'androidx.appcompat:appcompat:1.0.0'
+implementation 'androidx.recyclerview:recyclerview:1.1.0'
+//Glide Dependencies
+implementation 'com.github.bumptech.glide:glide:4.11.0'
+annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+//PhotoView Dependency for auto image zooming and double tap and pinch zoom replacing ImageView
+implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+
+
+
+  Firebase dependencies
+
+
+1
+2
+3
+4
+5
+6
+//Firebase ML-Kit general dependency, also used for OCR and Barcode
+implementation 'com.google.firebase:firebase-ml-vision:24.0.3'
+//Firebase ML-Kit recongnize and label images dependency works along with general dependency
+implementation 'com.google.firebase:firebase-ml-vision-image-label-model:20.0.1'
+//Firebase ML-Kit face detection dependency works along with general dependency
+implementation 'com.google.firebase:firebase-ml-vision-face-model:20.0.1'
+
+
+Project Assets
+
+All assets belong to their respective owners. A list of reference is provided to all the assets.
+
+
+  Firebase Logo from Firebase.
+  App Logo (Colors Edited) from Flaticon.
+  Flaticon License available here.</content>
+            </url>
+        
+    
+            
+            <url>
+                <loc>https://baijudodhia.github.io/blog/technology/jekyll-setup-guide/</loc>
+                <lastmod>2021-12-06T15:55:02+00:00</lastmod>
+                <title>Jekyll Setup Guide</title>
+                <excerpt>Guide to Setup and Getting Started with Jekyll.</excerpt>
+                <tags>jekyll , guides</tags>
+                <category>technology</category>
+                <content>You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.
+
+Jekyll requires blog post files to be named according to the following format:
+
+YEAR-MONTH-DAY-title.MARKUP
+
+Where YEAR is a four-digit number, MONTH and DAY are both two-digit numbers, and MARKUP is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+
+Jekyll also offers powerful support for code snippets:
+
+def print_hi(name)
+  puts "Hi, #{name}"
+end
+print_hi('Tom')
+#=&gt; prints 'Hi, Tom' to STDOUT.
+
+Check out the Jekyll docs for more info on how to get the most out of Jekyll. File all bugs/feature requests at Jekyll’s GitHub repo. If you have questions, you can ask them on Jekyll Talk.</content>
+            </url>
+        
+    
+</urlset>

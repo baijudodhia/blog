@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en"><head>
+    
+
+    
+    
+    
+    
+    
+
+    <title>Javascript Basics | Blog - Baiju Dodhia</title>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <meta name="author" content="Baiju Dodhia" />
+    <meta name="color-scheme" content="light">
+    <meta name="copyright" content="Baiju Dodhia" />
+    <meta name="description" content="Blog post about technology, javascript, js basics, js functions, js closure,  js settimeout etc. Basic concepts in Javascript." />
+    <meta name="designer" content="Baiju Dodhia" />
+    <meta name="geo.region" content="IN" />
+    <meta name="keywords" content="technology, javascript, js basics, js functions, js closure,  js settimeout" />
+    <meta name="language" content="EN" />
+    <meta name="owner" content="Baiju Dodhia" />
+    <meta name="robots" content="INDEX, FOLLOW" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    
+    
+    <!-- Open Graph -->
+    <meta property="article:author" content="Baiju Dodhia" />
+    <meta property="article:published_time" content="2022-07-05 06:30:00 +0000" />
+    <meta property="article:publisher" content="https://baijudodhia.github.io/" />
+    <meta property="og:description" content="Blog post about technology, javascript, js basics, js functions, js closure,  js settimeout etc. Basic concepts in Javascript.">
+    <meta property="og:image" content="https://baijudodhia.github.io/blog/assets/social-media-preview/social-preview.png"/>
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:site_name" content="Javascript Basics">
+    <meta property="og:title" content="Javascript Basics">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://baijudodhia.github.io/blog/technology/javascript-basics/">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:description" content="Blog post about technology, javascript, js basics, js functions, js closure,  js settimeout etc. Basic concepts in Javascript." />
+    <meta property="twitter:image" content="https://baijudodhia.github.io/blog/assets/social-media-preview/social-preview.png"/>
+    <meta property="twitter:site" content="https://baijudodhia.github.io/blog/" />
+    <meta property="twitter:title" content="Javascript Basics">
+    <meta property="twitter:url" content="https://baijudodhia.github.io/blog/" />
+
+    <!-- Analytics -->
+    <script src="/blog/assets/scripts/analytics.js"></script>
+
+    
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/assets/main.css">
+    <link rel="stylesheet" href="/blog/assets/styles/syntax-fruity.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/blog/assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/blog/assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/blog/assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/blog/assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/blog/assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/blog/assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/blog/assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/blog/assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/blog/assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/blog/assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/blog/assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/blog/assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/blog/assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/blog/assets/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/blog/assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Scripts -->
+    <script src="/blog/assets/scripts/main.js"></script>
+
+    
+    
+    <!-- Post Schema -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "url": "https://baijudodhia.github.io/blog/technology/javascript-basics/",
+            "name": "Javascript Basics",
+            "headline": "Javascript Basics",
+            "keywords": "technology, javascript, js basics, js functions, js closure,  js settimeout",
+            "description": "Blog post about technology, javascript, js basics, js functions, js closure,  js settimeout etc. Basic concepts in Javascript.",
+            "articleBody": "\n\n#1 - Execution Context\n\n  Everything in JS happens inside the execution context. Imagine a sealed-off container inside which JS runs. It is an abstract concept that hold info about the env. within the current code is being executed.\n  In the container the first component is memory component and the 2nd one is code component\n  Memory component has all the variables and functions in key value pairs. It is also called Variable environment. Code component is the place where code is executed one line at a time. It is also called the Thread of Execution. JS is a synchronous, single-threaded language\n    \n      Synchronous: One command at a time.\n      Single-threaded: In a specific synchronous order.\n    \n  \n\n\n#2: How JS is executed &amp; Call Stack ?\n\n\n  When a JS program is ran, a global execution context is created. The execution context is created in two phases.\n    \n      Memory creation phase - JS will allocate memory to variables and functions.\n      Code execution phase - Let’s consider the below example and its code execution steps:\n    \n  \n\n\n1\n2\n3\n4\n5\n6\n7\n8\nvar n = 2;\n\nfunction square(num) {\n    var ans = num * num;\n    return ans;\n}\nvar square2 = square(n);\nvar square4 = square(4);\n\n\n\n  Javascript manages code execution context creation and deletion with the the help of Call Stack. Call Stack is a mechanism to keep track of its place in script that calls multiple function.\n  Call Stack maintains the order of execution of execution contexts. It is also known as Program Stack, Control Stack, Runtime stack, Machine Stack, Execution context stack.\n\n\n#3: Hoisting in JavaScript (Variables &amp; Functions)\n\n\n  Let’s observe the below code and it’s explaination:\n\n\n1\n2\n3\n4\n5\n6\ngetName(); // Hello World console.log(x); // undefined\nvar x = 7;\n\nfunction getName() {\n    console.log(\"Hello World\");\n}\n\n\n\n  It should have been an outright error in many other languages, as it is not possible to even access something which is not even created (defined) yet but in JS we know that in memory creation phase it assigns undefined and puts the content of function to function’s memory. And in execution, it then executes whatever is asked. Here, as execution goes line by line and not after compiling, it could only print undefined and nothing else. This phenomenon, is not an error. However, if we remove var x = 7; then it gives error. Uncaught ReferenceError: x is not defined\n  Hoisting is a concept which enables us to extract values of variables and functions even before initialising/assigning value without getting error and this is happening due to the 1st phase (memory creation phase) of the Execution Context.\n  So in previous part, we learnt that execution context gets created in two phase, so even before code execution, memory is created so in case of variable, it will be initialized as undefined while in case of function the whole function code is placed in the memory.\n\n\nExample:\n\n1\n2\n3\n4\n5\n6\ngetName(); // Hello World\nconsole.log(x); // Uncaught Reference: x is not defined.\nconsole.log(getName); // function getName(){ console.log(\"Hello World); }\nfunction getName() {\n  console.log(\"Hello World\");\n}\n\n\n\n  Now let’s observe a different example and try to understand the output.\n\n\n1\n2\n3\n4\n5\ngetName(); // Uncaught TypeError: getName is not a function console.log(getName);\nvar getName = function() {\n    console.log(\"Hello World\");\n}\n// The code won't execute as the first line itself throws an TypeError.\n\n\n#4: Functions and Variable Environments\n\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\nvar x = 1;\na();\nb(); // we are calling the functions before defining them. This will work properly, as seen in Hoisting.\nconsole.log(x);\n\nfunction a() {\n    var x = 10; // local scope because of separate execution context console.log(x);\n}\n\nfunction b() {\n    var x = 100;\n    console.log(x);\n}\n\n\nOutputs:\n10\n100\n1\n\n#5: Shortest JS Program, window &amp; this keyword\n\n\n  The shortest JS program is empty file. Because even then, JS engine does a lot of things. As always, even in this case, it creates the GEC which has memory space and the execution context.\n  JS engine creates something known as ‘window’. It is an object, which is created in the global space. It contains lots of functions and variables. These functions and variables can be accessed from anywhere in the program. JS engine also creates a this keyword, which points to the window object at the global level. So, in summary, along with GEC, a global object (window) and a this variable are created.\n  In different engines, the name of global object changes. Window in browsers, but in nodeJS it is called something else.\n  At global level, this === window\n  If we create any variable in the global scope, then the variables get attached to the global object.\n\n\n1\n2\n3\n4\nvar x = 10;\nconsole.log(x); // 10\nconsole.log(this.x); // 10\nconsole.log(window.x); // 10\n\n\n#6: undefined vs not defined in JS\n\n\n  In first phase (memory allocation) JS assigns each variable a placeholder called undefined.\n  undefined is when memory is allocated for the variable, but no value is assigned yet.\n  If an object/variable is not even declared/found in memory allocation phase, and tried to access it then it is Not defined\n  Not Defined !== Undefined\n  When variable is declared but not assigned value, its current value is undefined. But when the variable itself is not declared but called in code, then it is not defined.\n\n\n1\n2\n3\nconsole.log(x); // undefined var x = 25;\nconsole.log(x); // 25\nconsole.log(a); // Uncaught ReferenceError: a is not defined\n\n\n\n  JS is a loosely typed / weakly typed language. It doesn’t attach variables to any datatype. We can say var a = 5, and then change the value to boolean a = true or string a = ‘hello’ later on.\n  Never assign undefined to a variable manually. Let it happen on it’s own accord.\n\n\n#7: The Scope Chain, Scope &amp; Lexical Environment\n\n\n  Scope in Javascript is directly related to Lexical Environment.\n\n\nLet’s observe the below examples:\n\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19\n20\n21\n22\n23\n24\n25\n26\n27\n28\n29\n30\n31\n32\n33\n34\n35\n36\n37\n38\n39\n40\n41\n42\n// CASE 1\nfunction a() {\n    console.log(b); // 10\n    // Instead of printing undefined it prints 10, So somehow this a function could access the variable b outside the function scope.\n}\nvar b = 10;\na();\n\n// CASE 2\nfunction a() {\n    c();\n\n    function c() {\n        console.log(b); // 10\n    }\n}\nvar b = 10;\na();\n\n// CASE 3\nfunction a() {\n    c();\n\n    function c() {\n        var b = 100;\n        console.log(b); // 100\n    }\n}\nvar b = 10;\na();\n\n// CASE 4\nfunction a() {\n    var b = 10;\n    c();\n\n    function c() {\n        console.log(b); // 10\n    }\n}\na();\nconsole.log(b); // Error, Not Defined\n\n\n\n  Let’s try to understand the output in each of the cases above.\n    \n      In case 1: function a is able to access variable b from Global scope.\n      In case 2: 10 is printed. It means that within nested function too, the global scope variable can be accessed.\n      In case 3: 100 is printed meaning local variable of the same name took precedence over a global variable.\n      In case 4: A function can access a global variable, but the global execution context can’t access any local variable.\n    \n  \n  So, Lexical Environment = local memory + lexical env of its parent. Hence, Lexical Environement is the local memory along with the lexical environment of its parent\n  Lexical: In hierarchy, In order\n  Whenever an Execution Context is created, a Lexical environment(LE) is also created and is referenced in the local Execution Context(in memory space). The process of going one by one to parent and checking for values is called scope chain or Lexcial environment chain.\n\n\n1\n2\n3\n4\n5\n6\nfunction a() {\n    function c() {\n        // logic here\n    }\n    c(); // c is lexically inside a\n} // a is lexically inside global execution\n\n\n\n  Lexical or Static scope refers to the accessibility of variables, functions and object based on phylical location in source code.\n\n\n1\n2\n3\n4\n5\n6\nGlobal {\n    Outer {\n        Inner\n    }\n}\n// Inner is surrounded by lexical scope of Outer\n\n\n\n  TLDR; An inner function can access variables which are in outer functions even if inner function is nested deep. In any other case, a function can’t access variables not in its scope.\n\n\n#8: let &amp; const in JS, Temporal Dead Zone\n\n\n  let and const declarations are hoisted. But its different from var\n\n\n1\n2\n3\n4\nconsole.log(a); // ReferenceError: Cannot access 'a' before initialization console.log(b); // prints undefined as expected\nlet a = 10;\nconsole.log(a); // 10 var b = 15;\nconsole.log(window.a); // undefined console.log(window.b); // 15\n\n\n\n  It looks like let isn’t hoisted, but it is, let’s understand\n  Both a and b are actually initialized as undefined in hoisting stage. But var b is inside the storage space of GLOBAL, and a is in a separate memory object called script, where it can be accessed only after assigning some value to it first ie. one can access ‘a’ only if it is assigned. Thus, it throws error.\n  Temporal Dead Zone : Time since when the let variable was hoisted until it is initialized some value.\n    \n      So any line till before “let a = 10” is the TDZ for a\n      Since a is not accessible on global, its not accessible in window/this also. window.b or this.b -&gt; 15; But window.a or this.a -&gt;undefined, just like window.x-&gt;undefined (x isn’t declared anywhere)\n    \n  \n  Reference Error are thrown when variables are in temporal dead zone.\n  Syntax Error doesn’t even let us run single line of code.\n\n\n1\n2\nlet a = 10;\nlet a = 100; //this code is rejected upfront as SyntaxError. (duplicate declaration)\n\n\n1\n2\nlet a = 10;\nvar a = 100; // this code also rejected upfront as SyntaxError. (can't use same name in same scope)\n\n\n\n  Let is a stricter version of var. Now, const is even more stricter than let.\n\n\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\nlet a;\na = 10;\nconsole.log(a) // 10. Note declaration and assigning of a is in different lines.\n\nconst b;\nb = 10;\nconsole.log(b); // SyntaxError: Missing initializer in const declaration. (This type of declaration won't work with const. const b = 10 only will work)\n\nconst b = 100;\nb = 1000; //this gives us TypeError: Assignment to constant variable.\n\n\n\n  Types of Error: Syntax, Reference, and Type.\n    \n      Uncaught ReferenceError: x is not defined at …\n        \n          This Error signifies that x has never been in the scope of the program. This literally means that x was never defined/declared and is being tried to be accesed.\n        \n      \n      Uncaught ReferenceError: cannot access ‘a’ before initialization\n        \n          This Error signifies that ‘a’ cannot be accessed because it is declared as ‘let’ and since it is not assigned a value, it is its Temporal Dead Zone. Thus, this error occurs.\n        \n      \n      Uncaught SyntaxError: Identifier ‘a’ has already been declared\n        \n          This Error signifies that we are redeclaring a variable that is ‘let’ declared. No execution will take place.\n        \n      \n      Uncaught SyntaxError: Missing initializer in const declaration\n        \n          This Error signifies that we haven’t initialized or assigned value to a const declaration.\n        \n      \n      Uncaught TypeError: Assignment to constant variable\n        \n          This Error signifies that we are reassigning to a const variable.\n        \n      \n    \n  \n\n\nSOME GOOD PRACTICES:\n\n  Try using const wherever possible. If not, use let, Avoid var.\n  Declare and initialize all variables with let to the top to avoid errors to shrink temporal dead zone window to zero.\n\n\n#9: Functions in JS\n\nQ: What is Function statement?\nBelow way of creating function are function statement.\n\n1\n2\n3\n4\nfunction a() {\n    console.log(\"Hello\");\n}\na(); // Hello\n\n\nQ: What is Function Expression?\nAssigning a function to a variable. Function acts like a value.\n\n1\n2\n3\n4\nvar b = function() {\n    console.log(\"Hello\");\n}\nb();\n\n\nQ: Difference between function statement and expression\nThe major difference between these two lies in Hoisting.\n\n1\n2\n3\n4\n5\n6\n7\n8\na(); // \"Hello A\"\nb(); // TypeError\nfunction a() {\n  console.log(\"Hello A\");\n}\nvar b = function () {\n  console.log(\"Hello B\");\n};\n\n\nWhy did this happen? During mem creation phase a is created in memory and function assigned to a. But b is created like a variable (b:undefined) and until code reaches the function() part, it is still undefined. So it cannot be called.\n\nQ: What is Function Declaration?\nOther name for function statement.\n\nQ: What is Anonymous Function?\nA function without a name.\n\n1\n2\n3\nfunction () {\n\n} // this is going to throw Syntax Error - Function Statement requires function name.\n\n\nThey don’t have their own identity. So an anonymous function without code inside it results in an error.\nAnonymous functions are used when functions are used as values eg. the code sample for function expression above.\n\n#10: Closures in JS\n\n\n  Function bundled along with it’s lexical scope is closure.\n  JavaScript has a lexcial scope environment. If a function needs to access a variable, it first goes to its local memory. When it does not find it there, it goes to the memory of its lexical parent.\n  See Below code, Over here function y along with its lexical scope i.e. (function x) would be called a closure.\n\n\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\nfunction x() {\n    var a = 7;\n\n    function y() {\n        console.log(a);\n    }\n    return y;\n}\nvar z = x();\nconsole.log(z); // value of z is entire code of function y.\n\n\n\n  In above code, When y is returned, not only is the function returned but the entire closure (fun y + its lexical scope) is returned and put inside z. So when z is used somewhere else in program, it still remembers var a inside x()\n  Thus In simple words, we can say:\n    \n      A closure is a function that has access to its outer function scope even after the function has returned. Meaning, A closure can remember and access variables and arguments reference of its outer function even after the function has returned.\n    \n  \n  Advantages of Closure: Module Design, Pattern Currying, Memoize, Data hiding and encapsulation setTimeouts etc.\n  Disadvantages of Closure: Over consumption of memory , Memory Leak &amp; Freeze Browser\n\n\n#10 (A) setTimeout\n\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\nfunction x() {\n    var i = 1;\n    setTimeout(function() {\n        console.log(i);\n    }, 3000);\n    console.log(\"Hello World\");\n}\nx();\n// Output:\n// Hello World\n// 1 // after waiting 3 seconds\n\n\n\n  We expect JS to wait 3 sec, print 1 and then go down and print the string. But JS prints string immediately, waits 3 sec and then prints 1.\n  The function inside setTimeout forms a closure (remembers reference to i). So wherever function goes it carries this ref along with it.\n  setTimeout takes this callback function &amp; attaches timer of 3000ms and stores it. Goes to next line without waiting and prints string.\n  After 3000ms runs out, JS takes function, puts it into call stack and runs it. Q: Print 1 after 1 sec, 2 after 2 sec till 5\n  We assume this has a simple approach as below\n\n\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\nfunction x() {\n    for (var i = 1; i &lt;= 5; i++) {\n        setTimeout(function() {\n            console.log(i);\n        }, i * 1000);\n    }\n    console.log(\"Hello World\");\n}\nx();\n// Output:\n// Hello World\n// 6\n// 6\n// 6\n// 6\n// 6\n\n\nReason?\n\n  This happens because of closures. When setTimeout stores the function somewhere and attaches timer to it, the function remembers its reference to i, not value of i. All 5 copies of function point to same reference of i. JS stores these 5 functions, prints string and then comes back to the functions. By then the timer has run fully. And due to looping, the i value became 6. And when the callback fun runs the variable i = 6. So same 6 is printed in each log.\n  To avoid this, we can use let instead of var as let has Block scope. For each iteration, the i is a new variable altogether(new copy of i). Everytime setTimeout is run, the inside function forms closure with new variable i\n  But what if you have to implement using var?\n\n\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\nfunction x() {\n    for (var i = 1; i &lt;= 5; i++) {\n        function close(i) {\n            setTimeout(function() {\n                console.log(i);\n            }, i * 1000);\n            // put the setT function inside new function close()\n        }\n        close(i); // everytime you call close(i) it creates new copy of i. Only this time, it is with var itself!\n    }\n    console.log(\"Hello World\");\n}\nx();\n\n\n#11 – Web APIs\n\nStuff which is not a part of JS but provided by the Browsers.\nE.g. setTimeout(), DOM APIs, fetch(), localstorage, console, location and so many\nmore.\na.\tsetTimeout() : Timer function\nb.\tDOM APIs : eg.Document.xxxx ; Used to access HTML DOM tree. (Document Object Manipulation)\nc.\tfetch() : Used to make connection with external servers eg. Netflix servers etc.\n",
+            "datePublished": "2022-07-05 06:30:00 +0000",
+            "dateModified": "2022-07-05 06:30:00 +0000",
+            "image": [
+                "http://source.unsplash.com/100x100/?javascript,jsbasics,jsfunctions,jsclosure,jssettimeout",
+                "http://source.unsplash.com/400x300/?javascript,jsbasics,jsfunctions,jsclosure,jssettimeout",
+                "http://source.unsplash.com/1600x900/?javascript,jsbasics,jsfunctions,jsclosure,jssettimeout"
+            ],
+            "author": {
+                "@type": "Person",
+                "name": {"name":"Baiju Dodhia","url":"https://baijudodhia.github.io/"},
+                "url": "https://baijudodhia.github.io/"
+            },
+            "publisher": {
+                "@type": "Professional",
+                "name": {"name":"Baiju Dodhia","url":"https://baijudodhia.github.io/"},
+                "url": "https://baijudodhia.github.io/"
+            },
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://baijudodhia.github.io/technology/javascript-basics/"
+            }
+        }
+    </script>
+    
+</head><body>
+    <div id="body-header"><div class="header-container">
+  <div class="header">
+    <button onclick="toggleSidebar()" class="header-toggler" aria-label="Menu">
+      <span class="header-toggler-bar"></span>
+      <span class="header-toggler-bar"></span>
+      <span class="header-toggler-bar"></span>
+    </button>
+    <div class="header-logo">
+        <img src=/blog/assets/logo/logo.png alt="The Tech Blog Logo" width="24" height="24"/>
+        <a href="/blog/">
+            Blog
+        </a>
+    </div>
+    <div class="header-nav">
+        
+        <div class="header-nav-link">
+            <a href="/blog/" class="header-nav-link-item ">Home</a>
+        </div>
+        <div class="header-nav-link">
+            <a href="/blog/category" class="header-nav-link-item ">Category</a>
+        </div>
+        <div class="header-nav-link">
+            <a href="/blog/tag" class="header-nav-link-item ">Tag</a>
+        </div>
+    </div>
+    <div class="header-misc">
+        <div class="header-search-container">
+            <a class="header-search-btn" href="/blog/search" aria-label="Search" title="Search">
+                <i aria-hidden="true" class='fa fa-search'></i>
+            </a>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+    <div id="content">
+        <div id="body-sidebar"><div id="sidebar-container">
+    <div id="sidebar">
+        <div class="sidebar-nav">
+            
+            <div class="sidebar-nav-link">
+                <a href="/blog/"
+                    class="sidebar-nav-link-item ">Home</a>
+            </div>
+            <div class="sidebar-nav-link">
+                <a href="/blog/category"
+                    class="sidebar-nav-link-item ">Category</a>
+            </div>
+            <div class="sidebar-nav-link">
+                <a href="/blog/tag"
+                    class="sidebar-nav-link-item ">Tag</a>
+            </div>
+        </div>
+        <div class="sidebar-footer">
+            <a class="sidebar-footer-link" rel="noopener" href="https://baijudodhia.github.io?utm_source=blog&utm_medium=sidebar"
+                target="_blank">
+                <i aria-hidden="true" class="fa fa-globe"></i>
+                <span>baijudodhia.github.io</span>
+            </a>
+            <a class="sidebar-footer-link" rel="noopener" href="https://www.github.com/baijudodhia/" target="_blank">
+                <i aria-hidden="true" class="fa fa-github"></i>
+                <span>baijudodhia</span>
+            </a>
+            <a class="sidebar-footer-link" rel="noopener" href="https://www.linkedin.com/in/baijudodhia/" target="_blank">
+                <i aria-hidden="true" class="fa fa-linkedin"></i>
+                <span>baijudodhia</span>
+            </a>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener("click", (e) => {
+        if (document.getElementById("sidebar-container").contains(e.target)) {
+            document
+                .getElementById("sidebar-container")
+                .classList
+                .remove("show");
+            document
+                .querySelector(".header-toggler")
+                .classList
+                .remove("active");
+        }
+    });
+</script>
+</div>
+        <div id="body-main">
+            <main>
+                <div class="post">
+    <div class="post-header">
+        <div class="post-header-container">
+            <div class="post-title">
+                Javascript Basics
+            </div>
+            <div class="post-date">
+                posted on
+                <b>
+                    <time class="dt-published" datetime="2022-07-05T06:30:00+00:00" itemprop="datePublished">Jul 5, 2022
+                    </time>
+                </b>
+            </div>
+            <div class="post-author">
+                by <b>Baiju Dodhia</b>
+            </div>
+            <div></div>
+            <div class="post-tags">
+                
+                    
+    
+    
+    <a class="badge-tag" href='/blog/tag/javascript' title=javascript rel="noopener">javascript</a>
+
+
+                
+                    
+    
+    
+    <a class="badge-tag" href='/blog/tag/js-basics' title=js-basics rel="noopener">js basics</a>
+
+
+                
+                    
+    
+    
+    <a class="badge-tag" href='/blog/tag/js-functions' title=js-functions rel="noopener">js functions</a>
+
+
+                
+                    
+    
+    
+    <a class="badge-tag" href='/blog/tag/js-closure' title=js-closure rel="noopener">js closure</a>
+
+
+                
+                    
+    
+    
+    <a class="badge-tag" href='/blog/tag/-js-settimeout' title=-js-settimeout rel="noopener"> js settimeout</a>
+
+
+                
+            </div>
+        </div>
+    </div>
+    <div class="post-body">
+        <div class="post-content">
+            <p><img src="https://source.unsplash.com/1600x600/?javascript" alt="Wallpaper" /></p>
+
+<h3 id="1---execution-context">#1 - Execution Context</h3>
+<ul>
+  <li>Everything in JS happens inside the execution context. Imagine a sealed-off container inside which JS runs. It is an abstract concept that hold info about the env. within the current code is being executed.</li>
+  <li>In the container the first component is memory component and the 2nd one is code component</li>
+  <li>Memory component has all the variables and functions in key value pairs. It is also called Variable environment. Code component is the place where code is executed one line at a time. It is also called the Thread of Execution. JS is a synchronous, single-threaded language
+    <ul>
+      <li>Synchronous: One command at a time.</li>
+      <li>Single-threaded: In a specific synchronous order.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="2-how-js-is-executed--call-stack-">#2: How JS is executed &amp; Call Stack ?</h3>
+
+<ul>
+  <li>When a JS program is ran, a global execution context is created. The execution context is created in two phases.
+    <ul>
+      <li>Memory creation phase - JS will allocate memory to variables and functions.</li>
+      <li>Code execution phase - Let’s consider the below example and its code execution steps:</li>
+    </ul>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">n</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">square</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">ans</span> <span class="o">=</span> <span class="nx">num</span> <span class="o">*</span> <span class="nx">num</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nx">ans</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">square2</span> <span class="o">=</span> <span class="nx">square</span><span class="p">(</span><span class="nx">n</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">square4</span> <span class="o">=</span> <span class="nx">square</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>Javascript manages code execution context creation and deletion with the the help of Call Stack. Call Stack is a mechanism to keep track of its place in script that calls multiple function.</li>
+  <li>Call Stack maintains the order of execution of execution contexts. It is also known as Program Stack, Control Stack, Runtime stack, Machine Stack, Execution context stack.</li>
+</ul>
+
+<h3 id="3-hoisting-in-javascript-variables--functions">#3: Hoisting in JavaScript (Variables &amp; Functions)</h3>
+
+<ul>
+  <li>Let’s observe the below code and it’s explaination:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="nx">getName</span><span class="p">();</span> <span class="c1">// Hello World console.log(x); // undefined</span>
+<span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">getName</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello World</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>It should have been an outright error in many other languages, as it is not possible to even access something which is not even created (defined) yet but in JS we know that in memory creation phase it assigns undefined and puts the content of function to function’s memory. And in execution, it then executes whatever is asked. Here, as execution goes line by line and not after compiling, it could only print undefined and nothing else. This phenomenon, is not an error. However, if we remove var x = 7; then it gives error. Uncaught ReferenceError: x is not defined</li>
+  <li>Hoisting is a concept which enables us to extract values of variables and functions even before initialising/assigning value without getting error and this is happening due to the 1st phase (memory creation phase) of the Execution Context.</li>
+  <li>So in previous part, we learnt that execution context gets created in two phase, so even before code execution, memory is created so in case of variable, it will be initialized as undefined while in case of function the whole function code is placed in the memory.</li>
+</ul>
+
+<p>Example:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="nx">getName</span><span class="p">();</span> <span class="c1">// Hello World</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// Uncaught Reference: x is not defined.</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">getName</span><span class="p">);</span> <span class="c1">// function getName(){ console.log("Hello World); }</span>
+<span class="kd">function</span> <span class="nx">getName</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello World</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>Now let’s observe a different example and try to understand the output.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="code"><pre><span class="nx">getName</span><span class="p">();</span> <span class="c1">// Uncaught TypeError: getName is not a function console.log(getName);</span>
+<span class="kd">var</span> <span class="nx">getName</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello World</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// The code won't execute as the first line itself throws an TypeError.</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<h3 id="4-functions-and-variable-environments">#4: Functions and Variable Environments</h3>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nx">a</span><span class="p">();</span>
+<span class="nx">b</span><span class="p">();</span> <span class="c1">// we are calling the functions before defining them. This will work properly, as seen in Hoisting.</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">a</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// local scope because of separate execution context console.log(x);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">b</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Outputs:
+10
+100
+1</p>
+
+<h3 id="5-shortest-js-program-window--this-keyword">#5: Shortest JS Program, window &amp; this keyword</h3>
+
+<ul>
+  <li>The shortest JS program is empty file. Because even then, JS engine does a lot of things. As always, even in this case, it creates the GEC which has memory space and the execution context.</li>
+  <li>JS engine creates something known as ‘window’. It is an object, which is created in the global space. It contains lots of functions and variables. These functions and variables can be accessed from anywhere in the program. JS engine also creates a this keyword, which points to the window object at the global level. So, in summary, along with GEC, a global object (window) and a this variable are created.</li>
+  <li>In different engines, the name of global object changes. Window in browsers, but in nodeJS it is called something else.</li>
+  <li>At global level, this === window</li>
+  <li>If we create any variable in the global scope, then the variables get attached to the global object.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// 10</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// 10</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// 10</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<h3 id="6-undefined-vs-not-defined-in-js">#6: undefined vs not defined in JS</h3>
+
+<ul>
+  <li>In first phase (memory allocation) JS assigns each variable a placeholder called undefined.</li>
+  <li>undefined is when memory is allocated for the variable, but no value is assigned yet.</li>
+  <li>If an object/variable is not even declared/found in memory allocation phase, and tried to access it then it is Not defined</li>
+  <li>Not Defined !== Undefined</li>
+  <li>When variable is declared but not assigned value, its current value is undefined. But when the variable itself is not declared but called in code, then it is not defined.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// undefined var x = 25;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span> <span class="c1">// 25</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// Uncaught ReferenceError: a is not defined</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>JS is a loosely typed / weakly typed language. It doesn’t attach variables to any datatype. We can say var a = 5, and then change the value to boolean a = true or string a = ‘hello’ later on.</li>
+  <li>Never assign undefined to a variable manually. Let it happen on it’s own accord.</li>
+</ul>
+
+<h3 id="7-the-scope-chain-scope--lexical-environment">#7: The Scope Chain, Scope &amp; Lexical Environment</h3>
+
+<ul>
+  <li>Scope in Javascript is directly related to Lexical Environment.</li>
+</ul>
+
+<p>Let’s observe the below examples:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+</pre></td><td class="code"><pre><span class="c1">// CASE 1</span>
+<span class="kd">function</span> <span class="nx">a</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span> <span class="c1">// 10</span>
+    <span class="c1">// Instead of printing undefined it prints 10, So somehow this a function could access the variable b outside the function scope.</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">a</span><span class="p">();</span>
+
+<span class="c1">// CASE 2</span>
+<span class="kd">function</span> <span class="nx">a</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">c</span><span class="p">();</span>
+
+    <span class="kd">function</span> <span class="nx">c</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span> <span class="c1">// 10</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">a</span><span class="p">();</span>
+
+<span class="c1">// CASE 3</span>
+<span class="kd">function</span> <span class="nx">a</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">c</span><span class="p">();</span>
+
+    <span class="kd">function</span> <span class="nx">c</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span> <span class="c1">// 100</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">a</span><span class="p">();</span>
+
+<span class="c1">// CASE 4</span>
+<span class="kd">function</span> <span class="nx">a</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="nx">c</span><span class="p">();</span>
+
+    <span class="kd">function</span> <span class="nx">c</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span> <span class="c1">// 10</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="nx">a</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span> <span class="c1">// Error, Not Defined</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>Let’s try to understand the output in each of the cases above.
+    <ul>
+      <li>In case 1: function a is able to access variable b from Global scope.</li>
+      <li>In case 2: 10 is printed. It means that within nested function too, the global scope variable can be accessed.</li>
+      <li>In case 3: 100 is printed meaning local variable of the same name took precedence over a global variable.</li>
+      <li>In case 4: A function can access a global variable, but the global execution context can’t access any local variable.</li>
+    </ul>
+  </li>
+  <li>So, Lexical Environment = local memory + lexical env of its parent. Hence, Lexical Environement is the local memory along with the lexical environment of its parent</li>
+  <li>Lexical: In hierarchy, In order</li>
+  <li>Whenever an Execution Context is created, a Lexical environment(LE) is also created and is referenced in the local Execution Context(in memory space). The process of going one by one to parent and checking for values is called scope chain or Lexcial environment chain.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">a</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">function</span> <span class="nx">c</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// logic here</span>
+    <span class="p">}</span>
+    <span class="nx">c</span><span class="p">();</span> <span class="c1">// c is lexically inside a</span>
+<span class="p">}</span> <span class="c1">// a is lexically inside global execution</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>Lexical or Static scope refers to the accessibility of variables, functions and object based on phylical location in source code.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre>Global <span class="o">{</span>
+    Outer <span class="o">{</span>
+        Inner
+    <span class="o">}</span>
+<span class="o">}</span>
+// Inner is surrounded by lexical scope of Outer
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>TLDR; An inner function can access variables which are in outer functions even if inner function is nested deep. In any other case, a function can’t access variables not in its scope.</li>
+</ul>
+
+<h3 id="8-let--const-in-js-temporal-dead-zone">#8: let &amp; const in JS, Temporal Dead Zone</h3>
+
+<ul>
+  <li>let and const declarations are hoisted. But its different from var</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// ReferenceError: Cannot access 'a' before initialization console.log(b); // prints undefined as expected</span>
+<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// 10 var b = 15;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">a</span><span class="p">);</span> <span class="c1">// undefined console.log(window.b); // 15</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>It looks like let isn’t hoisted, but it is, let’s understand</li>
+  <li>Both a and b are actually initialized as undefined in hoisting stage. But var b is inside the storage space of GLOBAL, and a is in a separate memory object called script, where it can be accessed only after assigning some value to it first ie. one can access ‘a’ only if it is assigned. Thus, it throws error.</li>
+  <li>Temporal Dead Zone : Time since when the let variable was hoisted until it is initialized some value.
+    <ul>
+      <li>So any line till before “let a = 10” is the TDZ for a</li>
+      <li>Since a is not accessible on global, its not accessible in window/this also. window.b or this.b -&gt; 15; But window.a or this.a -&gt;undefined, just like window.x-&gt;undefined (x isn’t declared anywhere)</li>
+    </ul>
+  </li>
+  <li>Reference Error are thrown when variables are in temporal dead zone.</li>
+  <li>Syntax Error doesn’t even let us run single line of code.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span> <span class="c1">//this code is rejected upfront as SyntaxError. (duplicate declaration)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="code"><pre><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span> <span class="c1">// this code also rejected upfront as SyntaxError. (can't use same name in same scope)</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>Let is a stricter version of var. Now, const is even more stricter than let.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="code"><pre><span class="kd">let</span> <span class="nx">a</span><span class="p">;</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span> <span class="c1">// 10. Note declaration and assigning of a is in different lines.</span>
+
+<span class="kd">const</span> <span class="nx">b</span><span class="p">;</span>
+<span class="nx">b</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span> <span class="c1">// SyntaxError: Missing initializer in const declaration. (This type of declaration won't work with const. const b = 10 only will work)</span>
+
+<span class="kd">const</span> <span class="nx">b</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+<span class="nx">b</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span> <span class="c1">//this gives us TypeError: Assignment to constant variable.</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>Types of Error: Syntax, Reference, and Type.
+    <ul>
+      <li>Uncaught ReferenceError: x is not defined at …
+        <ul>
+          <li>This Error signifies that x has never been in the scope of the program. This literally means that x was never defined/declared and is being tried to be accesed.</li>
+        </ul>
+      </li>
+      <li>Uncaught ReferenceError: cannot access ‘a’ before initialization
+        <ul>
+          <li>This Error signifies that ‘a’ cannot be accessed because it is declared as ‘let’ and since it is not assigned a value, it is its Temporal Dead Zone. Thus, this error occurs.</li>
+        </ul>
+      </li>
+      <li>Uncaught SyntaxError: Identifier ‘a’ has already been declared
+        <ul>
+          <li>This Error signifies that we are redeclaring a variable that is ‘let’ declared. No execution will take place.</li>
+        </ul>
+      </li>
+      <li>Uncaught SyntaxError: Missing initializer in const declaration
+        <ul>
+          <li>This Error signifies that we haven’t initialized or assigned value to a const declaration.</li>
+        </ul>
+      </li>
+      <li>Uncaught TypeError: Assignment to constant variable
+        <ul>
+          <li>This Error signifies that we are reassigning to a const variable.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>SOME GOOD PRACTICES:</p>
+<ul>
+  <li>Try using const wherever possible. If not, use let, Avoid var.</li>
+  <li>Declare and initialize all variables with let to the top to avoid errors to shrink temporal dead zone window to zero.</li>
+</ul>
+
+<h3 id="9-functions-in-js">#9: Functions in JS</h3>
+
+<p>Q: What is Function statement?
+Below way of creating function are function statement.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">a</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">a</span><span class="p">();</span> <span class="c1">// Hello</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Q: What is Function Expression?
+Assigning a function to a variable. Function acts like a value.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="code"><pre><span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">b</span><span class="p">();</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Q: Difference between function statement and expression
+The major difference between these two lies in Hoisting.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+</pre></td><td class="code"><pre><span class="nx">a</span><span class="p">();</span> <span class="c1">// "Hello A"</span>
+<span class="nx">b</span><span class="p">();</span> <span class="c1">// TypeError</span>
+<span class="kd">function</span> <span class="nx">a</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello A</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello B</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">};</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Why did this happen? During mem creation phase a is created in memory and function assigned to a. But b is created like a variable (b:undefined) and until code reaches the function() part, it is still undefined. So it cannot be called.</p>
+
+<p>Q: What is Function Declaration?
+Other name for function statement.</p>
+
+<p>Q: What is Anonymous Function?
+A function without a name.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="code"><pre><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+
+<span class="p">}</span> <span class="c1">// this is going to throw Syntax Error - Function Statement requires function name.</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>They don’t have their own identity. So an anonymous function without code inside it results in an error.
+Anonymous functions are used when functions are used as values eg. the code sample for function expression above.</p>
+
+<h3 id="10-closures-in-js">#10: Closures in JS</h3>
+
+<ul>
+  <li>Function bundled along with it’s lexical scope is closure.</li>
+  <li>JavaScript has a lexcial scope environment. If a function needs to access a variable, it first goes to its local memory. When it does not find it there, it goes to the memory of its lexical parent.</li>
+  <li>See Below code, Over here function y along with its lexical scope i.e. (function x) would be called a closure.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">x</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+
+    <span class="kd">function</span> <span class="nx">y</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">y</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">z</span> <span class="o">=</span> <span class="nx">x</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">z</span><span class="p">);</span> <span class="c1">// value of z is entire code of function y.</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>In above code, When y is returned, not only is the function returned but the entire closure (fun y + its lexical scope) is returned and put inside z. So when z is used somewhere else in program, it still remembers var a inside x()</li>
+  <li>Thus In simple words, we can say:
+    <ul>
+      <li>A closure is a function that has access to its outer function scope even after the function has returned. Meaning, A closure can remember and access variables and arguments reference of its outer function even after the function has returned.</li>
+    </ul>
+  </li>
+  <li>Advantages of Closure: Module Design, Pattern Currying, Memoize, Data hiding and encapsulation setTimeouts etc.</li>
+  <li>Disadvantages of Closure: Over consumption of memory , Memory Leak &amp; Freeze Browser</li>
+</ul>
+
+<h3 id="10-a-settimeout">#10 (A) setTimeout</h3>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">x</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+    <span class="p">},</span> <span class="mi">3000</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello World</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">x</span><span class="p">();</span>
+<span class="c1">// Output:</span>
+<span class="c1">// Hello World</span>
+<span class="c1">// 1 // after waiting 3 seconds</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<ul>
+  <li>We expect JS to wait 3 sec, print 1 and then go down and print the string. But JS prints string immediately, waits 3 sec and then prints 1.</li>
+  <li>The function inside setTimeout forms a closure (remembers reference to i). So wherever function goes it carries this ref along with it.</li>
+  <li>setTimeout takes this callback function &amp; attaches timer of 3000ms and stores it. Goes to next line without waiting and prints string.</li>
+  <li>After 3000ms runs out, JS takes function, puts it into call stack and runs it. Q: Print 1 after 1 sec, 2 after 2 sec till 5</li>
+  <li>We assume this has a simple approach as below</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">x</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+        <span class="p">},</span> <span class="nx">i</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello World</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">x</span><span class="p">();</span>
+<span class="c1">// Output:</span>
+<span class="c1">// Hello World</span>
+<span class="c1">// 6</span>
+<span class="c1">// 6</span>
+<span class="c1">// 6</span>
+<span class="c1">// 6</span>
+<span class="c1">// 6</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<p>Reason?</p>
+<ul>
+  <li>This happens because of closures. When setTimeout stores the function somewhere and attaches timer to it, the function remembers its reference to i, not value of i. All 5 copies of function point to same reference of i. JS stores these 5 functions, prints string and then comes back to the functions. By then the timer has run fully. And due to looping, the i value became 6. And when the callback fun runs the variable i = 6. So same 6 is printed in each log.</li>
+  <li>To avoid this, we can use let instead of var as let has Block scope. For each iteration, the i is a new variable altogether(new copy of i). Everytime setTimeout is run, the inside function forms closure with new variable i</li>
+  <li>But what if you have to implement using var?</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="code"><pre><span class="kd">function</span> <span class="nx">x</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">function</span> <span class="nx">close</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span>
+            <span class="p">},</span> <span class="nx">i</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">);</span>
+            <span class="c1">// put the setT function inside new function close()</span>
+        <span class="p">}</span>
+        <span class="nx">close</span><span class="p">(</span><span class="nx">i</span><span class="p">);</span> <span class="c1">// everytime you call close(i) it creates new copy of i. Only this time, it is with var itself!</span>
+    <span class="p">}</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Hello World</span><span class="dl">"</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">x</span><span class="p">();</span>
+</pre></td></tr></tbody></table></code></pre></figure>
+
+<h3 id="11--web-apis">#11 – Web APIs</h3>
+
+<p>Stuff which is not a part of JS but provided by the Browsers.
+E.g. setTimeout(), DOM APIs, fetch(), localstorage, console, location and so many
+more.
+a.	setTimeout() : Timer function
+b.	DOM APIs : eg.Document.xxxx ; Used to access HTML DOM tree. (Document Object Manipulation)
+c.	fetch() : Used to make connection with external servers eg. Netflix servers etc.</p>
+
+        </div>
+    </div>
+    <div class="post-divider"></div><div class="next-prev-post"><div>
+            
+            <a class="anchor next-prev-post-btn" title="Previous Post" href=/blog/business/startup-terminology/ rel="noopener">
+    
+    
+        <div>
+            <i aria-hidden="true" class='fa fa-arrow-left'></i>
+        </div>
+    
+</a>
+        </div><div>
+        <button   title=Random Post  class="button next-prev-post-btn" onclick=redirectToRandomBlog();>
+    
+    
+        <div>
+            <i aria-hidden="true" class='fa fa-random'></i>
+        </div>
+    
+</button>
+    </div><div>
+            
+            <a class="anchor next-prev-post-btn" title="Next Post" href=/blog/technology/css-basics/ rel="noopener">
+    
+    
+        <div>
+            <i aria-hidden="true" class='fa fa-arrow-right'></i>
+        </div>
+    
+</a>
+        </div></div></div>
+            </main><footer class="footer">
+    <div class="footer-links">
+        <a class="footer-link" rel="noopener" href="https://baijudodhia.github.io?utm_source=blog&utm_medium=footer" target="_blank">
+            <i aria-hidden="true" class="fa fa-globe"></i>
+            <span>baijudodhia.github.io</span>
+        </a>
+        <a class="footer-link" rel="noopener" href="https://www.github.com/baijudodhia/" target="_blank">
+            <i aria-hidden="true" class="fa fa-github"></i>
+            <span>baijudodhia</span>
+        </a>
+        <a class="footer-link" rel="noopener" href="https://www.linkedin.com/in/baijudodhia/" target="_blank">
+            <i aria-hidden="true" class="fa fa-linkedin"></i>
+            <span>baijudodhia</span>
+        </a>
+    </div>
+</footer></div>
+    </div>
+</body></html>

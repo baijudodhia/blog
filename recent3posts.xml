@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  
+        
+    <url>
+      <loc>https://baijudodhia.github.io/blog/technology/remove-bloatware-from-android-using-adb/</loc>
+      <lastmod>2022-08-13T06:30:00+00:00</lastmod>
+      <title>Remove Bloatware from Android usign ADB</title>
+      <excerpt>A guide to removing bloatware from android devices with android debug bridge (adb) command-line tool and no-root required.</excerpt>
+      <tags>android , adb , bloatware</tags>
+      <category>technology</category>
+    </url>
+    
+  
+        
+    <url>
+      <loc>https://baijudodhia.github.io/blog/technology/reactjs-basics/</loc>
+      <lastmod>2022-07-06T06:30:00+00:00</lastmod>
+      <title>ReactJS Basics</title>
+      <excerpt>Basic understanding of ReactJS</excerpt>
+      <tags>reactjs , jsx</tags>
+      <category>technology</category>
+    </url>
+    
+  
+        
+    <url>
+      <loc>https://baijudodhia.github.io/blog/technology/css-basics/</loc>
+      <lastmod>2022-07-06T06:30:00+00:00</lastmod>
+      <title>CSS Basics</title>
+      <excerpt>Basic of CSS</excerpt>
+      <tags>css , web-styling</tags>
+      <category>technology</category>
+    </url>
+    
+  
+</urlset>
