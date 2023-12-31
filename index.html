@@ -80,7 +80,9 @@
 		<script src="https://baijudodhia.github.io/blog/assets/scripts/analytics.js"></script>
 
 		<script>
-			window.location.replace("https://baijudodhia.blogspot.com/");
+			const queryParams = window.location.search;
+    			const redirectUrl = "https://baijudodhia.blogspot.com/" + queryParams;
+    			window.location.replace(redirectUrl);
 		</script>
 	</head>
 	<body> </body>
